@@ -1,0 +1,7 @@
+Solution/bin            #忽略 Solution/bin 目录下的所有文件
+Solution/game/autogen   #忽略autogen 下的所有文件
+Solution/game/Data      #忽略Data 下的所有文件
+Solution/game/*.user    #忽略user 文件
+Solution/*.ncb          #忽略所有 ncb 文件
+Solution/*.suo          #忽略所有 suo 文件
+Solution/tmp            #忽略tmp 目录里的文件
