@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="5d1ec3c3-e5b9-415b-9f21-30f19b55e8ad"
+  Description="Entity model for creating a selectable proxy representation of the entity as a billboarded texture in 3D space.">
+  <Mixins>
+    <Mixin
+      SourceID="e579223d-1f2e-419c-9214-c77d5e6c4eba"
+      SourceName="Proxy" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ProxyTextureAsset"
+      Description="Asset reference to a texture file to use as the billboard for an entity.">
+      <Traits />
+      <Value>
+        <Asset
+          Value="">
+          <LastKnownName></LastKnownName>
+          <LastKnownPath></LastKnownPath>
+          <LastKnownTags></LastKnownTags>
+        </Asset>
+      </Value>
+      <Restriction>
+        <TagRestriction>
+          <Tags>image</Tags>
+        </TagRestriction>
+      </Restriction>
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

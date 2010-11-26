@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="bfcee047-ed4f-4482-84f4-0e7571f4f942"
+  Description="A spot light set up to be used for precomputed lighting.">
+  <Mixins>
+    <Mixin
+      SourceID="3a968412-6fb9-481c-b55d-a79da6062c1e"
+      SourceName="SpotLight" />
+    <Mixin
+      SourceID="67d1b6f6-53f9-4669-85d7-c74114dac43f"
+      SourceName="PrecomputedLightConfig" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="CastShadows"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

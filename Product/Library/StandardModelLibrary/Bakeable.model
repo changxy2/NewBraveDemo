@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="d3ed731f-997d-43ee-affd-d32df693850d"
+  Description="Entity model used to define whether or not an entity is a candidate for offline processing. This model is currently unused and is meant to assist developers wishing to implement a light-map baking algorithm.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="IsStatic"
+      Description="The IsStatic property is used to indicate that an entity will not be updated (moved, animated, etc) after it has been created. Only entities with this property true will be baked. Only entities with this property false will be updated by the Scene Graph Service on every frame. It is a major performance advantage to mark all static objects as such. Note that Rapid Iteration updates are still applied to static objects.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

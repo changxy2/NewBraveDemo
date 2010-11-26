@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Lightable"
+  id="3306310187">
+  <trait
+    value="Active" />
+  <property
+    type="UInt32"
+    name="MaxDirectionalLights"
+    id="3276506584">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxPointLights"
+    id="481351731">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxSpotLights"
+    id="3623858961">
+    <set
+      value="2" />
+  </property>
+</model>

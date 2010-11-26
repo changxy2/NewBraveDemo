@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Mesh"
+  id="3176107662">
+  <trait
+    value="Active" />
+  <trait
+    value="BuiltinModel" />
+  <trait
+    value="ReplicaBuiltinModel" />
+  <trait
+    value="ToolBuiltinModel" />
+  <mixin
+    name="Renderable"
+    id="3759402445"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Bakeable"
+    id="2219133248"
+    type="Active" />
+  <mixin
+    name="Shadowable"
+    id="1432364367"
+    type="Active" />
+  <mixin
+    name="BaseEntity"
+    id="129412341"
+    type="" />
+  <mixin
+    name="Lightable"
+    id="3306310187"
+    type="Active" />
+  <mixin
+    name="Preloadable"
+    id="1650880398"
+    type="Active" />
+  <property
+    type="AssetID"
+    name="NifAsset"
+    id="1997430726"
+    source="Mesh">
+    <set
+      value="" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsNifAssetShared"
+    id="3588137404"
+    source="Mesh">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="AssocAttachedNifAsset"
+    name="AttachedObjects"
+    id="4052223838"
+    source="Mesh" />
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsStatic"
+    id="713021940">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsCastingShadow"
+    id="3634273042">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsReceivingShadow"
+    id="2429998135">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxDirectionalLights"
+    id="3276506584">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxPointLights"
+    id="481351731">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxSpotLights"
+    id="3623858961">
+    <set
+      value="2" />
+  </property>
+  <property
+    type="Boolean"
+    name="PreloadAssets"
+    id="1896513443">
+    <set
+      value="True" />
+  </property>
+</model>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project
+  version="5">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.BehaviorScriptsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.DiagramsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.EnumsOutput"
+      property-type="String">
+      <value>..\Enums</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.FlatModelsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.ModelsAndPresetsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+  </tool-settings>
+  <Files>
+    <File
+      path="PhysXBox.model" />
+    <File
+      path="PhysXBoxTrigger.model" />
+    <File
+      path="PhysXCapsule.model" />
+    <File
+      path="PhysXCapsuleTrigger.model" />
+    <File
+      path="PhysXModelLibrary.diagram" />
+    <File
+      path="PhysXProp.model" />
+    <File
+      path="PhysXRagdoll.model" />
+    <File
+      path="PhysXScene.model" />
+    <File
+      path="PhysXShape.model" />
+    <File
+      path="PhysXSphere.model" />
+    <File
+      path="PhysXSphereTrigger.model" />
+    <File
+      path="PhysXTerrain.model" />
+    <File
+      path="PhysXTrigger.model" />
+    <File
+      path="PhysXWhitebox.model" />
+    <File
+      path="PhysXWhiteboxTrigger.model" />
+  </Files>
+  <References>
+    <Project
+      path="..\StandardModelLibrary\StandardModelLibrary.emtproj" />
+  </References>
+  <virtual-folders
+    version="1" />
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="MovableObject"
+  id="264070643">
+  <trait
+    value="BuiltinModel" />
+  <property
+    type="Point3"
+    name="MoveVelocity"
+    id="3475307868"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="MoveAccel"
+    id="3075443446"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="RotationAxis"
+    id="3391897551"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="AngularSpeed"
+    id="1367195968"
+    source="MovableObject">
+    <set
+      value="0" />
+  </property>
+</model>

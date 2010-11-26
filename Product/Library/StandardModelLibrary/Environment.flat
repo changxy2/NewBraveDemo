@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Environment"
+  id="3707847260">
+  <trait
+    value="Active" />
+  <mixin
+    name="TimeOfDayEditable"
+    id="477905418"
+    type="" />
+  <property
+    type="EntityRef"
+    name="EnvironmentSunEntity"
+    id="4210425245">
+    <set
+      value="00000000-0000-0000-0000-000000000000" />
+  </property>
+  <property
+    type="Boolean"
+    name="EnvironmentAutoFogColor"
+    id="749778642">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="EnvironmentUseSunAnlges"
+    id="1683617793">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Color"
+    name="EnvironmentFogColor"
+    id="509540491">
+    <set
+      value="0.02745098, 0.6352941, 0.9882353" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentSunAzimuthAngle"
+    id="2990627829">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentSunElevationAngle"
+    id="553088826">
+    <set
+      value="30" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentSunSize"
+    id="2307185758">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentSunIntensity"
+    id="3987675536">
+    <set
+      value="15" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentPhaseConstant"
+    id="4101666276">
+    <set
+      value="-0.99" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentRayleighConstant"
+    id="3003055152">
+    <set
+      value="0.0025" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentMieConstant"
+    id="2540523410">
+    <set
+      value="0.0015" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentHDRExposure"
+    id="1686436541">
+    <set
+      value="2" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentRedWavelength"
+    id="2560830890">
+    <set
+      value="0.65" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentGreenWavelength"
+    id="18108488">
+    <set
+      value="0.57" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentBlueWavelength"
+    id="1623590390">
+    <set
+      value="0.475" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentDomeRadius"
+    id="3220562753">
+    <set
+      value="1000" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentDomeDetail"
+    id="3670294242">
+    <set
+      value="8" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentDomeDetailAxisBias"
+    id="5429998">
+    <set
+      value="0.6" />
+  </property>
+  <property
+    type="Float32"
+    name="EnvironmentDomeDetailHorizontalBias"
+    id="2919962678">
+    <set
+      value="0.9" />
+  </property>
+  <property
+    type="AssetID"
+    name="TimeOfDayAssetPath"
+    id="1056771729">
+    <set
+      value="" />
+  </property>
+  <property
+    type="AssocString"
+    name="TimeOfDayAnimatablePropertyList"
+    id="949502095" />
+</model>

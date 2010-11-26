@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="a05b40bc-8637-4c58-9964-93dee0881c4b"
+  Description="An actor which uses precomputed lighting.  Since actors normally move throughout a scene, this model is set to use light probes by default.">
+  <Mixins>
+    <Mixin
+      SourceID="bc8153af-f680-46ac-9de7-f99106dee084"
+      SourceName="Actor" />
+    <Mixin
+      SourceID="88c2bbb6-ecce-433b-b7da-3e0a5fa98f92"
+      SourceName="PrecomputedLightReceiver" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="UseLightProbes"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="71994823-4511-426b-8e9b-b20303d34fd3"
+  Description="Defines the properties for a PhysX terrain.  This is used by egmPhysXTerrain::PhysXTerrainService to add the terrain to an NxScene and allow terrain to interact with PhysXProps.">
+  <Mixins>
+    <Mixin
+      SourceID="3bee69a7-c94f-4849-bc79-082f81e77ef9"
+      SourceName="Terrain" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="SceneName"
+      Description="Names the PhysXScene that this terrain object should be placed in.">
+      <Traits />
+      <Value>
+        <String
+          Value="PhysXDefaultSceneName" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="PhysXTerrainMaterialBaseIndex"
+      Description="Defines the starting Index to be used to associate TerrainMaterial indices with NxMaterial. Users should ensure no other PhysX objects use a NxMaterial that the terrain might be using.">
+      <Traits />
+      <Value>
+        <UInt16
+          Value="20" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="Global" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

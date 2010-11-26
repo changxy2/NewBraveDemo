@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="70bf971f-e738-4a47-92d9-2a267cf49ab3"
+  Description="An object that represents a point light source in a scene. Point lights have a specific location in space and a distance attenuation function. Point lights project illumination in all directions from their model space origin. They may be positioned anywhere by changing the translation of the light object.&#xD;&#xA;&#xD;&#xA;Gamebryo uses the following equation to calculate the intensity of a point light at a given point in space:&#xD;&#xA;&#xD;&#xA; Ifinal = Iorig / ( C + Ld + Qd^2)           &#xD;&#xA;&#xD;&#xA;Where Iorig is the original intensity, Ifinal is the final intensity, d is the world-space distance from the light location to the given point, and C, L, and Q are the constant, linear, and quadratic attenuation factors, respectively.">
+  <Mixins>
+    <Mixin
+      SourceID="c2a81bfe-f2b2-4b96-8431-a30739726860"
+      SourceName="Light" />
+    <Mixin
+      SourceID="cdc0f85e-5fc8-4b5d-a38b-e07e58553887"
+      SourceName="ShadowGenerator" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ConstantAttenuation"
+      Description="The constant term, C,  in the following equation:&#xD;&#xA; Ifinal = Iorig / ( C + Ld + Qd^2)      ">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="LinearAttenuation"
+      Description="The linear distance varying term, L,  in the following equation:&#xD;&#xA; Ifinal = Iorig / ( C + Ld + Qd^2)      ">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="QuadraticAttenuation"
+      Description="The quadratic distance varying term, Q,  in the following equation:&#xD;&#xA; Ifinal = Iorig / ( C + Ld + Qd^2)      ">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AttenuationVisualizerThreshold"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.05" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AttenuationVisualizerOrientation"
+      Description="">
+      <Traits />
+      <Value>
+        <Rotator>
+          <Roll>
+            <Degree
+              Value="0" />
+          </Roll>
+          <Pitch>
+            <Degree
+              Value="0" />
+          </Pitch>
+          <Yaw>
+            <Degree
+              Value="0" />
+          </Yaw>
+        </Rotator>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="DepthBias"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Float32
+          Value="0.98" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="ProxyNifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:bd3b0a84-0000-0000-0000-000000000000">
+          <LastKnownName>PointLight</LastKnownName>
+          <LastKnownPath>/StandardModelLibrary/Media/PointLight.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:PointLight</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList>
+    <ExtraData
+      Name="AttenuationVisualizer"
+      Type="PropertyVisualizer">
+      <Entry
+        Type="Dependency"
+        Key="Anchor"
+        Value="Position" />
+      <Entry
+        Type="Dependency"
+        Key="Color"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="ConstantAttenuation"
+        Value="ConstantAttenuation" />
+      <Entry
+        Type="Dependency"
+        Key="FinalIntensity"
+        Value="AttenuationVisualizerThreshold" />
+      <Entry
+        Type="Dependency"
+        Key="LinearAttenuation"
+        Value="LinearAttenuation" />
+      <Entry
+        Type="Dependency"
+        Key="MaxRange"
+        Value="Range" />
+      <Entry
+        Type="Dependency"
+        Key="Offset"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Orientation"
+        Value="AttenuationVisualizerOrientation" />
+      <Entry
+        Type="Dependency"
+        Key="OriginalIntensity"
+        Value="Dimmer" />
+      <Entry
+        Type="Dependency"
+        Key="QuadraticAttenuation"
+        Value="QuadraticAttenuation" />
+      <Entry
+        Type="Dependency"
+        Key="Scale"
+        Value="Default" />
+      <Entry
+        Type="Type"
+        Key="Type"
+        Value="Attenuation" />
+    </ExtraData>
+  </ExtraDataList>
+</EntityModel>

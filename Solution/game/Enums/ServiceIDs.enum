@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<enum type="Normal" start="0x06100000" end="0x061FFFFF ">
+
+    <!-- Service IDs -->
+    <header useNamespace="game" useExistingTypedef="efd::ClassID" prefix="SERVICE_ID_" includes="efd/ClassInfo.h"/>
+
+    <item name="GameApp"/>
+    <item name="AIService"/>
+    <item name="InGameCameraService"/>
+    <item name="ControlServer"/>
+</enum>

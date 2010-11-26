@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<enum type="Normal" start="0x06200000" end="0x062FFFFF ">
+
+    <!-- Class IDs -->
+    <header useNamespace="game" useExistingTypedef="efd::ClassID" prefix="CLASS_ID_" includes="efd/ClassInfo.h"/>
+
+    <item name="AIModel"/>
+    <item name="Camera_base"/>
+    <item name="Camera_smoothFollow"/>
+    <item name="MovableObject"/>
+    <item name="MovementService"/>  
+</enum>

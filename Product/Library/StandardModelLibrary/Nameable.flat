@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Nameable"
+  id="532089914">
+  <trait
+    value="Active" />
+  <property
+    type="String"
+    name="Name"
+    id="62725275">
+    <set
+      value="" />
+  </property>
+</model>

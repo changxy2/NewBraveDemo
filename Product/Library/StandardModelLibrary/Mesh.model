@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="769224cc-5c68-4af1-b1c8-85bc9879d9a9"
+  Description="Entity that uses a NIF file to render itself in the 3D world.&#xD;&#xA;&#xD;&#xA;Note: When mixing this into a model in another entity modeling project, it is advisable to not mix in directly. Instead, create a new model, like &quot;MyCustomMesh&quot;, and mix-into that model. Then mix &quot;MyCustomMesh&quot; into all relevant models in that project. This is useful when refactoring large numbers of meshes at once.">
+  <Mixins>
+    <Mixin
+      SourceID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+      SourceName="Renderable" />
+    <Mixin
+      SourceID="d3ed731f-997d-43ee-affd-d32df693850d"
+      SourceName="Bakeable" />
+    <Mixin
+      SourceID="856ac922-dbe5-4fb1-a2ed-998f6112a031"
+      SourceName="Shadowable" />
+    <Mixin
+      SourceID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+      SourceName="BaseEntity" />
+    <Mixin
+      SourceID="e803dfb5-8811-4ace-82aa-a3f3f62d3b83"
+      SourceName="Lightable" />
+    <Mixin
+      SourceID="65fbc8cc-fe62-4bc2-9ad6-5c72dbfb3a46"
+      SourceName="Preloadable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="NifAsset"
+      Description="Asset reference to the NIF file used to describe the appearance of the object.">
+      <Traits />
+      <Value>
+        <Asset
+          Value="">
+          <LastKnownName></LastKnownName>
+          <LastKnownPath></LastKnownPath>
+          <LastKnownTags></LastKnownTags>
+        </Asset>
+      </Value>
+      <Restriction>
+        <TagRestriction>
+          <Tags>gamebryo-scenegraph</Tags>
+        </TagRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="IsNifAssetShared"
+      Description="Is the NIF asset shared in memory or must it be reloaded from disk. Setting this value to false should be done sparingly, as it can increase memory usage substantially.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AttachedObjects"
+      Description="Collection of assets attached to the entity. If no AttachPoint is specified, the root will be used as the attachment point.">
+      <Traits />
+      <Value>
+        <Map
+          ItemsDataType="AttachedNifAsset">
+          <Items />
+        </Map>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+    <Trait
+      Name="ReplicaBuiltinModel" />
+    <Trait
+      Name="ToolBuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

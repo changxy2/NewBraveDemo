@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="fa8a844a-302b-4ba0-9b5e-43ca1470539b"
+  Description="Defines the properties for a PhysX ragdoll character.  This is used by egmPhysXRagdoll::RagdollService to mark animation sequences from a Core Runtime KF/KFM file as blended with ragdoll data from PhysX.">
+  <Mixins>
+    <Mixin
+      SourceID="46c50bb9-fa71-4f68-8a6e-81a49088feef"
+      SourceName="PhysXProp" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="PhysicalSequences"
+      Description="A list of all animation sequences for the actor that should be treated as physical.">
+      <Traits />
+      <Value>
+        <List
+          ItemsDataType="String">
+          <Items />
+        </List>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

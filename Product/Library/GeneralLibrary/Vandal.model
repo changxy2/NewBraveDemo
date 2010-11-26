@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="18ed5ba5-b6f8-45a2-a776-4a05b760d6da"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="bc8153af-f680-46ac-9de7-f99106dee084"
+      SourceName="Actor" />
+    <Mixin
+      SourceID="6fd25663-b822-49f7-a666-35e471d9b160"
+      SourceName="InputHandler" />
+    <Mixin
+      SourceID="f7682dbf-e1d1-48a3-9a98-ef3ff586d2d7"
+      SourceName="MovableObject" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="MoveDir"
+      Description="">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MaxSpeed"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="50" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MoveLR"
+      Description="">
+      <Traits />
+      <Value>
+        <SInt16
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MoveFB"
+      Description="">
+      <Traits />
+      <Value>
+        <SInt16
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="IsKfmAssetShared"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="KfmAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:af3b754d-0000-0000-0000-000000000000">
+          <LastKnownName>Vandal</LastKnownName>
+          <LastKnownPath>/Temp/Mesh/Characters/Vandal/Vandal.kfm</LastKnownPath>
+          <LastKnownTags>application:gamebryo-animation:Vandal</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="NormalEventMap"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Map
+          ItemsDataType="String">
+          <Items>
+            <Item
+              Key="MoveForward">
+              <String
+                Value="OnMoveForward" />
+            </Item>
+            <Item
+              Key="MoveBackward">
+              <String
+                Value="OnMoveBackward" />
+            </Item>
+            <Item
+              Key="MoveLeft">
+              <String
+                Value="OnMoveLeft" />
+            </Item>
+            <Item
+              Key="MoveRight">
+              <String
+                Value="OnMoveRight" />
+            </Item>
+          </Items>
+        </Map>
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="Scale"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Float32
+          Value="0.1" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors>
+    <Behavior
+      Name="OnMoveForward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="OnMoveBackward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="OnMoveLeft"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="OnMoveRight"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="OnTick"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="AITick"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

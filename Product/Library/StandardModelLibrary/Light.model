@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="c2a81bfe-f2b2-4b96-8431-a30739726860"
+  Description="Base entity model for creating lights.">
+  <Mixins>
+    <Mixin
+      SourceID="5944388d-0863-42e5-a5da-c3f119c2de70"
+      SourceName="3DProxy" />
+    <Mixin
+      SourceID="d3ed731f-997d-43ee-affd-d32df693850d"
+      SourceName="Bakeable" />
+    <Mixin
+      SourceID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+      SourceName="Renderable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="AmbientColor"
+      Description="The light ambient color.">
+      <Traits />
+      <Value>
+        <Color
+          R="0"
+          G="0"
+          B="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="DiffuseColor"
+      Description="The light diffuse color.">
+      <Traits />
+      <Value>
+        <Color
+          R="255"
+          G="255"
+          B="255" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SpecularColor"
+      Description="The light specular color.">
+      <Traits />
+      <Value>
+        <Color
+          R="255"
+          G="255"
+          B="255" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Dimmer"
+      Description="Sets the light dimmer, which scales the overall brightness of all light components. This value must be nonnegative and is usually less than or equal to 1.0 (although advanced lighting effects may use larger values)">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Range"
+      Description="The distance at which this light will not be considered for affecting an entity.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10000" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="RangeVisualizerOrientation"
+      Description="Controls the rotation of the property visualizer displaying the light's effective range.">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="LightPriority"
+      Description="Importance of the light compared to other lights. Used to determine which lights should effect an entity when that entity has more lights within it's range than it supports. Higher priority lights will be chosen over lower priority lights. 100 is the highest possible priority, while 0 is the lowest possible priority.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="50" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>100</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="UpdateLightingOnMove"
+      Description="Indicates if an application should recompute which objects should be affected by the light when the light's properties change. Note: This is ignored at tool time.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AlwaysAffectedByLight"
+      Description="List of entities that will always be affected by the light regardless of range or priority.">
+      <Traits />
+      <Value>
+        <List
+          ItemsDataType="EntityRef">
+          <Items />
+        </List>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="NeverAffectedByLight"
+      Description="List of entities that will never be affected by the light regardless of range or priority.">
+      <Traits />
+      <Value>
+        <List
+          ItemsDataType="EntityRef">
+          <Items />
+        </List>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="IsStatic"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="ProxyScale"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Float32
+          Value="0.01" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList>
+    <ExtraData
+      Name="RangeVisualizer"
+      Type="PropertyVisualizer">
+      <Entry
+        Type="Dependency"
+        Key="Anchor"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Color"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Offset"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Orientation"
+        Value="RangeVisualizerOrientation" />
+      <Entry
+        Type="Dependency"
+        Key="Radius"
+        Value="Range" />
+      <Entry
+        Type="Dependency"
+        Key="Scale"
+        Value="Default" />
+      <Entry
+        Type="Type"
+        Key="Type"
+        Value="Radius" />
+    </ExtraData>
+  </ExtraDataList>
+</EntityModel>

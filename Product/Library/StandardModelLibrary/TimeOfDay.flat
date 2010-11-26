@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="TimeOfDay"
+  id="1434437246">
+  <trait
+    value="Active" />
+  <property
+    type="Float32"
+    name="TimeOfDayTimeScaleMultiplier"
+    id="1312233749">
+    <set
+      value="10" />
+  </property>
+  <property
+    type="Boolean"
+    name="TimeOfDayAnimate"
+    id="1676676468">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Float32"
+    name="TimeOfDayDuration"
+    id="3688343572">
+    <trait
+      value="ReadOnly" />
+    <set
+      value="86400" />
+  </property>
+  <property
+    type="Float32"
+    name="TimeOfDayInitialTime"
+    id="258648764">
+    <set
+      value="0" />
+  </property>
+</model>

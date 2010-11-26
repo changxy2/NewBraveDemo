@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="152bd766-7933-47a3-8df1-00aca1e697ff"
+  Description="Entity model representing an entity having a property called &quot;Name&quot;. The value of the &quot;Name&quot; property will be the same as the tool-time entity name. This name property is always considered overridden by the entity.  Any &quot;Name&quot; value specified on a model or preset will seed the default name generated for placed entities.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="Name"
+      Description="The string representing the name of this entity.">
+      <Traits>
+        <Trait
+          Name="Hidden" />
+      </Traits>
+      <Value>
+        <String
+          Value="" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

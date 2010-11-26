@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="d0d2c06f-6099-4da2-9430-ddea270bef70"
+  Description="Entity model used to represent a camera in a world.">
+  <Mixins>
+    <Mixin
+      SourceID="5944388d-0863-42e5-a5da-c3f119c2de70"
+      SourceName="3DProxy" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="FOV"
+      Description="The field-of-view for the camera. This cone defines the shape of the view frustum.">
+      <Traits />
+      <Value>
+        <Degree
+          Value="60" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="NearPlane"
+      Description="Distance of the near plane from the camera origin.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="FarPlane"
+      Description="Distance of the far plane from the camera origin.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10000" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MinimumNearPlane"
+      Description="The minimum view frustum near plane distance.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MaximumFarToNearRatio"
+      Description="Maximum ratio between near and far planes.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="65536" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="IsOrthographic"
+      Description="Ortho projection view frustums are created with the same six values that the general perspective camera model employs. However, the planes created from these values do not pass through a single, shared center of projection. Instead, the left, right, top and bottom planes are all perpendicular to the view plane (note that this means that oblique parallel projections are not supported).&#xD;&#xA;&#xD;&#xA;Ortho projections (sometimes referred to as parallel projections) are often used in modeling tools for displaying side, front, top renderings and other situations where perspective rendering is not appropriate.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="LODAdjust"
+      Description="The Level-of-Detail adjustment value for the camera. This value is used by NiLODNode objects to multiply the distance between the object whose LOD is being computed and the camera. A higher value for this setting will tend to lower the LOD of the objects drawn by the camera.">
+      <Traits />
+      <Value>
+        <SInt32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="ProxyNifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:9760c049-0000-0000-0000-000000000000">
+          <LastKnownName>Camera</LastKnownName>
+          <LastKnownPath>/StandardModelLibrary/Media/Camera.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:Camera</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="ProxyScale"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Float32
+          Value="0.25" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="Rotation"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Rotator>
+          <Roll>
+            <Degree
+              Value="90" />
+          </Roll>
+          <Pitch>
+            <Degree
+              Value="0" />
+          </Pitch>
+          <Yaw>
+            <Degree
+              Value="0" />
+          </Yaw>
+        </Rotator>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

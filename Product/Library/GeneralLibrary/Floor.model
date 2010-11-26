@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="32d3e35e-0d9f-4b8f-8e5e-f39d08f3d461"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="769224cc-5c68-4af1-b1c8-85bc9879d9a9"
+      SourceName="Mesh" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="IsNifAssetShared"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="NifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:a4ed3927-0000-0000-0000-000000000000">
+          <LastKnownName>HallFloor</LastKnownName>
+          <LastKnownPath>/Temp/Mesh/HallFloor.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:HallFloor</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

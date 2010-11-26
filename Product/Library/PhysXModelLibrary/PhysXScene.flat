@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysXScene"
+  id="1469913759">
+  <trait
+    value="Active" />
+  <trait
+    value="BuiltinModel" />
+  <mixin
+    name="BaseEntity"
+    id="129412341"
+    type="" />
+  <property
+    type="Point3"
+    name="Gravity"
+    id="3670053048"
+    source="PhysXScene">
+    <set
+      value="0, 0, -9.8" />
+  </property>
+  <property
+    type="Float32"
+    name="ScaleFactor"
+    id="4280449824"
+    source="PhysXScene">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Float32"
+    name="Timestep"
+    id="983449107"
+    source="PhysXScene">
+    <set
+      value="0.016666" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxSubSteps"
+    id="4256292842"
+    source="PhysXScene">
+    <set
+      value="8" />
+  </property>
+  <property
+    type="Boolean"
+    name="DoFixedStep"
+    id="4123748938"
+    source="PhysXScene">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="BlockOnFetch"
+    id="2517274990"
+    source="PhysXScene">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="UInt32"
+    name="NumSubSteps"
+    id="441568503"
+    source="PhysXScene">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="String"
+    name="SceneName"
+    id="3540665846"
+    source="PhysXScene">
+    <set
+      value="PhysXDefaultSceneName" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseHardware"
+    id="81528385"
+    source="PhysXScene">
+    <trait
+      value="ReadOnly" />
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="ActivateOnSetFinished"
+    id="135962216"
+    source="PhysXScene">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="SimActive"
+    id="2597907648"
+    source="PhysXScene">
+    <trait
+      value="ReadOnly" />
+    <set
+      value="False" />
+  </property>
+  <behavior
+    name="OnEntitySetFinished"
+    id="677833593"
+    type="Lua"
+    source="PhysXScene">
+    <trait
+      value="Extends" />
+    <invocation-order>
+      <model
+        name="PhysXScene" />
+    </invocation-order>
+  </behavior>
+</model>

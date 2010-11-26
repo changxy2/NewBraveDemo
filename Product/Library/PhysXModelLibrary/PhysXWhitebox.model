@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="37ab77e8-af35-4ea9-8b11-7f3807156d6b"
+  Description="A physically simulating rectangular prism that can be created and edited with the whitebox tools.">
+  <Mixins>
+    <Mixin
+      SourceID="01b445d0-3956-49cf-9ba4-7096b8b8ff51"
+      SourceName="Whitebox" />
+    <Mixin
+      SourceID="46c50bb9-fa71-4f68-8a6e-81a49088feef"
+      SourceName="PhysXProp" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="Density"
+      Description="The mass per unit volume for the physical simulation of this shape in kilograms per meter cubed.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="DynamicallySimulate"
+      Description="If true, the shape will dynamically simulate. If false, the shape will be a static rigid body.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Friction"
+      Description="The surface friction to use in the physics simulation.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

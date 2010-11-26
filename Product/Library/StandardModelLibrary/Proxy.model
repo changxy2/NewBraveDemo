@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="e579223d-1f2e-419c-9214-c77d5e6c4eba"
+  Description="This model is used for creating a proxy representation of an entity in World Builder.  This model is abstract, you should use 2DProxy or 3DProxy to actually create a proxy in the world.">
+  <Mixins>
+    <Mixin
+      SourceID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+      SourceName="Renderable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ProxyScale"
+      Description="Proxy Scale is the actual scale to render the geometry at.  For proxies this scale always overrides the &quot;Scale&quot; property for rendering in the editor because that property may have another meaning that is not visual (for the proxy).  This property can also be used to correct art authored at a different scale from the rest of the world.  The Proxy Scale will be multiplied by the World Scale setting in a block to arrive at the actual rendered scale of the proxy.  The Proxy Scale value should represent the scale to apply to an object inserted into a meter scale world to make it look correct relative to other meter scale objects.  So if your proxy art were authored in centimeters, this value would be 0.01.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

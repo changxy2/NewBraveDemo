@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution
+  version="10">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.GameSolution.ContentRoot"
+      property-type="String">
+      <value>..</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorFacingOffset"
+      property-type="Float">
+      <value>0</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorUpdateBuckets"
+      property-type="Integer">
+      <value>10</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.PositionUpdateThreshold"
+      property-type="Float">
+      <value>50</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.RotationUpdateThreshold"
+      property-type="Float">
+      <value>45</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.WorldBuilder.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+  </tool-settings>
+  <Hierarchy
+    version="1">
+    <Item
+      content-type="Emergent.Toolbench.GameSolution.GameSolutionDocument"
+      name="PhysXModelLibrary.gsl"
+      id="c237e622-c226-42cd-bb56-b8aa4d1eff7f"
+      filepath="PhysXModelLibrary.gsl" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="PhysXModelLibrary.emtproj"
+      id="532e9892-bc6d-47b9-98c7-b86f97233bda"
+      parent="c237e622-c226-42cd-bb56-b8aa4d1eff7f"
+      filepath="PhysXModelLibrary.emtproj" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="StandardModelLibrary.emtproj"
+      id="9999a516-9f30-4b90-815b-a80dcbc93403"
+      parent="c237e622-c226-42cd-bb56-b8aa4d1eff7f"
+      filepath="..\StandardModelLibrary\StandardModelLibrary.emtproj" />
+  </Hierarchy>
+</Solution>

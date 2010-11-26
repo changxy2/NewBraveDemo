@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="67d1b6f6-53f9-4669-85d7-c74114dac43f"
+  Description="Configures a light to behave appropriately in precomputed lighting mode with respect to both precomputed and non-precomputed objects.">
+  <Mixins>
+    <Mixin
+      SourceID="b14f108a-3f7a-4527-a6ff-93550b1af555"
+      SourceName="PrecomputedLighting" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="LightPCLObjectsAtRuntime"
+      Description="This light should dynamically illuminate objects which use precomputed lighting even when the LightService is in precomputed lighting mode.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="LightNonPCLObjectsAtRuntime"
+      Description="This light should dynamically illuminate objects which do not use precomputed lighting when the LightService is in precomputed lighting mode.  ">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

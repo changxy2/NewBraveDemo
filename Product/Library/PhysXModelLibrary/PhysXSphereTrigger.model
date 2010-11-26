@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="4f1854af-8a54-454d-b07a-2ab1ccfe3cb2"
+  Description="PhysXSphere with an OnPhysXTrigger callback that is called when this PhysXSphere fulfills the collision requirements (TriggerOnEnter, TriggerOnStay, TriggerOnLeave) with another shape.">
+  <Mixins>
+    <Mixin
+      SourceID="7bc3fcc6-f9d6-445f-9eef-38e47c6e9fc4"
+      SourceName="PhysXSphere" />
+    <Mixin
+      SourceID="fff6e58e-8953-4afa-85a9-bce932cd6d06"
+      SourceName="PhysXTrigger" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

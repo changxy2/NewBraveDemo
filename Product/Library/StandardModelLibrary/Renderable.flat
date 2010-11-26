@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Renderable"
+  id="3759402445">
+  <trait
+    value="Active" />
+  <trait
+    value="BuiltinModel" />
+  <trait
+    value="ReplicaBuiltinModel" />
+  <trait
+    value="ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+</model>

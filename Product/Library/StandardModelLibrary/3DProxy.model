@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="5944388d-0863-42e5-a5da-c3f119c2de70"
+  Description="Entity model for creating a selectable proxy representation of the entity in 3D space.">
+  <Mixins>
+    <Mixin
+      SourceID="e579223d-1f2e-419c-9214-c77d5e6c4eba"
+      SourceName="Proxy" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ProxyNifAsset"
+      Description="Asset reference of the NIF file that should be the proxy for this entity.">
+      <Traits />
+      <Value>
+        <Asset
+          Value="">
+          <LastKnownName></LastKnownName>
+          <LastKnownPath></LastKnownPath>
+          <LastKnownTags></LastKnownTags>
+        </Asset>
+      </Value>
+      <Restriction>
+        <TagRestriction>
+          <Tags>gamebryo-scenegraph</Tags>
+        </TagRestriction>
+      </Restriction>
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

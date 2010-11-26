@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Vandal"
+  id="3941879731">
+  <trait
+    value="Active" />
+  <mixin
+    name="Actor"
+    id="1221378093"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Renderable"
+    id="3759402445"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Shadowable"
+    id="1432364367"
+    type="Active" />
+  <mixin
+    name="BaseEntity"
+    id="129412341"
+    type="" />
+  <mixin
+    name="Lightable"
+    id="3306310187"
+    type="Active" />
+  <mixin
+    name="Preloadable"
+    id="1650880398"
+    type="Active" />
+  <mixin
+    name="Nameable"
+    id="532089914"
+    type="Active" />
+  <mixin
+    name="InputHandler"
+    id="1915530644"
+    type="Active; BuiltinModel" />
+  <mixin
+    name="MovableObject"
+    id="264070643"
+    type="BuiltinModel" />
+  <property
+    type="Point3"
+    name="MoveDir"
+    id="713908269">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="MaxSpeed"
+    id="1136413280">
+    <set
+      value="50" />
+  </property>
+  <property
+    type="SInt16"
+    name="MoveLR"
+    id="1240443361">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="SInt16"
+    name="MoveFB"
+    id="1241491931">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="AssetID"
+    name="KfmAsset"
+    id="305675498"
+    source="Actor">
+    <set
+      value="urn:llid:af3b754d-0000-0000-0000-000000000000" />
+  </property>
+  <property
+    type="String"
+    name="InitialSequence"
+    id="1072862152"
+    source="Actor">
+    <set
+      value="" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsKfmAssetShared"
+    id="971825834"
+    source="Actor">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsNifAssetShared"
+    id="3588137404"
+    source="Actor">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="AccumulatesTransforms"
+    id="3273638489"
+    source="Actor">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="AssocAttachedNifAsset"
+    name="AttachedObjects"
+    id="4052223838"
+    source="Actor" />
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="0.1" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsCastingShadow"
+    id="3634273042">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsReceivingShadow"
+    id="2429998135">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxDirectionalLights"
+    id="3276506584">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxPointLights"
+    id="481351731">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxSpotLights"
+    id="3623858961">
+    <set
+      value="2" />
+  </property>
+  <property
+    type="Boolean"
+    name="PreloadAssets"
+    id="1896513443">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="String"
+    name="Name"
+    id="62725275">
+    <set
+      value="" />
+  </property>
+  <property
+    type="AssocString"
+    name="NormalEventMap"
+    id="1753976354"
+    source="InputHandler">
+    <set
+      index="MoveForward"
+      value="OnMoveForward" />
+    <set
+      index="MoveBackward"
+      value="OnMoveBackward" />
+    <set
+      index="MoveLeft"
+      value="OnMoveLeft" />
+    <set
+      index="MoveRight"
+      value="OnMoveRight" />
+  </property>
+  <property
+    type="Boolean"
+    name="InputsEnabled"
+    id="1184637157"
+    source="InputHandler">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="AssocString"
+    name="ImmediateEventMap"
+    id="1235118898"
+    source="InputHandler" />
+  <property
+    type="Point3"
+    name="MoveVelocity"
+    id="3475307868"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="MoveAccel"
+    id="3075443446"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="RotationAxis"
+    id="3391897551"
+    source="MovableObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="AngularSpeed"
+    id="1367195968"
+    source="MovableObject">
+    <set
+      value="0" />
+  </property>
+  <behavior
+    name="OnMoveForward"
+    id="835634992"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="OnMoveBackward"
+    id="2056870667"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="OnMoveLeft"
+    id="834860399"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="OnMoveRight"
+    id="1296700905"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="OnTick"
+    id="961293468"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="AITick"
+    id="1032793310"
+    type="Lua"
+    source="Vandal" />
+  <behavior
+    name="OnEntitySetFinished"
+    id="677833593"
+    type="Lua"
+    source="Vandal">
+    <trait
+      value="Extends" />
+    <invocation-order>
+      <model
+        name="Vandal" />
+    </invocation-order>
+  </behavior>
+</model>

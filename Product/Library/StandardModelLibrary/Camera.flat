@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Camera"
+  id="3170031834">
+  <trait
+    value="Active" />
+  <mixin
+    name="3DProxy"
+    id="2664050537"
+    type="Active" />
+  <mixin
+    name="Proxy"
+    id="3460482204"
+    type="Active" />
+  <mixin
+    name="Renderable"
+    id="3759402445"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <property
+    type="Float32"
+    name="FOV"
+    id="2293586166">
+    <set
+      value="60" />
+  </property>
+  <property
+    type="Float32"
+    name="NearPlane"
+    id="456849770">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Float32"
+    name="FarPlane"
+    id="1921669780">
+    <set
+      value="10000" />
+  </property>
+  <property
+    type="Float32"
+    name="MinimumNearPlane"
+    id="2324864004">
+    <set
+      value="0.1" />
+  </property>
+  <property
+    type="Float32"
+    name="MaximumFarToNearRatio"
+    id="2656458049">
+    <set
+      value="65536" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsOrthographic"
+    id="588305758">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="SInt32"
+    name="LODAdjust"
+    id="249967523">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="AssetID"
+    name="ProxyNifAsset"
+    id="1958564334">
+    <set
+      value="urn:llid:9760c049-0000-0000-0000-000000000000" />
+  </property>
+  <property
+    type="Float32"
+    name="ProxyScale"
+    id="1748223839">
+    <set
+      value="0.25" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="90, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+</model>

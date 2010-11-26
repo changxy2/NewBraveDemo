@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="4827186b-4f38-4150-8e2c-3f096bdd4d41"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="d0d2c06f-6099-4da2-9430-ddea270bef70"
+      SourceName="Camera" />
+    <Mixin
+      SourceID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+      SourceName="BaseEntity" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="Target"
+      Description="">
+      <Traits />
+      <Value>
+        <EntityRef>
+          <Name></Name>
+          <Id>00000000-0000-0000-0000-000000000000</Id>
+          <TargetContainerHierarchy></TargetContainerHierarchy>
+        </EntityRef>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MoveDamping"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="5" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="RotateDamping"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="5" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TickTime"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="IsOrthographic"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors>
+    <Behavior
+      Name="OnTick"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

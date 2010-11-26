@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="5daef827-0159-4c97-8928-40243ffcb671"
+  Description="Defines a basic collision shape for use with the PhysX system. The origin for a cube shape is the center of the base of the cube (0, 0, -z/2). The origin for a sphere is its center. The origin for a capsule is (0, 0, -z/2), or the center of the lower end-cap hemisphere.">
+  <Mixins>
+    <Mixin
+      SourceID="2696199a-98a7-410b-a3e3-28abeeae752a"
+      SourceName="Placeable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ShapeTranslation"
+      Description="The translation offset of the shape from the entity’s position.">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ShapeRotation"
+      Description="The rotation to apply to the shape on top of the entity’s rotation.">
+      <Traits />
+      <Value>
+        <Rotator>
+          <Roll>
+            <Degree
+              Value="0" />
+          </Roll>
+          <Pitch>
+            <Degree
+              Value="0" />
+          </Pitch>
+          <Yaw>
+            <Degree
+              Value="0" />
+          </Yaw>
+        </Rotator>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ShapeCollisionGroup"
+      Description="The collision group for the shape.">
+      <Traits />
+      <Value>
+        <UInt16
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ShapeType"
+      Description="One of: box, sphere or capsule">
+      <Traits />
+      <Value>
+        <String
+          Value="box" />
+      </Value>
+      <Restriction>
+        <EnumerationRestriction>
+          <Values>
+            <String
+              Value="box" />
+            <String
+              Value="sphere" />
+            <String
+              Value="capsule" />
+          </Values>
+        </EnumerationRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="ShapeDimensions"
+      Description="The side length in X, Y and Z for a box. The radius of a sphere is X and Y and Z are unused. The radius of the capsule is X, Y is unused and Z is the height not including the end caps.">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="1" />
+          </X>
+          <Y>
+            <Float32
+              Value="1" />
+          </Y>
+          <Z>
+            <Float32
+              Value="1" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SceneName"
+      Description="Names the PhysXScene that this terrain object should be placed in.">
+      <Traits />
+      <Value>
+        <String
+          Value="PhysXDefaultSceneName" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

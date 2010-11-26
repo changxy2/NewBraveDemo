@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="87de5465-a1b8-4409-b6df-9eb7ea82bd66"
+  Description="A PhysXBox that gets the dimensions from the Whitebox mixin so that it can quickly be created in World Builder and implement an OnPhysXTrigger behavior to react to collisions.">
+  <Mixins>
+    <Mixin
+      SourceID="fff6e58e-8953-4afa-85a9-bce932cd6d06"
+      SourceName="PhysXTrigger" />
+    <Mixin
+      SourceID="7862ceac-902b-455e-85d9-1890a2700730"
+      SourceName="PhysXBox" />
+    <Mixin
+      SourceID="01b445d0-3956-49cf-9ba4-7096b8b8ff51"
+      SourceName="Whitebox" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="AnchorAtBase"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

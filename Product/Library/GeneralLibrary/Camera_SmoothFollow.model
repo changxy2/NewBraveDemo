@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="1d69bb3f-d4f0-4356-b489-db06f92fc726"
+  Description="">
+  <Mixins />
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="BuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

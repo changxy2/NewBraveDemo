@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<InputServiceBindings>
+    <!--Input service bindings: action maps, events and actions, used only by HelloWorld/BaseGame tutorials -->
+    <ActionMapsList>
+        <ActionMap ActionMapName="Control">
+            <EventsList>
+                <Event EventName="MoveForward" EventFlags="RETURN_MAGNITUDE">
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE|ON_DEACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_UP" MinRange="-1.000000" MaxRange="1.000000" />
+                
+                    </ActionsList>
+                </Event>
+                <Event EventName="MoveBackward" EventFlags="RETURN_MAGNITUDE">
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE|ON_DEACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_DOWN" MinRange="-1.000000" MaxRange="1.000000" />
+                    </ActionsList>
+                </Event>
+                <Event EventName="MoveLeft" EventFlags="RETURN_MAGNITUDE">
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE|ON_DEACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_LEFT" MinRange="-1.000000" MaxRange="1.000000" />
+                    </ActionsList>
+                </Event>
+                <Event EventName="MoveRight" EventFlags="RETURN_MAGNITUDE">
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE|ON_DEACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_RIGHT" MinRange="-1.000000" MaxRange="1.000000" />
+                    </ActionsList>
+                </Event>
+           
+                
+		 <Event EventName="Test" EventFlags="RETURN_MAGNITUDE">
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_D" MinRange="-1.000000" MaxRange="1.000000" />
+                    </ActionsList>
+                </Event>
+		<Event EventName="TestComBo" EventFlags="RETURN_MAGNITUDE|ACTION_COMBO" Timeout=1>
+                    <ActionsList>
+                        <Action Flags="ON_ACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_A" MinRange="-1.000000" MaxRange="1.000000" />
+			<Action Flags="ON_ACTIVATE" DeviceID="0" Modifiers="" ActionClsID="ACTION" Semantic="KEY_S" MinRange="-1.000000" MaxRange="1.000000" />
+                    </ActionsList>
+                </Event>
+            </EventsList>
+        </ActionMap>
+    </ActionMapsList>
+     <GlobalActionMap ActionMapName="Global">
+        <EventsList />        
+    </GlobalActionMap>
+</InputServiceBindings>
+

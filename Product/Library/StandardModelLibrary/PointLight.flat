@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PointLight"
+  id="4051886863">
+  <trait
+    value="Active" />
+  <mixin
+    name="Light"
+    id="742877173"
+    type="Active" />
+  <mixin
+    name="3DProxy"
+    id="2664050537"
+    type="Active" />
+  <mixin
+    name="Proxy"
+    id="3460482204"
+    type="Active" />
+  <mixin
+    name="Renderable"
+    id="3759402445"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Bakeable"
+    id="2219133248"
+    type="Active" />
+  <mixin
+    name="ShadowGenerator"
+    id="3282032347"
+    type="Active" />
+  <property
+    type="Float32"
+    name="ConstantAttenuation"
+    id="1305396295">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Float32"
+    name="LinearAttenuation"
+    id="2362551945">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Float32"
+    name="QuadraticAttenuation"
+    id="2675777447">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Float32"
+    name="AttenuationVisualizerThreshold"
+    id="3871818043">
+    <set
+      value="0.05" />
+  </property>
+  <property
+    type="Point3"
+    name="AttenuationVisualizerOrientation"
+    id="3516850064">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Color"
+    name="AmbientColor"
+    id="2961634472">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Color"
+    name="DiffuseColor"
+    id="764212102">
+    <set
+      value="1, 1, 1" />
+  </property>
+  <property
+    type="Color"
+    name="SpecularColor"
+    id="3287298718">
+    <set
+      value="1, 1, 1" />
+  </property>
+  <property
+    type="Float32"
+    name="Dimmer"
+    id="418765070">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Float32"
+    name="Range"
+    id="1215385659">
+    <set
+      value="10000" />
+  </property>
+  <property
+    type="Point3"
+    name="RangeVisualizerOrientation"
+    id="3230513011">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="LightPriority"
+    id="2433320795">
+    <set
+      value="50" />
+  </property>
+  <property
+    type="Boolean"
+    name="UpdateLightingOnMove"
+    id="4016209235">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="AssocEntityRef"
+    name="AlwaysAffectedByLight"
+    id="1988520236" />
+  <property
+    type="AssocEntityRef"
+    name="NeverAffectedByLight"
+    id="3868114911" />
+  <property
+    type="AssetID"
+    name="ProxyNifAsset"
+    id="1958564334">
+    <set
+      value="urn:llid:bd3b0a84-0000-0000-0000-000000000000" />
+  </property>
+  <property
+    type="Float32"
+    name="ProxyScale"
+    id="1748223839">
+    <set
+      value="0.01" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsStatic"
+    id="713021940">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="CastShadows"
+    id="2028291755">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="RenderBackfaces"
+    id="2702261372">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="String"
+    name="ShadowTechnique"
+    id="4003517295">
+    <set
+      value="NiStandardShadowTechnique" />
+  </property>
+  <property
+    type="UInt16"
+    name="SizeHint"
+    id="3629962131">
+    <set
+      value="512" />
+  </property>
+  <property
+    type="Boolean"
+    name="StrictlyObserveSizeHint"
+    id="4282050119">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="StaticShadows"
+    id="1026821479">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseDefaultDepthBias"
+    id="1542307136">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Float32"
+    name="DepthBias"
+    id="143107425">
+    <set
+      value="0.98" />
+  </property>
+  <extradata
+    name="AttenuationVisualizer"
+    type="PropertyVisualizer">
+    <entry
+      type="Dependency"
+      key="Anchor"
+      value="Position" />
+    <entry
+      type="Dependency"
+      key="Color"
+      value="Default" />
+    <entry
+      type="Dependency"
+      key="ConstantAttenuation"
+      value="ConstantAttenuation" />
+    <entry
+      type="Dependency"
+      key="FinalIntensity"
+      value="AttenuationVisualizerThreshold" />
+    <entry
+      type="Dependency"
+      key="LinearAttenuation"
+      value="LinearAttenuation" />
+    <entry
+      type="Dependency"
+      key="MaxRange"
+      value="Range" />
+    <entry
+      type="Dependency"
+      key="Offset"
+      value="Default" />
+    <entry
+      type="Dependency"
+      key="Orientation"
+      value="AttenuationVisualizerOrientation" />
+    <entry
+      type="Dependency"
+      key="OriginalIntensity"
+      value="Dimmer" />
+    <entry
+      type="Dependency"
+      key="QuadraticAttenuation"
+      value="QuadraticAttenuation" />
+    <entry
+      type="Dependency"
+      key="Scale"
+      value="Default" />
+    <entry
+      type="Type"
+      key="Type"
+      value="Attenuation" />
+  </extradata>
+</model>

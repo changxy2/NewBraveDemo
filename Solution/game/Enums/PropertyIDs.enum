@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<enum type="Normal" storage="efd::UInt32" invalid="" >
+	<!-- Property IDs -->
+    <header useNamespace="game" useExistingTypedef="egf::PropertyID" prefix="PROPRTY_ID_" includes="egf/EntityTypes.h"/>
+
+	<item name="Position" value="4254452306"/>
+	<item name="Rotation" value="1757921949"/>
+	<item name="Scale" value="763145517"/>
+	<item name="Target" value="2833504309"/>
+	<item name="Distance" value="3883988357"/>
+	<item name="Dip" value="228405430"/>
+	<item name="MoveDamping" value="664507656"/>
+	<item name="Yaw" value="2150195470"/>
+	<item name="Pitch" value="478331364"/>
+	<item name="Height" value="452724723"/>
+
+</enum>

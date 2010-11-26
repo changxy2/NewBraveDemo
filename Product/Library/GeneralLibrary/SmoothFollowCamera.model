@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="1d69bb3f-d4f0-4356-b489-db06f92fc726"
+      SourceName="Camera_smoothFollow" />
+    <Mixin
+      SourceID="d0d2c06f-6099-4da2-9430-ddea270bef70"
+      SourceName="Camera" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="Target"
+      Description="">
+      <Traits />
+      <Value>
+        <EntityRef>
+          <Name></Name>
+          <Id>00000000-0000-0000-0000-000000000000</Id>
+          <TargetContainerHierarchy></TargetContainerHierarchy>
+        </EntityRef>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Distance"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MoveDamping"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Yaw"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Pitch"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="-30" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Height"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="80" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors>
+    <Behavior
+      Name="Zoom"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

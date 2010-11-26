@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="0a2ecc8d-b423-40cf-9fca-b0b8382cda97"
+  Description="Entity model defining the natural environment of a world.">
+  <Mixins>
+    <Mixin
+      SourceID="00e2bdb9-fde1-47c4-b6e8-c71da4b234dd"
+      SourceName="TimeOfDayEditable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="EnvironmentSunEntity"
+      Description="The sun light affecting the environment.">
+      <Traits />
+      <Value>
+        <EntityRef>
+          <Name></Name>
+          <Id>00000000-0000-0000-0000-000000000000</Id>
+          <TargetContainerHierarchy></TargetContainerHierarchy>
+        </EntityRef>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="EnvironmentAutoFogColor"
+      Description="Calculates the fog's color automatically when enabled.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="EnvironmentUseSunAnlges"
+      Description="Defines whether the sun angles should be modifying the associated sun light.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="EnvironmentFogColor"
+      Description="The color of the fog when it is not automatically calculated.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Color
+          R="7"
+          G="162"
+          B="252" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="EnvironmentSunAzimuthAngle"
+      Description="Angle to the sun in the horizontal plane.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>360</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentSunElevationAngle"
+      Description="Angle to the sun above the horizontal plane.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="30" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>360</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentSunSize"
+      Description="The size of the sun.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>100</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentSunIntensity"
+      Description="The intensity affects the amount of sunlight incident on the atmosphere and hence indirectly affects the brightness of the simulated sky.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="15" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>100</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentPhaseConstant"
+      Description="This constant affects the directionality of the atmospheric scattering.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="-0.99" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>-1</Minimum>
+          <Maximum>0</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentRayleighConstant"
+      Description="The Rayleigh scattering constant (beta rayleigh) controls how different colors are scattered in the atmosphere.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0.0025" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>0.01</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentMieConstant"
+      Description="The Mie scatering constant controls how the sky responds to dust particles in the atmosphere and largely controls the appearance of the sun in the sky.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0.0015" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>0.01</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentHDRExposure"
+      Description="The exposure constant to calculate HDR tone mapping on the sky.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="2" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>10</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentRedWavelength"
+      Description="This represents the wavelength of the red channel of the sky color.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0.65" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>1</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentGreenWavelength"
+      Description="This represents the wavelength of the green channel of the sky color.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0.57" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>1</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentBlueWavelength"
+      Description="This represents the wavelength of the blue channel of the sky color.">
+      <Traits>
+        <Trait
+          Name="TimeOfDayAnimatable" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="0.475" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>1</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentDomeRadius"
+      Description="The radius of the sky dome.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1000" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>50000</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentDomeDetail"
+      Description="The amount of detail used on the sky dome.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="8" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>100</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentDomeDetailAxisBias"
+      Description="Adjusts the distribution of vertices on the latitudes and longitudes.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.6" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>1</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="EnvironmentDomeDetailHorizontalBias"
+      Description="Adjusts the distribution of the division of the latitudes between a linear distribution (a value of 0) and a power of 3 distribution concentrated at the horizon (value of 1).">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.9" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>1</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="Global" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

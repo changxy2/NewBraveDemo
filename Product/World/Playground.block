@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<block
+  version="3"
+  name="Playground">
+  <model-references
+    version="1">
+    <reference>..\Library\StandardModelLibrary\StandardModelLibrary.emtproj</reference>
+    <reference>..\Library\PhysXModelLibrary\PhysXModelLibrary.emtproj</reference>
+    <reference>..\Library\GeneralLibrary\General.emtproj</reference>
+  </model-references>
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.WorldBuilder.CustomShaders.CustomShaderDirectory"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.ExportFolder"
+      property-type="String">
+      <value>..\Exported</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Exporter"
+      property-type="String">
+      <value>XmlBlockExporter</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.SnapPoints.SnapPointStickinessRadius"
+      property-type="Float">
+      <value>0.5</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.World.Scale"
+      property-type="Float">
+      <value>1</value>
+    </setting>
+  </tool-settings>
+  <layers
+    version="1" />
+  <entities
+    version="1">
+    <entity
+      id="112cf174-8fd0-423b-bfed-927b8096e0a5"
+      model-name="Tick_Test"
+      model-id="266a2e14-25c7-4acf-859a-c146a18abf6f"
+      name="Tick_Test0"
+      iterations="16"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-45.5392227, -16.98834, 17.2757416" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="0.1" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="899a7b18-97fc-47e0-bda6-a9f5eb01caa5"
+      model-name="Vandal"
+      model-id="18ed5ba5-b6f8-45a2-a776-4a05b760d6da"
+      name="Vandal0"
+      iterations="44"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-49.97175, 31.4698162, 0.87221" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="0, 0, 275.004669" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="ac0c4b09-3e6d-46e8-9d0a-f31b21c52ed7"
+      model-name="Tick_Test"
+      model-id="266a2e14-25c7-4acf-859a-c146a18abf6f"
+      name="Tick_Test1"
+      iterations="22"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="IsCastingShadow">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="0, 0, 0" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="0.1" />
+        </property>
+        <property
+          name="TickMethod">
+          <set
+            value="WhileOne" />
+        </property>
+        <property
+          name="UseSysClock">
+          <set
+            value="False" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="bed59052-a64f-4cb1-9171-79b3c8998c07"
+      model-name="Camera_SmoothFollow"
+      model-id="4827186b-4f38-4150-8e2c-3f096bdd4d41"
+      name="Camera_SmoothFollow0"
+      iterations="106"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-108.922, 21.7494068, 37.2316055" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="90, 345.901245, 348.658569" />
+        </property>
+        <property
+          name="Target">
+          <set
+            value="ac0c4b09-3e6d-46e8-9d0a-f31b21c52ed7|Tick_Test1|simple" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="c6ef5cc4-25a1-4073-8c27-335795e2bc9c"
+      model-name="Floor"
+      model-id="7600964e-aace-4efb-aa36-f40e6b05f924"
+      name="Floor0"
+      iterations="10"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="0, 0, 1" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="2" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="d900c6ba-0317-41fc-85b4-bc81178ebc66"
+      model-name="Tick_Test"
+      model-id="266a2e14-25c7-4acf-859a-c146a18abf6f"
+      name="Tick_Test2"
+      iterations="25"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="IsCastingShadow">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="0, -15, 0" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="0.1" />
+        </property>
+        <property
+          name="TickMethod">
+          <set
+            value="WhileOne" />
+        </property>
+        <property
+          name="UseSysClock">
+          <set
+            value="True" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="fea0313b-c2b7-4735-a725-33f47e897e1a"
+      model-name="DirectionalLight"
+      model-id="41b2a3c8-bb9e-47e2-8e54-b4fea9b954fe"
+      name="DirectionalLight0"
+      iterations="53"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="CastShadows">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="-104.592178, -17.9695053, 57.98033" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="40.4358826, 18.3343811, 322.318634" />
+        </property>
+        <property
+          name="ShadowTechnique">
+          <set
+            value="NiPCFShadowTechnique" />
+        </property>
+      </properties>
+    </entity>
+  </entities>
+  <selections
+    version="1" />
+  <entity-folders
+    version="1" />
+</block>

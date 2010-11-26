@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution
+  version="10">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.GameSolution.ContentRoot"
+      property-type="String">
+      <value>.</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorFacingOffset"
+      property-type="Float">
+      <value>0</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorUpdateBuckets"
+      property-type="Integer">
+      <value>10</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.PositionUpdateThreshold"
+      property-type="Float">
+      <value>50</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.RotationUpdateThreshold"
+      property-type="Float">
+      <value>45</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.WorldBuilder.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+  </tool-settings>
+  <Hierarchy
+    version="1">
+    <Item
+      content-type="Emergent.Toolbench.GameSolution.GameSolutionDocument"
+      name="demo.gsl"
+      id="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="demo.gsl" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="StandardModelLibrary.emtproj"
+      id="01d24333-8b3f-4e7c-9e7a-bb80d57cb272"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="Library\StandardModelLibrary\StandardModelLibrary.emtproj" />
+    <Item
+      content-type="Emergent.Toolbench.WorldBuilder.BlockDocument"
+      name="BattleTest.block"
+      id="53a9c1dd-222e-4219-8d5c-707fff742dec"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="World\BattleTest.block" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="General.emtproj"
+      id="87692283-5cb3-4e08-a2b2-bb3fe3e9ee2e"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="Library\GeneralLibrary\General.emtproj" />
+    <Item
+      content-type="Emergent.Toolbench.WorldBuilder.BlockDocument"
+      name="Playground.block"
+      id="b2d096a6-d977-47d0-80ff-725509453c52"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="World\Playground.block" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="PhysXModelLibrary.emtproj"
+      id="c2cff3f8-660a-4c5a-8f8c-b22fa14858b8"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="Library\PhysXModelLibrary\PhysXModelLibrary.emtproj" />
+    <Item
+      content-type="Emergent.Toolbench.WorldBuilder.BlockDocument"
+      name="MyTest.block"
+      id="fc9dca66-380b-4edb-88af-acd3d1e79e88"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="World\MyTest.block" />
+  </Hierarchy>
+</Solution>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="f7bcdebc-4639-4873-a6ff-452ded8d98e9"
+  Description="AmbientLight is an object that represents a source of ambient light for a scene.  This object is the simplest type of light object, and has no location, direction, or attenuation.">
+  <Mixins>
+    <Mixin
+      SourceID="c2a81bfe-f2b2-4b96-8431-a30739726860"
+      SourceName="Light" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="AmbientColor"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Color
+          R="128"
+          G="128"
+          B="128" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="DiffuseColor"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Color
+          R="0"
+          G="0"
+          B="0" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="ProxyNifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:0105d902-0000-0000-0000-000000000000">
+          <LastKnownName>AmbientLight</LastKnownName>
+          <LastKnownPath>/StandardModelLibrary/Media/AmbientLight.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:AmbientLight</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="SpecularColor"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Color
+          R="0"
+          G="0"
+          B="0" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

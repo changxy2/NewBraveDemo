@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="46d216af-1ffa-4ff4-9fb5-32110d581106"
+  Description="Entity model that controls the time of day animation.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="TimeOfDayTimeScaleMultiplier"
+      Description="Controls the speed at which time of day editable objects are animated.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TimeOfDayAnimate"
+      Description="Controls whether the time of day should be animated or not.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TimeOfDayDuration"
+      Description="The length of one day in seconds. Currently the Time of Day Editor does not allow for this to be changed.">
+      <Traits>
+        <Trait
+          Name="ReadOnly" />
+      </Traits>
+      <Value>
+        <Float32
+          Value="86400" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TimeOfDayInitialTime"
+      Description="Percentage of the time of day duration at which the animation should start.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction>
+        <RangeRestriction>
+          <Minimum>0</Minimum>
+          <Maximum>100</Maximum>
+        </RangeRestriction>
+      </Restriction>
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="Global" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="01b445d0-3956-49cf-9ba4-7096b8b8ff51"
+  Description="Base entity model to have properties set by whitebox service and World Builder tools.">
+  <Mixins>
+    <Mixin
+      SourceID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+      SourceName="Renderable" />
+    <Mixin
+      SourceID="e803dfb5-8811-4ace-82aa-a3f3f62d3b83"
+      SourceName="Lightable" />
+    <Mixin
+      SourceID="856ac922-dbe5-4fb1-a2ed-998f6112a031"
+      SourceName="Shadowable" />
+    <Mixin
+      SourceID="d3ed731f-997d-43ee-affd-d32df693850d"
+      SourceName="Bakeable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="ShapeDimensions"
+      Description="The dimensions of the box in the x, y, and z local axes">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Diffuse"
+      Description="The diffuse material color of the object, including alpha">
+      <Traits />
+      <Value>
+        <ColorA
+          R="255"
+          G="255"
+          B="255"
+          A="255" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SnapPoints"
+      Description="Whether to generate snap point nodes for precision operations in World Builder">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Walkable"
+      Description="Whether the object surface can be walked on using the walkable service">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="RuntimeRender"
+      Description="Whether the object renders in-game. It will always render in the tools">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList>
+    <ExtraData
+      Name="WhiteboxProxy"
+      Type="PropertyVisualizer">
+      <Entry
+        Type="Dependency"
+        Key="Anchor"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Color"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Dimensions"
+        Value="ShapeDimensions" />
+      <Entry
+        Type="Dependency"
+        Key="Offset"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Orientation"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Scale"
+        Value="Default" />
+      <Entry
+        Type="Type"
+        Key="Type"
+        Value="Cube" />
+    </ExtraData>
+  </ExtraDataList>
+</EntityModel>

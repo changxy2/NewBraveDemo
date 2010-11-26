@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Shadowable"
+  id="1432364367">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="IsCastingShadow"
+    id="3634273042">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsReceivingShadow"
+    id="2429998135">
+    <set
+      value="True" />
+  </property>
+</model>

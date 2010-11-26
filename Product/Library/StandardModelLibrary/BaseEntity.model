@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+  Description="Entity model that encapsulates the lifecycle events for an entity instance.">
+  <Mixins />
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors>
+    <Behavior
+      Name="OnCreate"
+      Description="Behavior invoked when the Entity Manager adds the entity instance. Created entities do not render until they enter the world."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="Extends" />
+      </Traits>
+    </Behavior>
+    <Behavior
+      Name="OnAssetsLoaded"
+      Description="Behavior invoked when the required assets have been loaded."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="Extends" />
+      </Traits>
+    </Behavior>
+    <Behavior
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="Extends" />
+      </Traits>
+    </Behavior>
+    <Behavior
+      Name="OnDestroy"
+      Description="Behavior invoked when the scheduler removes the entity instance from the simulation."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="ReverseExtends" />
+      </Traits>
+    </Behavior>
+    <Behavior
+      Name="OnEnterWorld"
+      Description="Behavior invoked when an entity is told to enter the world. By default entities automatically enter the world once OnCreate finishes."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="Extends" />
+      </Traits>
+    </Behavior>
+    <Behavior
+      Name="OnExitWorld"
+      Description="Behavior invoked when an entity is told to exit the world. Once out of the world the entity is still valid but will no longer render."
+      Target="Abstract">
+      <Traits>
+        <Trait
+          Name="Extends" />
+      </Traits>
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

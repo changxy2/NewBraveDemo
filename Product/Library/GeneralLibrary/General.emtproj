@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project
+  version="5">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.BehaviorScriptsOutput"
+      property-type="String">
+      <value>Behaviors</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.DiagramsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.EnumsOutput"
+      property-type="String">
+      <value>..\Enums</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.FlatModelsOutput"
+      property-type="String">
+      <value>..\Exported</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.ModelsAndPresetsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+  </tool-settings>
+  <Files>
+    <File
+      path="AIModel.model" />
+    <File
+      path="Camera_base.model" />
+    <File
+      path="Camera_smoothFollow.model" />
+    <File
+      path="Camera_SmoothFollow_old.model" />
+    <File
+      path="Character.model" />
+    <File
+      path="Floor.model" />
+    <File
+      path="MovableObject.model" />
+    <File
+      path="Player.model" />
+    <File
+      path="simple.diagram" />
+    <File
+      path="SmoothFollowCamera.model" />
+    <File
+      path="Vandal.model" />
+  </Files>
+  <References>
+    <Project
+      path="..\StandardModelLibrary\StandardModelLibrary.emtproj" />
+    <Project
+      path="..\PhysXModelLibrary\PhysXModelLibrary.emtproj" />
+  </References>
+  <virtual-folders
+    version="1" />
+</Project>

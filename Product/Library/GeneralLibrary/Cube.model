@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="2a128629-0ad0-44a2-bd40-7faf95e19643"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="769224cc-5c68-4af1-b1c8-85bc9879d9a9"
+      SourceName="Mesh" />
+    <Mixin
+      SourceID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+      SourceName="BaseEntity" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="NifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:4c8c3c23-0000-0000-0000-000000000000">
+          <LastKnownName>cube</LastKnownName>
+          <LastKnownPath>/Temp/Mesh/cube.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:cube</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors>
+    <Behavior
+      Name="OnTick"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

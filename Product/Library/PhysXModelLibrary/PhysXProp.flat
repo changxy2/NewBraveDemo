@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysXProp"
+  id="3004029168">
+  <trait
+    value="Active" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <property
+    type="String"
+    name="SceneName"
+    id="3540665846">
+    <set
+      value="PhysXDefaultSceneName" />
+  </property>
+  <property
+    type="UInt32"
+    name="State"
+    id="2324933933">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="UInt16"
+    name="PropCollisionGroup"
+    id="2913322450">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Boolean"
+    name="InteractWithTriggers"
+    id="3899012199">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+  <behavior
+    name="AttachSceneCallback"
+    id="513250996"
+    type="Abstract"
+    source="PhysXProp" />
+  <behavior
+    name="DetachSceneCallback"
+    id="2010396418"
+    type="Abstract"
+    source="PhysXProp" />
+</model>

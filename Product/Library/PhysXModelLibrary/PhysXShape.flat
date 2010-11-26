@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysXShape"
+  id="4240692126">
+  <trait
+    value="Active" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <property
+    type="Point3"
+    name="ShapeTranslation"
+    id="2589325141">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="ShapeRotation"
+    id="2637819055">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="UInt16"
+    name="ShapeCollisionGroup"
+    id="2357272066">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="String"
+    name="ShapeType"
+    id="3849786514">
+    <set
+      value="box" />
+  </property>
+  <property
+    type="Point3"
+    name="ShapeDimensions"
+    id="2646747882">
+    <set
+      value="1, 1, 1" />
+  </property>
+  <property
+    type="String"
+    name="SceneName"
+    id="3540665846">
+    <set
+      value="PhysXDefaultSceneName" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+</model>

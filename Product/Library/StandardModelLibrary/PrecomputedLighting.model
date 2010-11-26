@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="b14f108a-3f7a-4527-a6ff-93550b1af555"
+  Description="Indicates whether an entity is to be used for a precomputed lighting solution.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="UseForPrecomputedLighting"
+      Description="Indicates that this entity will be used in the generation of a precomputed lighting solution.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

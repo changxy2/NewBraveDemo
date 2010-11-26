@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PrecomputedLighting"
+  id="3209966185">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="UseForPrecomputedLighting"
+    id="1857230642">
+    <set
+      value="True" />
+  </property>
+</model>

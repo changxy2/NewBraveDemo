@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PrecomputedLightReceiver"
+  id="2959089521">
+  <trait
+    value="Active" />
+  <mixin
+    name="PrecomputedLighting"
+    id="3209966185"
+    type="Active" />
+  <property
+    type="Boolean"
+    name="UseLightProbes"
+    id="1217788253">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseForPrecomputedLighting"
+    id="1857230642">
+    <set
+      value="True" />
+  </property>
+</model>

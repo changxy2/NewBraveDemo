@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="7c0ef586-08d1-4fdb-937a-1e9d9f492597"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="c2a81bfe-f2b2-4b96-8431-a30739726860"
+      SourceName="Light" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

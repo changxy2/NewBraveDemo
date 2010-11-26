@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+  Description="Base entity model for objects that have a visual representation in the 3D world.">
+  <Mixins>
+    <Mixin
+      SourceID="2696199a-98a7-410b-a3e3-28abeeae752a"
+      SourceName="Placeable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="IsVisible"
+      Description="Determines whether or not the entity is going to be rendered.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+    <Trait
+      Name="ReplicaBuiltinModel" />
+    <Trait
+      Name="ToolBuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

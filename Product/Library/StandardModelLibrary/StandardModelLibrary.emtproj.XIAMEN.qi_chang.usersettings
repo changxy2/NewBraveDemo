@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tool-settings
+  version="1">
+  <setting
+    id="Emergent.Toolbench.EntityModeling.PreviousSessionActiveContent"
+    property-type="Guid">
+    <value>2696199a-98a7-410b-a3e3-28abeeae752a</value>
+  </setting>
+  <setting
+    id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.BrowseViewMode"
+    property-type="Integer">
+    <value>0</value>
+  </setting>
+  <setting
+    id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.SearchViewMode"
+    property-type="Integer">
+    <value>0</value>
+  </setting>
+  <setting
+    id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.SelectedViewModel"
+    property-type="Integer">
+    <value>0</value>
+  </setting>
+  <setting
+    id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.TreeRestoreWidth"
+    property-type="Double">
+    <value>200</value>
+  </setting>
+  <setting
+    id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.TreeWidth"
+    property-type="Double">
+    <value>0</value>
+  </setting>
+</tool-settings>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="6121b8d3-7cda-42c2-8fdd-0c08dd8d04af"
+  Description="Entity model that represents a shadow casting directional light that uses parallel split shadow mapping. Only one PSSMDirectionalLight entity can exist in a scene.">
+  <Mixins>
+    <Mixin
+      SourceID="41b2a3c8-bb9e-47e2-8e54-b4fea9b954fe"
+      SourceName="DirectionalLight" />
+    <Mixin
+      SourceID="fe0efed6-0e42-4a4f-80ef-335aa7891467"
+      SourceName="ParallelSplitShadowConfig" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="CastShadows"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="Global" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

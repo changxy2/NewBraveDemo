@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="ParallelSplitShadowConfig"
+  id="247448509">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="PSSMEnabled"
+    id="697661803">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="SceneDependentFrustums"
+    id="399441449">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="UInt32"
+    name="SliceCount"
+    id="3594171977">
+    <set
+      value="4" />
+  </property>
+  <property
+    type="Float32"
+    name="SliceDistanceExponentFactor"
+    id="3090612939">
+    <set
+      value="0.5" />
+  </property>
+  <property
+    type="Float32"
+    name="SliceTransitionLength"
+    id="1107539347">
+    <set
+      value="300" />
+  </property>
+  <property
+    type="Float32"
+    name="SliceTransitionNoiseGranularity"
+    id="3824403685">
+    <set
+      value="0.05" />
+  </property>
+  <property
+    type="Boolean"
+    name="SliceTransitions"
+    id="2354585355">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="SuppressShimmer"
+    id="3796244861">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseCustomFarPlane"
+    id="4017100074">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Float32"
+    name="CustomFarPlane"
+    id="2217890492">
+    <set
+      value="10000" />
+  </property>
+  <property
+    type="Float32"
+    name="CameraDistanceScaleFactor"
+    id="3671243165">
+    <set
+      value="5" />
+  </property>
+</model>

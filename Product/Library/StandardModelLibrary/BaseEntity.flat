@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="BaseEntity"
+  id="129412341">
+  <behavior
+    name="OnCreate"
+    id="2991225057"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="Extends" />
+    <invocation-order />
+  </behavior>
+  <behavior
+    name="OnAssetsLoaded"
+    id="3815550487"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="Extends" />
+    <invocation-order />
+  </behavior>
+  <behavior
+    name="OnEntitySetFinished"
+    id="677833593"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="Extends" />
+    <invocation-order />
+  </behavior>
+  <behavior
+    name="OnDestroy"
+    id="3415513274"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="ReverseExtends" />
+    <invocation-order />
+  </behavior>
+  <behavior
+    name="OnEnterWorld"
+    id="3240518143"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="Extends" />
+    <invocation-order />
+  </behavior>
+  <behavior
+    name="OnExitWorld"
+    id="3904400371"
+    type="Abstract"
+    source="BaseEntity">
+    <trait
+      value="Extends" />
+    <invocation-order />
+  </behavior>
+</model>

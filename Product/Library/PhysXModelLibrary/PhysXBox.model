@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="7862ceac-902b-455e-85d9-1890a2700730"
+  Description="Defines a cube collision shape for use with the PhysX system. The origin for a cube shape is the center of the base of the cube (0, 0, -z/2).">
+  <Mixins>
+    <Mixin
+      SourceID="5daef827-0159-4c97-8928-40243ffcb671"
+      SourceName="PhysXShape" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="ShapeType"
+      Description="">
+      <TraitOverrides>
+        <TraitOverride
+          IsActive="true">
+          <Trait
+            Name="Hidden" />
+        </TraitOverride>
+      </TraitOverrides>
+      <Value>
+        <String
+          Value="box" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList>
+    <ExtraData
+      Name="PhysXBox"
+      Type="PropertyVisualizer">
+      <Entry
+        Type="Dependency"
+        Key="Anchor"
+        Value="Position" />
+      <Entry
+        Type="Dependency"
+        Key="AnchorAtBase"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Color"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Dimensions"
+        Value="ShapeDimensions" />
+      <Entry
+        Type="Dependency"
+        Key="Offset"
+        Value="ShapeTranslation" />
+      <Entry
+        Type="Dependency"
+        Key="Orientation"
+        Value="Rotation" />
+      <Entry
+        Type="Dependency"
+        Key="OrientationOffset"
+        Value="ShapeRotation" />
+      <Entry
+        Type="Dependency"
+        Key="Scale"
+        Value="Scale" />
+      <Entry
+        Type="Type"
+        Key="Type"
+        Value="PhysXBox" />
+    </ExtraData>
+  </ExtraDataList>
+</EntityModel>

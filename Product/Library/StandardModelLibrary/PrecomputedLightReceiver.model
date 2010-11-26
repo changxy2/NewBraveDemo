@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="88c2bbb6-ecce-433b-b7da-3e0a5fa98f92"
+  Description="Indicates that an entity is a receiver of precomputed lighting.">
+  <Mixins>
+    <Mixin
+      SourceID="b14f108a-3f7a-4527-a6ff-93550b1af555"
+      SourceName="PrecomputedLighting" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="UseLightProbes"
+      Description="Indicates that this entity will use light probes rather than object-specific baked lighting for precomputed illumination.  This will allow its lighting to change as it moves throughout the scene.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

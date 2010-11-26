@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="00e2bdb9-fde1-47c4-b6e8-c71da4b234dd"
+  Description="Allows an entity to change in reponse to the current time of day.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="TimeOfDayAssetPath"
+      Description="The file name where the time of day animation data should be saved.">
+      <Traits />
+      <Value>
+        <Asset
+          Value="">
+          <LastKnownName></LastKnownName>
+          <LastKnownPath></LastKnownPath>
+          <LastKnownTags></LastKnownTags>
+        </Asset>
+      </Value>
+      <Restriction>
+        <TagRestriction>
+          <Tags>gamebryo-time-of-day</Tags>
+        </TagRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="TimeOfDayAnimatablePropertyList"
+      Description="A list of entity model properties that can be configured to change with the time of day.">
+      <Traits>
+        <Trait
+          Name="Hidden" />
+      </Traits>
+      <Value>
+        <List
+          ItemsDataType="String">
+          <Items />
+        </List>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

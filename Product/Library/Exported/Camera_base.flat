@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Camera_base"
+  id="2879517057">
+  <trait
+    value="BuiltinModel" />
+</model>

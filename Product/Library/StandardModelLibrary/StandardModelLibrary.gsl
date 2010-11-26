@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution
+  version="10">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.GameSolution.ContentRoot"
+      property-type="String">
+      <value>..</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorFacingOffset"
+      property-type="Float">
+      <value>0</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.ActorUpdateBuckets"
+      property-type="Integer">
+      <value>10</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.PositionUpdateThreshold"
+      property-type="Float">
+      <value>50</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.SimDebugger.RotationUpdateThreshold"
+      property-type="Float">
+      <value>45</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.WorldBuilder.VersionControlExport"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+  </tool-settings>
+  <Hierarchy
+    version="1">
+    <Item
+      content-type="Emergent.Toolbench.GameSolution.GameSolutionDocument"
+      name="StandardModelLibrary.gsl"
+      id="e76b585a-52ca-4de5-96a6-a28acf148c9d"
+      filepath="StandardModelLibrary.gsl" />
+    <Item
+      content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
+      name="StandardModelLibrary.emtproj"
+      id="2524ef37-a6a0-450f-817e-a9fb17aab0c7"
+      parent="e76b585a-52ca-4de5-96a6-a28acf148c9d"
+      filepath="StandardModelLibrary.emtproj" />
+  </Hierarchy>
+</Solution>

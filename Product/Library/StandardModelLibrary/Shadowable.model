@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="856ac922-dbe5-4fb1-a2ed-998f6112a031"
+  Description="Entity model that determines whether or not the renderable entity can cast or receive shadows.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="IsCastingShadow"
+      Description="Determines whether or not this entity can cast shadows. Used in combination with a shadow-casting light.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="IsReceivingShadow"
+      Description="Determines whether or not this entity can receive shadows from a shadow-casting light.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

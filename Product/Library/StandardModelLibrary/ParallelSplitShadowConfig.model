@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="fe0efed6-0e42-4a4f-80ef-335aa7891467"
+  Description="Entity model that stores shadowing parameters for a shadow casting light using parallel split shadow mapping. The parallel split shadow mapping (PSSM) solution provides improved shadow quality for large scenes at the expense of an increase in CPU and GPU load.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="PSSMEnabled"
+      Description="Specifies if Parallel Split Shadow Mapping should be used.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SceneDependentFrustums"
+      Description="Specifies if the scene should be analyzed per frame to allow the shadow camera frustum to be tightened to only the visible objects. Improves shadow quality at the expense of an increase in CPU load.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SliceCount"
+      Description="Specifies how many slices (sections) to break the scene camera's frustum into. Larger slice counts increase CPU &amp; GPU load.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="4" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SliceDistanceExponentFactor"
+      Description="Defines how much larger a given PSSM slice will be in comparison to the previous. A larger value will create a bigger difference in size; therefore biasing more shadowmap pixels to objects nearer to the visible camera.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.5" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SliceTransitionLength"
+      Description="The distance, in world dimensions, of the transition from one slice to the next.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="300" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SliceTransitionNoiseGranularity"
+      Description="The size of each noise pixel in a slice transition. A lower number will increase the size of each noise pixel.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.05" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SliceTransitions"
+      Description="Enable smoother transitions between PSSM splits, using random noise. Increases GPU cost.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SuppressShimmer"
+      Description="Quantize the shadow-map camera's movements so that they snap to the shadow maps pixels. This removes shadow shimmering when the view camera moves. It has no effect on any shimmering caused by movement of the casting light.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="UseCustomFarPlane"
+      Description="Enables use of a user specified far clipping plane for shadows. The scene camera's far clipping plane distance is used by default when one is not specified.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="CustomFarPlane"
+      Description="The distance from the camera, in world space, that shadows will become clipped away. A shorter distance will improve shadow quality and performance.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="10000" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="CameraDistanceScaleFactor"
+      Description="Defines how far the shadow map camera will be placed from the scene. A larger scale factor helps to eliminate shadow clipping, but reduces shadow map precision.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="5" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

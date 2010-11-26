@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="2696199a-98a7-410b-a3e3-28abeeae752a"
+  Description="Provides position, rotation and scale information for placing objects in a 3D space.&#xD;&#xA;&#xD;&#xA;Note: When mixing this into a model in another entity modeling project, it is advisable to not mix in directly. Instead, create a new model, like &quot;MyCustomPlaceable&quot;, and mix-into that model. Then mix &quot;MyCustomPlaceable&quot; into all relevant models in that project. This is useful when refactoring large numbers of placeables at once.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="Position"
+      Description="The world-space position of the entity.">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Rotation"
+      Description="The world-space rotation of the entity.">
+      <Traits />
+      <Value>
+        <Rotator>
+          <Roll>
+            <Degree
+              Value="0" />
+          </Roll>
+          <Pitch>
+            <Degree
+              Value="0" />
+          </Pitch>
+          <Yaw>
+            <Degree
+              Value="0" />
+          </Yaw>
+        </Rotator>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Scale"
+      Description="The world-space scale of the entity.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+    <Trait
+      Name="ReplicaBuiltinModel" />
+    <Trait
+      Name="ToolBuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

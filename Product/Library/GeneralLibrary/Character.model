@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="d505da4a-b365-48fb-a8b5-078a4e557c41"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="bc8153af-f680-46ac-9de7-f99106dee084"
+      SourceName="Actor" />
+    <Mixin
+      SourceID="f7682dbf-e1d1-48a3-9a98-ef3ff586d2d7"
+      SourceName="MovableObject" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="InitialSequence"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <String
+          Value="idle" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

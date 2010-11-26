@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysXWhitebox"
+  id="3837794050">
+  <trait
+    value="Active" />
+  <mixin
+    name="Whitebox"
+    id="3994498106"
+    type="Active" />
+  <mixin
+    name="Renderable"
+    id="3759402445"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Placeable"
+    id="2827666854"
+    type="Active; BuiltinModel; ReplicaBuiltinModel; ToolBuiltinModel" />
+  <mixin
+    name="Lightable"
+    id="3306310187"
+    type="Active" />
+  <mixin
+    name="Shadowable"
+    id="1432364367"
+    type="Active" />
+  <mixin
+    name="Bakeable"
+    id="2219133248"
+    type="Active" />
+  <mixin
+    name="PhysXProp"
+    id="3004029168"
+    type="Active" />
+  <property
+    type="Float32"
+    name="Density"
+    id="1962163150">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Boolean"
+    name="DynamicallySimulate"
+    id="525852438">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Float32"
+    name="Friction"
+    id="3347526202">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="Point3"
+    name="ShapeDimensions"
+    id="2646747882">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="ColorA"
+    name="Diffuse"
+    id="362372998">
+    <set
+      value="1, 1, 1, 1" />
+  </property>
+  <property
+    type="Boolean"
+    name="SnapPoints"
+    id="1618465084">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="Walkable"
+    id="4134546408">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="RuntimeRender"
+    id="38185234">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsVisible"
+    id="2696327545"
+    source="Renderable">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Point3"
+    name="Position"
+    id="4254452306"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Point3"
+    name="Rotation"
+    id="1757921949"
+    source="Placeable">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="Scale"
+    id="763145517"
+    source="Placeable">
+    <set
+      value="1" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxDirectionalLights"
+    id="3276506584">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxPointLights"
+    id="481351731">
+    <set
+      value="3" />
+  </property>
+  <property
+    type="UInt32"
+    name="MaxSpotLights"
+    id="3623858961">
+    <set
+      value="2" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsCastingShadow"
+    id="3634273042">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsReceivingShadow"
+    id="2429998135">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="IsStatic"
+    id="713021940">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="String"
+    name="SceneName"
+    id="3540665846">
+    <set
+      value="PhysXDefaultSceneName" />
+  </property>
+  <property
+    type="UInt32"
+    name="State"
+    id="2324933933">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="UInt16"
+    name="PropCollisionGroup"
+    id="2913322450">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Boolean"
+    name="InteractWithTriggers"
+    id="3899012199">
+    <set
+      value="False" />
+  </property>
+  <behavior
+    name="AttachSceneCallback"
+    id="513250996"
+    type="Abstract"
+    source="PhysXProp" />
+  <behavior
+    name="DetachSceneCallback"
+    id="2010396418"
+    type="Abstract"
+    source="PhysXProp" />
+</model>

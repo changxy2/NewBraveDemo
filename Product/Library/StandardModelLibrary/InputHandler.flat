@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="InputHandler"
+  id="1915530644">
+  <trait
+    value="Active" />
+  <trait
+    value="BuiltinModel" />
+  <mixin
+    name="BaseEntity"
+    id="129412341"
+    type="" />
+  <property
+    type="AssocString"
+    name="NormalEventMap"
+    id="1753976354"
+    source="InputHandler" />
+  <property
+    type="Boolean"
+    name="InputsEnabled"
+    id="1184637157"
+    source="InputHandler">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="AssocString"
+    name="ImmediateEventMap"
+    id="1235118898"
+    source="InputHandler" />
+</model>

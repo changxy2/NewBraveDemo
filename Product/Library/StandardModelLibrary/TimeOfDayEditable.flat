@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="TimeOfDayEditable"
+  id="477905418">
+  <property
+    type="AssetID"
+    name="TimeOfDayAssetPath"
+    id="1056771729">
+    <set
+      value="" />
+  </property>
+  <property
+    type="AssocString"
+    name="TimeOfDayAnimatablePropertyList"
+    id="949502095" />
+</model>

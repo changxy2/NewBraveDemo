@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project
+  version="5">
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.Toolbench.EntityModeling.BehaviorScriptsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.DiagramsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.EnumsOutput"
+      property-type="String">
+      <value>..\Enums</value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.FlatModelsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.Toolbench.EntityModeling.ModelsAndPresetsOutput"
+      property-type="String">
+      <value></value>
+    </setting>
+  </tool-settings>
+  <Files>
+    <File
+      path="2DProxy.model" />
+    <File
+      path="3DProxy.model" />
+    <File
+      path="Actor.model" />
+    <File
+      path="AmbientLight.model" />
+    <File
+      path="Bakeable.model" />
+    <File
+      path="BaseEntity.model" />
+    <File
+      path="Camera.model" />
+    <File
+      path="Core.diagram" />
+    <File
+      path="DirectionalLight.model" />
+    <File
+      path="Environment.model" />
+    <File
+      path="InputHandler.model" />
+    <File
+      path="Light.model" />
+    <File
+      path="Lightable.model" />
+    <File
+      path="Lights.diagram" />
+    <File
+      path="Mesh.model" />
+    <File
+      path="Nameable.model" />
+    <File
+      path="ParallelSplitShadowConfig.model" />
+    <File
+      path="PCLActor.model" />
+    <File
+      path="PCLDirectionalLight.model" />
+    <File
+      path="PCLMesh.model" />
+    <File
+      path="PCLPointLight.model" />
+    <File
+      path="PCLSpotLight.model" />
+    <File
+      path="Placeable.model" />
+    <File
+      path="PointLight.model" />
+    <File
+      path="PrecomputedLightConfig.model" />
+    <File
+      path="PrecomputedLighting.model" />
+    <File
+      path="PrecomputedLightReceiver.model" />
+    <File
+      path="Preloadable.model" />
+    <File
+      path="Proxy.model" />
+    <File
+      path="PSSMDirectionalLight.model" />
+    <File
+      path="Renderable.model" />
+    <File
+      path="Shadowable.model" />
+    <File
+      path="ShadowGenerator.model" />
+    <File
+      path="SpotLight.model" />
+    <File
+      path="Terrain.model" />
+    <File
+      path="TimeOfDay.model" />
+    <File
+      path="TimeOfDayEditable.model" />
+    <File
+      path="Whitebox.model" />
+  </Files>
+  <References />
+  <virtual-folders
+    version="1" />
+</Project>

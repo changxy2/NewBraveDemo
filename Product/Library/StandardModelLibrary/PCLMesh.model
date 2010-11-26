@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="4d0e55ec-fdc6-45d6-934e-e85c04c53e2b"
+  Description="A Mesh which uses precomputed lighting.">
+  <Mixins>
+    <Mixin
+      SourceID="769224cc-5c68-4af1-b1c8-85bc9879d9a9"
+      SourceName="Mesh" />
+    <Mixin
+      SourceID="88c2bbb6-ecce-433b-b7da-3e0a5fa98f92"
+      SourceName="PrecomputedLightReceiver" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

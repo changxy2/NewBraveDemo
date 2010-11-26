@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="cdc0f85e-5fc8-4b5d-a38b-e07e58553887"
+  Description="Entity model that determines which shadowing technique a light should use if it indeed casts shadows.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="CastShadows"
+      Description="Determines whether or not this light casts shadows.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="RenderBackfaces"
+      Description="Determines whether or not the backfaces are used when rendering an entity. For many shadowing algorithms, this reduces the visual artifact known as &quot;shadow acne&quot;.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ShadowTechnique"
+      Description="Determines which shadowing algorithm is used to generate the shadow maps.">
+      <Traits />
+      <Value>
+        <String
+          Value="NiStandardShadowTechnique" />
+      </Value>
+      <Restriction>
+        <EnumerationRestriction>
+          <Values>
+            <String
+              Value="NiStandardShadowTechnique" />
+            <String
+              Value="NiPCFShadowTechnique" />
+            <String
+              Value="NiVSMShadowTechnique" />
+          </Values>
+        </EnumerationRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="SizeHint"
+      Description="Hint to the renderer used to describe the desired square resolution of the shadow map.">
+      <Traits />
+      <Value>
+        <UInt16
+          Value="512" />
+      </Value>
+      <Restriction>
+        <EnumerationRestriction>
+          <Values>
+            <UInt16
+              Value="2048" />
+            <UInt16
+              Value="1024" />
+            <UInt16
+              Value="512" />
+            <UInt16
+              Value="256" />
+            <UInt16
+              Value="128" />
+            <UInt16
+              Value="64" />
+            <UInt16
+              Value="32" />
+            <UInt16
+              Value="16" />
+            <UInt16
+              Value="8" />
+            <UInt16
+              Value="4" />
+            <UInt16
+              Value="2" />
+            <UInt16
+              Value="1" />
+          </Values>
+        </EnumerationRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="StrictlyObserveSizeHint"
+      Description="Forces the renderer to obey the SizeHint parameter.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="StaticShadows"
+      Description="If a shadow generator is flagged as static its shadow maps will only be rendered when its shadow maps or render views are flagged as dirty. ">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="UseDefaultDepthBias"
+      Description="Sets the shadow generator's depth bias to the default depth bias of the shadow technique assigned to the shadow generator.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="DepthBias"
+      Description="The shadow depth bias used by the shadow generator. This value is ignored if UseDefaultDepthBias is set to true.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

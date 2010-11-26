@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="3a968412-6fb9-481c-b55d-a79da6062c1e"
+  Description="An object that represents a spotlight in a scene. Spotlights have a specific location and direction in space, as well as a distance attenuation function and an angle attenuation function. Location and distance attenuation are inherited from the PointLight model. The light direction is handled in the same way as it is in DirectionalLight--it shines down the model-space positive X-axis of the light.">
+  <Mixins>
+    <Mixin
+      SourceID="70bf971f-e738-4a47-92d9-2a267cf49ab3"
+      SourceName="PointLight" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="OuterSpotAngle"
+      Description="The outer spotlight angle (in degrees).">
+      <Traits />
+      <Value>
+        <Degree
+          Value="22.5" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="InnerSpotAngle"
+      Description="The inner spotlight angle (in degrees).">
+      <Traits />
+      <Value>
+        <Degree
+          Value="21.5" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SpotExponent"
+      Description="Unless the angular attenuation exponent is something other than 1.0, Gamebryo uses linear attenuation from the inner cone angle to the outer cone angle. If the angular attenuation exponent is not 1.0, its effects are renderer-dependent.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="DepthBias"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="ProxyNifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:c9a17ea8-0000-0000-0000-000000000000">
+          <LastKnownName>SpotLight</LastKnownName>
+          <LastKnownPath>/StandardModelLibrary/Media/SpotLight.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:SpotLight</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

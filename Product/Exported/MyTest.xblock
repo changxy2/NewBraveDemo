@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<game>
+  <entitySet>
+    <entity
+      id="789098e989104c91bb376fe53b3d4e28"
+      modelName="Floor"
+      name="Floor0"
+      iterations="3">
+      <property
+        name="Position">
+        <set
+          value="-28.1926346, -13.8429794, 1.941717" />
+      </property>
+    </entity>
+    <entity
+      id="a37fb3894f03463da5ed5911b5c15c70"
+      modelName="Vandal"
+      name="Vandal0"
+      iterations="10">
+      <property
+        name="Position">
+        <set
+          value="-38.8816261, 38.694603, 2.941717" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="0, 0, 265.084045" />
+      </property>
+      <property
+        name="Name">
+        <set
+          value="Vandal0" />
+      </property>
+    </entity>
+    <entity
+      id="db6279b0ce4c4630be89b8672758eed6"
+      modelName="SmoothFollowCamera"
+      name="SmoothFollowCamera0"
+      iterations="254">
+      <property
+        name="Target">
+        <set
+          value="a37fb389-4f03-463d-a5ed-5911b5c15c70" />
+      </property>
+      <property
+        name="Distance">
+        <set
+          value="100" />
+      </property>
+      <property
+        name="MoveDamping">
+        <set
+          value="5" />
+      </property>
+      <property
+        name="FOV">
+        <set
+          value="60" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-102.719246, 32.93424, 69.69641" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="90, 7.41265869, 330.358459" />
+      </property>
+    </entity>
+    <entity
+      id="ef4faa3402f5476cbb62c8e049038565"
+      modelName="DirectionalLight"
+      name="DirectionalLight0"
+      iterations="53">
+      <property
+        name="Position">
+        <set
+          value="-98.25529, 72.6949158, 28.1185455" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="237.201111, 353.0032, 34.16098" />
+      </property>
+      <property
+        name="CastShadows">
+        <set
+          value="True" />
+      </property>
+      <property
+        name="ShadowTechnique">
+        <set
+          value="NiPCFShadowTechnique" />
+      </property>
+      <property
+        name="SizeHint">
+        <set
+          value="512" />
+      </property>
+      <property
+        name="StrictlyObserveSizeHint">
+        <set
+          value="False" />
+      </property>
+    </entity>
+  </entitySet>
+</game>

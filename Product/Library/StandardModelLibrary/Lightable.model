@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="e803dfb5-8811-4ace-82aa-a3f3f62d3b83"
+  Description="Model the defines if an entity should be affected by lights. Entities that do not mix in this model will never be affected by a light.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="MaxDirectionalLights"
+      Description="Max number of directional lights allowed to affect an entity that mixes in this model.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="3" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MaxPointLights"
+      Description="Max number of point lights allowed to affect an entity that mixes in this model.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="3" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MaxSpotLights"
+      Description="Max number of spot lights allowed to affect an entity that mixes in this model.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="2" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

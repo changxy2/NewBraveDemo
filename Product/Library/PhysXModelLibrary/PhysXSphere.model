@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="7bc3fcc6-f9d6-445f-9eef-38e47c6e9fc4"
+  Description="Defines a sphere collision shape for use with the PhysX system.  The origin for a sphere is its center.">
+  <Mixins>
+    <Mixin
+      SourceID="5daef827-0159-4c97-8928-40243ffcb671"
+      SourceName="PhysXShape" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="ShapeType"
+      Description="">
+      <TraitOverrides>
+        <TraitOverride
+          IsActive="true">
+          <Trait
+            Name="Hidden" />
+        </TraitOverride>
+      </TraitOverrides>
+      <Value>
+        <String
+          Value="sphere" />
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList>
+    <ExtraData
+      Name="PhysXSphere"
+      Type="PropertyVisualizer">
+      <Entry
+        Type="Dependency"
+        Key="Anchor"
+        Value="Position" />
+      <Entry
+        Type="Dependency"
+        Key="Color"
+        Value="Default" />
+      <Entry
+        Type="Dependency"
+        Key="Offset"
+        Value="ShapeTranslation" />
+      <Entry
+        Type="Dependency"
+        Key="Radius"
+        Value="ShapeDimensions" />
+      <Entry
+        Type="Dependency"
+        Key="Scale"
+        Value="Scale" />
+      <Entry
+        Type="Type"
+        Key="Type"
+        Value="Sphere" />
+    </ExtraData>
+  </ExtraDataList>
+</EntityModel>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="6fd25663-b822-49f7-a666-35e471d9b160"
+  Description="A model that binds Input Events to behaviors.  By setting the properties of this model you can automatically bind input events from the action map to specifically named behaviors.">
+  <Mixins>
+    <Mixin
+      SourceID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+      SourceName="BaseEntity" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="NormalEventMap"
+      Description="Map of behaviors to be invoked when a specific input event occurs, using normal event queueing.">
+      <Traits />
+      <Value>
+        <Map
+          ItemsDataType="String">
+          <Items />
+        </Map>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="InputsEnabled"
+      Description="Enable/disable all event processing.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ImmediateEventMap"
+      Description="Map of behaviors to be invoked when a specific input event occurs, using immediate behavior invocation.">
+      <Traits />
+      <Value>
+        <Map
+          ItemsDataType="String">
+          <Items />
+        </Map>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

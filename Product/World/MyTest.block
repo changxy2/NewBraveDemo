@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<block
+  version="3"
+  name="MyTest">
+  <model-references
+    version="1">
+    <reference>..\Library\StandardModelLibrary\StandardModelLibrary.emtproj</reference>
+    <reference>..\Library\PhysXModelLibrary\PhysXModelLibrary.emtproj</reference>
+    <reference>..\Library\GeneralLibrary\General.emtproj</reference>
+  </model-references>
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.WorldBuilder.CustomShaders.CustomShaderDirectory"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.ExportFolder"
+      property-type="String">
+      <value>..\Exported</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Exporter"
+      property-type="String">
+      <value>XmlBlockExporter</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.SnapPoints.SnapPointStickinessRadius"
+      property-type="Float">
+      <value>0.5</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.World.Scale"
+      property-type="Float">
+      <value>1</value>
+    </setting>
+  </tool-settings>
+  <layers
+    version="1" />
+  <entities
+    version="1">
+    <entity
+      id="789098e9-8910-4c91-bb37-6fe53b3d4e28"
+      model-name="Floor"
+      model-id="32d3e35e-0d9f-4b8f-8e5e-f39d08f3d461"
+      name="Floor0"
+      iterations="3"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-28.1926346, -13.8429794, 1.941717" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="a37fb389-4f03-463d-a5ed-5911b5c15c70"
+      model-name="Vandal"
+      model-id="18ed5ba5-b6f8-45a2-a776-4a05b760d6da"
+      name="Vandal0"
+      iterations="10"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-38.8816261, 38.694603, 2.941717" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="0, 0, 265.084045" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="db6279b0-ce4c-4630-be89-b8672758eed6"
+      model-name="SmoothFollowCamera"
+      model-id="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
+      name="SmoothFollowCamera0"
+      iterations="254"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Distance">
+          <set
+            value="100" />
+        </property>
+        <property
+          name="FOV">
+          <set
+            value="60" />
+        </property>
+        <property
+          name="MoveDamping">
+          <set
+            value="5" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="-102.719246, 32.93424, 69.69641" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="90, 7.41265869, 330.358459" />
+        </property>
+        <property
+          name="Target">
+          <set
+            value="a37fb389-4f03-463d-a5ed-5911b5c15c70|Vandal0|MyTest" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="ef4faa34-02f5-476c-bb62-c8e049038565"
+      model-name="DirectionalLight"
+      model-id="41b2a3c8-bb9e-47e2-8e54-b4fea9b954fe"
+      name="DirectionalLight0"
+      iterations="53"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="CastShadows">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="-98.25529, 72.6949158, 28.1185455" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="237.201111, 353.0032, 34.16098" />
+        </property>
+        <property
+          name="ShadowTechnique">
+          <set
+            value="NiPCFShadowTechnique" />
+        </property>
+        <property
+          name="SizeHint">
+          <set
+            value="512" />
+        </property>
+        <property
+          name="StrictlyObserveSizeHint">
+          <set
+            value="False" />
+        </property>
+      </properties>
+    </entity>
+  </entities>
+  <selections
+    version="1" />
+  <entity-folders
+    version="1" />
+</block>

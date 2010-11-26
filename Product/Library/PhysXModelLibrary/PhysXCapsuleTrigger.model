@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="70a8190c-6a60-41a5-916f-d5e170c4c9d8"
+  Description="PhysXCapsule with an OnPhysXTrigger callback that is called when this PhysXCapsule fulfills the collision requirements (TriggerOnEnter, TriggerOnStay, TriggerOnLeave) with another shape.">
+  <Mixins>
+    <Mixin
+      SourceID="4ac3082c-8e64-43a7-a212-35789bb9338d"
+      SourceName="PhysXCapsule" />
+    <Mixin
+      SourceID="fff6e58e-8953-4afa-85a9-bce932cd6d06"
+      SourceName="PhysXTrigger" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

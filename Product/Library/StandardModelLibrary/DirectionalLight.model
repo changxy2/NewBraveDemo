@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="41b2a3c8-bb9e-47e2-8e54-b4fea9b954fe"
+  Description="An object that represents a light located at infinity with uniform parallel light rays traveling in a specific direction.  The light will project illumination in its model-space positive X-axis.  The directional light may be pointed in any world-space direction by rotating the light.">
+  <Mixins>
+    <Mixin
+      SourceID="c2a81bfe-f2b2-4b96-8431-a30739726860"
+      SourceName="Light" />
+    <Mixin
+      SourceID="cdc0f85e-5fc8-4b5d-a38b-e07e58553887"
+      SourceName="ShadowGenerator" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="ProxyNifAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:89772076-0000-0000-0000-000000000000">
+          <LastKnownName>DirectionalLight</LastKnownName>
+          <LastKnownPath>/StandardModelLibrary/Media/DirectionalLight.nif</LastKnownPath>
+          <LastKnownTags>application:gamebryo-scenegraph:DirectionalLight</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

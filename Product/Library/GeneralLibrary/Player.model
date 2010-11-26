@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="b2867ef6-0d62-4d5b-a590-760087c72602"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="d505da4a-b365-48fb-a8b5-078a4e557c41"
+      SourceName="Character" />
+    <Mixin
+      SourceID="6fd25663-b822-49f7-a666-35e471d9b160"
+      SourceName="InputHandler" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="InitialSequence"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <String
+          Value="idle" />
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="KfmAsset"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Asset
+          Value="urn:llid:af3b754d-0000-0000-0000-000000000000">
+          <LastKnownName>Vandal</LastKnownName>
+          <LastKnownPath>/Temp/Mesh/Characters/Vandal/Vandal.kfm</LastKnownPath>
+          <LastKnownTags>application:gamebryo-animation:Vandal</LastKnownTags>
+        </Asset>
+      </Value>
+    </PropertyOverride>
+    <PropertyOverride
+      Name="NormalEventMap"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Map
+          ItemsDataType="String">
+          <Items>
+            <Item
+              Key="MoveForward">
+              <String
+                Value="Move_Forward" />
+            </Item>
+            <Item
+              Key="MoveBackward">
+              <String
+                Value="Move_Backward" />
+            </Item>
+            <Item
+              Key="MoveRight">
+              <String
+                Value="Move_Right" />
+            </Item>
+            <Item
+              Key="MoveLeft">
+              <String
+                Value="Move_Left" />
+            </Item>
+          </Items>
+        </Map>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors>
+    <Behavior
+      Name="Move_Right"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Left"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Forward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Backward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="RunningAIStep"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

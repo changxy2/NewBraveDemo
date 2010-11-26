@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="46c50bb9-fa71-4f68-8a6e-81a49088feef"
+  Description="Defines the properties for a PhysX prop.  This is used by ecrPhysX::PropService to add objects from a Core Runtime NIF file to an NxScene.">
+  <Mixins>
+    <Mixin
+      SourceID="2696199a-98a7-410b-a3e3-28abeeae752a"
+      SourceName="Placeable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="SceneName"
+      Description="The name of the PhysXScene entity to add this prop to.">
+      <Traits />
+      <Value>
+        <String
+          Value="PhysXDefaultSceneName" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="State"
+      Description="Which of several possible state snapshots stored in the NiProp object in the NIF file to use to initialize this object.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="PropCollisionGroup"
+      Description="Which subset of objects in the scene this prop can collide with.">
+      <Traits />
+      <Value>
+        <UInt16
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="InteractWithTriggers"
+      Description="Enables collisions with this entity to cause PhysXTrigger entities to activate their OnPhysXTrigger callbacks">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors>
+    <Behavior
+      Name="AttachSceneCallback"
+      Description="Behavior to be executed when this prop is attached to a scene."
+      Target="Abstract">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="DetachSceneCallback"
+      Description="Behavior to be executed when this prop is removed from a scene."
+      Target="Abstract">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

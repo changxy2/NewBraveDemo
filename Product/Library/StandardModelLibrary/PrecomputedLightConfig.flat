@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PrecomputedLightConfig"
+  id="4207906322">
+  <trait
+    value="Active" />
+  <mixin
+    name="PrecomputedLighting"
+    id="3209966185"
+    type="Active" />
+  <property
+    type="Boolean"
+    name="LightPCLObjectsAtRuntime"
+    id="2928597406">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="LightNonPCLObjectsAtRuntime"
+    id="2147844064">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseForPrecomputedLighting"
+    id="1857230642">
+    <set
+      value="True" />
+  </property>
+</model>

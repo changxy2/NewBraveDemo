@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="ShadowGenerator"
+  id="3282032347">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="CastShadows"
+    id="2028291755">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="RenderBackfaces"
+    id="2702261372">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="String"
+    name="ShadowTechnique"
+    id="4003517295">
+    <set
+      value="NiStandardShadowTechnique" />
+  </property>
+  <property
+    type="UInt16"
+    name="SizeHint"
+    id="3629962131">
+    <set
+      value="512" />
+  </property>
+  <property
+    type="Boolean"
+    name="StrictlyObserveSizeHint"
+    id="4282050119">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="StaticShadows"
+    id="1026821479">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Boolean"
+    name="UseDefaultDepthBias"
+    id="1542307136">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Float32"
+    name="DepthBias"
+    id="143107425">
+    <set
+      value="0" />
+  </property>
+</model>

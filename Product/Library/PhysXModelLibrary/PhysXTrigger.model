@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="fff6e58e-8953-4afa-85a9-bce932cd6d06"
+  Description="PhysXShape with an OnPhysXTrigger callback that is called when this PhysXShape fulfills the collision requirements (TriggerOnEnter, TriggerOnStay, TriggerOnLeave) with another shape.">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="TriggerOnEnter"
+      Description="If true, callbacks will be invoked when a shape enters the trigger shape.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TriggerOnStay"
+      Description="If true, callbacks will be invoked when a shape is penetrating the trigger shape.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TriggerMinInterval"
+      Description="The shortest time between trigger invocations when TriggerOnStay is active.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TriggerOnLeave"
+      Description="If true, callbacks will be invoked when a shape leaves the trigger shape.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AnchorAtBase"
+      Description="When True, the anchor is at the base of the 3D object. When False, the anchor is at the center of the 3D object.">
+      <Traits>
+        <Trait
+          Name="Hidden" />
+      </Traits>
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors>
+    <Behavior
+      Name="OnPhysXTrigger"
+      Description="Called when PhysX issues a trigger callback for this trigger. The behavior is passed the entity that caused the trigger and the enter/stay/leave status."
+      Target="Abstract">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Abstract" />
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

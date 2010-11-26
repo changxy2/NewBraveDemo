@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="Bakeable"
+  id="2219133248">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="IsStatic"
+    id="713021940">
+    <set
+      value="False" />
+  </property>
+</model>

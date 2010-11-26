@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="3bee69a7-c94f-4849-bc79-082f81e77ef9"
+  Description="Entity model that represents a terrain instance in the world.">
+  <Mixins>
+    <Mixin
+      SourceID="0129ba0a-d3e2-4ff1-8a8a-31520cbcd183"
+      SourceName="Renderable" />
+    <Mixin
+      SourceID="856ac922-dbe5-4fb1-a2ed-998f6112a031"
+      SourceName="Shadowable" />
+    <Mixin
+      SourceID="e803dfb5-8811-4ace-82aa-a3f3f62d3b83"
+      SourceName="Lightable" />
+    <Mixin
+      SourceID="65fbc8cc-fe62-4bc2-9ad6-5c72dbfb3a46"
+      SourceName="Preloadable" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="TerrainShadowLOD"
+      Description="Specifies the terrain level-of-detail that will be used when rendering terrain to a shadow map. ">
+      <Traits />
+      <Value>
+        <UInt16
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="TerrainAsset"
+      Description="Asset defining the terrain layout and configuration. This includes what surface material packages are referenced and size of the terrain. The sector data for a terrain is assumed to reside in the same directory as this asset.">
+      <Traits />
+      <Value>
+        <Asset
+          Value="">
+          <LastKnownName></LastKnownName>
+          <LastKnownPath></LastKnownPath>
+          <LastKnownTags></LastKnownTags>
+        </Asset>
+      </Value>
+      <Restriction>
+        <TagRestriction>
+          <Tags>gamebryo-terrain</Tags>
+        </TagRestriction>
+      </Restriction>
+    </Property>
+    <Property
+      Name="TerrainInitialSectors"
+      Description="The list of sector IDs to load when first loading a scene.">
+      <Traits>
+        <Trait
+          Name="Hidden" />
+      </Traits>
+      <Value>
+        <List
+          ItemsDataType="UInt32">
+          <Items />
+        </List>
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="Global" />
+    <Trait
+      Name="PaletteHidden" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

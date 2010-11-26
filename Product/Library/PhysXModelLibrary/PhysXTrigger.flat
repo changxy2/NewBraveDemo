@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysXTrigger"
+  id="2029550234">
+  <trait
+    value="Active" />
+  <property
+    type="Boolean"
+    name="TriggerOnEnter"
+    id="1918223591">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="TriggerOnStay"
+    id="412628717">
+    <set
+      value="False" />
+  </property>
+  <property
+    type="Float32"
+    name="TriggerMinInterval"
+    id="1221324840">
+    <set
+      value="0.1" />
+  </property>
+  <property
+    type="Boolean"
+    name="TriggerOnLeave"
+    id="3901814067">
+    <set
+      value="True" />
+  </property>
+  <property
+    type="Boolean"
+    name="AnchorAtBase"
+    id="944654409">
+    <set
+      value="True" />
+  </property>
+  <behavior
+    name="OnPhysXTrigger"
+    id="877505901"
+    type="Abstract"
+    source="PhysXTrigger" />
+</model>

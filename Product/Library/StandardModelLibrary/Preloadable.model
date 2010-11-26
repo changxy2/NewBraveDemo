@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="65fbc8cc-fe62-4bc2-9ad6-5c72dbfb3a46"
+  Description="Provides the ability for an entity's assets to be loaded automatically at creation time.&#xD;&#xA;">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="PreloadAssets"
+      Description="Controls whether EntityManager should preload assets during entity creation. This property is checked after the OnCreate entity behavior (if any) has completed. If the property is true, EntityManager will pause updates for the entity (including discovery notifications) until all of its registered preload services have finished loading the entity's assets. By default, this means the Mesh:NifAsset, Actor:KfmAsset, and Terrain:TerrainAsset properties will be preloaded. Other services can be registered with EntityManager to handle other properties and asset types. Once preloading is complete (or skipped by setting this property to false), the entity's OnAssetsLoaded behavior will run and the entity will be added to the simulation.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

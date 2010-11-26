@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="d8a858bb-65d3-4886-8590-3cc9371b227c"
+  Description="Defines the properties for a PhysX NxScene.  This is used by egfPhysX::SceneService to create an NxScene to handle PhysX objects. The name of this entity specifies which PhysXProp objects (including ragdolls, terrains, and shapes) are placed into this scene, and thus which sets of objects can interact.">
+  <Mixins>
+    <Mixin
+      SourceID="627cb1ec-e7b8-446f-aefa-8dc635329a27"
+      SourceName="BaseEntity" />
+  </Mixins>
+  <Properties>
+    <Property
+      Name="Gravity"
+      Description="Default force to be applied to objects in the scene, in m/s. This is not influenced by ScaleFactor below.">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="-9.8" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ScaleFactor"
+      Description="World-to-PhysX scale. Note that this is the *inverse* of the scale specified during art tool export. (e.g. if artists export with scale 0.01 in the PhysX export dialog, the runtime PhysX scene must have a scale of 100.0)">
+      <Traits />
+      <Value>
+        <Float32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="Timestep"
+      Description="The timestep used for each PhysX substep. Gamebryo will set timing each frame so that PhysX takes substeps of this size up to the maximum number of substeps. Default is .016666: 1 substep per frame at 60Hz. Lower values will result in greater simulation fidelity and stability but require more CPU time. Higher values will run faster but simulate less stably.">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0.016666" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="MaxSubSteps"
+      Description="Sets the maximum number of substeps that PhysX will be asked to take per frame. The actual number of sub-steps taken depends on the frame time, the value of Timestep, and the value of NumSubSteps.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="8" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="DoFixedStep"
+      Description="Flag to control whether Gamebryo takes substeps of a fixed duration (see Timestep above), or instead takes a single step of exactly one frame time in length.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="BlockOnFetch"
+      Description="Flag to control whether Gamebryo blocks when fetching results from PhysX if the requested time is not yet available.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="NumSubSteps"
+      Description="Timestep will be divided by NumSubSteps to determine the actual number of simulation steps requested of PhysX. More sub-steps improve the accuracy and stability of simulation, at the cost of increased computation time. At most MaxSubSteps steps will be taken.">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="1" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SceneName"
+      Description="The name of the scene. Other models reference the scene by this name. Changing this property causes the scene to be removed and re-added.">
+      <Traits />
+      <Value>
+        <String
+          Value="PhysXDefaultSceneName" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="UseHardware"
+      Description="When hardware is available and this property is true, the sceen will be created in hardware. Otherwise, the scene will run on software. Scenes may also run on software if hardware creation fails for some reason. This property cannot be rapidly iterated nor can it be changed after scene creation.">
+      <Traits>
+        <Trait
+          Name="ReadOnly" />
+      </Traits>
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="ActivateOnSetFinished"
+      Description="Specifies whether to start simulating as soon entites are finished loading.">
+      <Traits />
+      <Value>
+        <Boolean
+          Value="True" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SimActive"
+      Description="Scripts or services may use this property to determine whether or not the PhysX scene is currently actively simulating. It is unsafe to perform many PhysX operations when a scene is actively simulating. Internally, a scene is actively simulating when NxScene::simulate has been called and the corresponding NxScene::fetchResults has not yet returned true.">
+      <Traits>
+        <Trait
+          Name="ReadOnly" />
+      </Traits>
+      <Value>
+        <Boolean
+          Value="False" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>
