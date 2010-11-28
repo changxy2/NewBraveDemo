@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<game>
+  <entitySet>
+    <entity
+      id="2162c9c6a7c947b08b6b0c0f1040b0e1"
+      modelName="SmoothFollowCamera"
+      name="SmoothFollowCamera0"
+      iterations="2">
+      <property
+        name="Target">
+        <set
+          value="40456f5e-6222-41ef-b95d-35aaf295af40" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-23.3134, -157.119965, 1" />
+      </property>
+    </entity>
+    <entity
+      id="40456f5e622241efb95d35aaf295af40"
+      modelName="Player"
+      name="Player0"
+      iterations="3">
+      <property
+        name="Position">
+        <set
+          value="41.0714455, -167.121826, 0" />
+      </property>
+      <property
+        name="Scale">
+        <set
+          value="0.1" />
+      </property>
+      <property
+        name="Name">
+        <set
+          value="Player0" />
+      </property>
+    </entity>
+    <entity
+      id="56500fb5480c499a85ea900b37482fd1"
+      modelName="Floor"
+      name="Floor0"
+      iterations="6">
+      <property
+        name="NifAsset">
+        <set
+          value="urn:llid:0f67b1aa-0000-0000-0000-000000000000" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="0, 0, 0" />
+      </property>
+    </entity>
+  </entitySet>
+</game>

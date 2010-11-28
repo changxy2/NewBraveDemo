@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Terrain Version="3">
+    <Configuration>
+        <SectorSize>513</SectorSize>
+        <NumLOD>4</NumLOD>
+        <MaskSize>512</MaskSize>
+        <LowDetailTextureSize>2048</LowDetailTextureSize>
+        <MinElevation>-100.0000000000000000</MinElevation>
+        <MaxElevation>100.0000000000000000</MaxElevation>
+        <VertexSpacing>1.0000000000000000</VertexSpacing>
+        <NumSurfaces>0</NumSurfaces>
+        <LowDetailSpecularPower>1.0000000000000000</LowDetailSpecularPower>
+        <LowDetailSpecularIntensity>1.0000000000000000</LowDetailSpecularIntensity>
+    </Configuration>
+    <SurfaceList />
+</Terrain>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<block
+  version="3"
+  name="DemoTest">
+  <model-references
+    version="1">
+    <reference>..\Library\StandardModelLibrary\StandardModelLibrary.emtproj</reference>
+    <reference>..\Library\GeneralLibrary\General.emtproj</reference>
+    <reference>..\Library\PhysXModelLibrary\PhysXModelLibrary.emtproj</reference>
+  </model-references>
+  <tool-settings
+    version="1">
+    <setting
+      id="Emergent.WorldBuilder.CustomShaders.CustomShaderDirectory"
+      property-type="String">
+      <value></value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.ExportFolder"
+      property-type="String">
+      <value>..\Exported</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Exporter"
+      property-type="String">
+      <value>XmlBlockExporter</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.ScalePrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecision"
+      property-type="Float">
+      <value>0.1</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.Grid.TranslationPrecisionEnabled"
+      property-type="Boolean">
+      <value>False</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.SnapPoints.SnapPointStickinessRadius"
+      property-type="Float">
+      <value>0.5</value>
+    </setting>
+    <setting
+      id="Emergent.WorldBuilder.World.Scale"
+      property-type="Float">
+      <value>1</value>
+    </setting>
+  </tool-settings>
+  <layers
+    version="1" />
+  <entities
+    version="1">
+    <entity
+      id="2162c9c6-a7c9-47b0-8b6b-0c0f1040b0e1"
+      model-name="SmoothFollowCamera"
+      model-id="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
+      name="SmoothFollowCamera0"
+      iterations="2"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-23.3134, -157.119965, 1" />
+        </property>
+        <property
+          name="Target">
+          <set
+            value="40456f5e-6222-41ef-b95d-35aaf295af40|Player0|DemoTest" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="40456f5e-6222-41ef-b95d-35aaf295af40"
+      model-name="Player"
+      model-id="b2867ef6-0d62-4d5b-a590-760087c72602"
+      name="Player0"
+      iterations="3"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="41.0714455, -167.121826, 0" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="0.1" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="56500fb5-480c-499a-85ea-900b37482fd1"
+      model-name="Floor"
+      model-id="32d3e35e-0d9f-4b8f-8e5e-f39d08f3d461"
+      name="Floor0"
+      iterations="6"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="NifAsset">
+          <set
+            value="urn:llid:0f67b1aa-0000-0000-0000-000000000000" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="0, 0, 0" />
+        </property>
+      </properties>
+    </entity>
+  </entities>
+  <selections
+    version="1" />
+  <entity-folders
+    version="1" />
+</block>
