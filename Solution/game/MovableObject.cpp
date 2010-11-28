@@ -5,6 +5,7 @@
 #include "efd/EEMath.h"
 
 
+
 EE_IMPLEMENT_CONCRETE_CLASS_INFO(MovableObject);
 
 EE_IMPLEMENT_BUILTINMODEL_PROPERTIES(MovableObject);
