@@ -13,6 +13,8 @@ EE_HANDLER(
 
 GameControlService::GameControlService(void)
 {
+
+
 }
 
 const char* GameControlService::GetDisplayName() const
