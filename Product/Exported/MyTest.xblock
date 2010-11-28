@@ -2,6 +2,44 @@
 <game>
   <entitySet>
     <entity
+      id="28327391414c44888790e726c921761f"
+      modelName="Player"
+      name="Player0"
+      iterations="7">
+      <property
+        name="Position">
+        <set
+          value="0, 0, 0" />
+      </property>
+      <property
+        name="Scale">
+        <set
+          value="0.1" />
+      </property>
+      <property
+        name="Name">
+        <set
+          value="Player0" />
+      </property>
+    </entity>
+    <entity
+      id="3c05547c10fb4c9cadc7dfdc2aefb3a3"
+      modelName="Terrain"
+      name="Terrain1"
+      iterations="3">
+      <property
+        name="TerrainAsset">
+        <set
+          value="urn:llid:02092973-0000-0000-0000-000000000000" />
+      </property>
+      <property
+        name="TerrainInitialSectors">
+        <set
+          index="0"
+          value="0" />
+      </property>
+    </entity>
+    <entity
       id="789098e989104c91bb376fe53b3d4e28"
       modelName="Floor"
       name="Floor0"
@@ -13,35 +51,14 @@
       </property>
     </entity>
     <entity
-      id="a37fb3894f03463da5ed5911b5c15c70"
-      modelName="Vandal"
-      name="Vandal0"
-      iterations="10">
-      <property
-        name="Position">
-        <set
-          value="-38.8816261, 38.694603, 2.941717" />
-      </property>
-      <property
-        name="Rotation">
-        <set
-          value="0, 0, 265.084045" />
-      </property>
-      <property
-        name="Name">
-        <set
-          value="Vandal0" />
-      </property>
-    </entity>
-    <entity
       id="db6279b0ce4c4630be89b8672758eed6"
       modelName="SmoothFollowCamera"
       name="SmoothFollowCamera0"
-      iterations="254">
+      iterations="256">
       <property
         name="Target">
         <set
-          value="a37fb389-4f03-463d-a5ed-5911b5c15c70" />
+          value="28327391-414c-4488-8790-e726c921761f" />
       </property>
       <property
         name="Distance">

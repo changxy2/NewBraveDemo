@@ -258,8 +258,8 @@
     type="Lua"
     source="Player" />
   <behavior
-    name="OnTick"
-    id="961293468"
+    name="RunningAIStep"
+    id="3536050861"
     type="Lua"
     source="Player" />
   <behavior

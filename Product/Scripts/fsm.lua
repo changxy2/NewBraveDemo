@@ -33,6 +33,7 @@ end
 --/////////////////////////////////////////////////////////////////////////////
 
 State = oo.class({
+    name        = nil,   --State name
     entry_action = nil,
     exit_action = nil,
     step_action = nil,

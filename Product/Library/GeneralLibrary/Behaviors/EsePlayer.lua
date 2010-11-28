@@ -50,7 +50,8 @@ trans_WalkToIdle = oo.class(
 
 
 function trans_WalkToIdle:check()
-    if not g_MoveKeys.Forward and  not g_MoveKeys.Backward and not g_MoveKeys.Left and not g_MoveKeys.Right then 
+    if g_MoveKeysIsChange and  not g_MoveKeys.Forward and  not g_MoveKeys.Backward and not g_MoveKeys.Left and not g_MoveKeys.Right then 
+      g_MoveKeysIsChange = false
       return true;
     else
       return false;
@@ -224,11 +225,13 @@ function AIInit(self, params)
   -- define states
     state_idle = fsm.State
     {
+        name = "idle",
         entry_action = SetToStop{Animationname="idle",entity=self}
     }
     
     state_walk = fsm.State 
     {
+        name = "walk",
         entry_action = SetMovementTarget{Animationname="walk",entity=self}
     }
 

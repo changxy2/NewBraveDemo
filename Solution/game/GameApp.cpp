@@ -46,29 +46,15 @@
 
 //这个用来创建快速迭代的服务的头函数，现在先用来为模拟调试所用
 #include <egf/RapidIterationService.h>
-//这个是physx service 相关头文件
-#include <egfPhysX/ServiceAllocator.h> 
+
 
 //地形的头文件
 #include <NiTerrainLib.h>
-
-//添加 Terrain 的相关的头文件，以便于支持Terrain
-#include <egmPhysXTerrain/PhysXTerrainService.h>
-//添加PhysX 的场景服务
-#include <egfPhysX\SceneService.h>
-//添加 PhysX 的 道具服务
-#include <ecrPhysX\PropService.h>
-
-
-#include <NiTerrainPhysXUtils.h>  // need to manually initialize SDM
-//添加Ragdoll 服务的头文件
-#include <egmPhysXRagdoll\RagdollService.h>
-
-
 #include <NiParticle.h>
-#include <NiPhysX.h>
 //添加移动使用的MovementService
 #include "MovementService.h"
+
+#include <egmTerrain\TerrainService.h>
 
 //------------------------------------------------------------------------------------------------
 using namespace efd;
@@ -86,8 +72,6 @@ extern "C" int luaopen_egmAnimation(lua_State *L);
 extern "C" int luaopen_CameraAPI(lua_State *L);
 extern "C" int luaopen_MovementAPI(lua_State *L);
 
-//PhysX 的脚本接口
-extern "C" int luaopen_bapiPhysXBase(lua_State *L);
 
 #include <NiLicense.h>
 NiEmbedGamebryoLicenseCode;
@@ -135,8 +119,9 @@ efd::SInt32 GameApp::Go(
         // holds references to (which includes GameApp itself) or else we'll have a circular
         // reference which will prevent proper shutdown from occurring.
         m_spServiceManager = NULL;
-		NiTerrainPhysXUtils::SDM_Shutdown();
-		m_pPhysXSDKManager->Shutdown();
+		
+		
+	
         return 0;
     }
     return 1;
@@ -199,6 +184,10 @@ bool GameApp::SetupServices(
     EE_VERIFY(ecr::CreateRuntimeServices(
         m_spServiceManager,
         ecr::rsaf_NO_PICK_SERVICE));
+
+	egmTerrain::TerrainServicePtr spTerrainService = EE_NEW egmTerrain::TerrainService();
+	m_spServiceManager->RegisterSystemService(spTerrainService);
+
 
     // The AnimationService handles all actors, which are animating scene objects.
     // A note on priority, we use a higher priority than the scene graph service so the actors
@@ -285,41 +274,9 @@ bool GameApp::SetupServices(
     EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_egmAnimation));
     EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_CameraAPI));
 	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_MovementAPI));
-	//静态链接PhysX lua 接口
-	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_bapiPhysXBase));
+	
 #endif // !defined (EE_DYNAMIC_BEHAVIOR_LOAD)
-	// 启动 PhysX
-	m_pPhysXSDKManager = efdPhysX::PhysXSDKManager::GetManager();
-	if (!m_pPhysXSDKManager->Initialize())
-	{
-		EE_FAIL("Could not initialize the PhysX SDK.");
-		return false;
-	}
-	m_pPhysXSDKManager->Configure(spConfigManager);
-
-
-	// 物理地形的初始化
-	NiTerrainPhysXUtils::SDM_Init();
-
-	// PhysX Framework Services
-	egfPhysX::SceneServicePtr spSceneService = EE_NEW egfPhysX::SceneService();
-	m_spServiceManager->RegisterSystemService(spSceneService);
-
-
-
-	// PhysX Runtime Services
-	ecrPhysX::PropServicePtr spPropService = EE_NEW ecrPhysX::PropService();
-	//spPropService->SetWorkflowManager(spSceneGraphService->GetWorkflowManager());
-	m_spServiceManager->RegisterSystemService(spPropService);
-
-	egmPhysXRagdoll::RagdollServicePtr spRagdollService =
-		EE_NEW egmPhysXRagdoll::RagdollService();
-	m_spServiceManager->RegisterSystemService(spRagdollService);
-
-	egmPhysXTerrain::PhysXTerrainServicePtr spPhysXTerrainService =
-		EE_NEW egmPhysXTerrain::PhysXTerrainService();
-	m_spServiceManager->RegisterSystemService(spPhysXTerrainService);
-
+	
 
 
     // Some shared code might run slightly different based on whether it is being used in

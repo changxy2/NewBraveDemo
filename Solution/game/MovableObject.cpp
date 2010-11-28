@@ -56,9 +56,15 @@ void MovableObject::ChangeVelocityTo(efd::Float32 fDelayTime,efd::Point3 TargetV
 {
 
 	//计算出在规定时间变化到目标速度，所需要的加速度
-	m_prop2_Accel = (TargetVelocity - m_prop1_MoveVelocity)/fDelayTime;
+	SetAccel((TargetVelocity - m_prop1_MoveVelocity)/fDelayTime);
 	m_LeftTimeForTransitionVelocity = fDelayTime;
 	m_TargetVelocity = TargetVelocity;
+	EE_LOG(efd::kApp, 1, (
+		"MovableObject::ChangeVelocityTo: 速度变化为 x= %f,y = %f, z = %f\n",
+		TargetVelocity.x,TargetVelocity.y,TargetVelocity.z));
+	
+		
+
 
 
 
@@ -79,17 +85,26 @@ void MovableObject::ChangeAngleTo(efd::Float32 fDelayTime,efd::Float32 TargetfAn
 	efd::Float32 CurAngular = currentEulerAngle.z;
 	efd::Float32 ChangeAngular = TargetfAngular - CurAngular;
 
-	if (efd::Abs(ChangeAngular) > 180.0f)
+	if (ChangeAngular > 180.0f)
 	{
-		//大于 180 度,就要朝反方向旋转，因为反方向是小的角度
-		ChangeAngular  = (360.0f - ChangeAngular) * (-1);
+		//说明正传大于180 就要反向旋转，反向就会小于180
+		 ChangeAngular -= 360.0f;
+		                
+    
+	}
+	//如果小于-180 就要正传，正传会小于180
+	if (ChangeAngular < -180.0f )
+	{
+		  ChangeAngular += 360;
 
 	}
 
 	m_TargetAngular = TargetfAngular;
-	m_prop4_AngularSpeed = ChangeAngular / fDelayTime;
+	SetAngularSpeed (ChangeAngular / fDelayTime);
 	//复位转动角的时间
 	m_LeftTimeForTransitionAngular = fDelayTime;
+
+	
 }
 
 //移动物体的更新函数
@@ -111,8 +126,8 @@ void MovableObject::Update(efd::TimeType timeDelta)
 		//执行过渡速度操作
 		if(m_LeftTimeForTransitionVelocity > 0.0f)
 		{
-			efd::Point3 OffsetPosition =   m_prop1_MoveVelocity  * timeDelta +0.5f * m_prop2_Accel * timeDelta * timeDelta;
-			m_prop1_MoveVelocity =   m_prop1_MoveVelocity  +  m_prop2_Accel  * timeDelta;
+			OffsetPosition =   m_prop1_MoveVelocity  * timeDelta +0.5f * m_prop2_Accel * timeDelta * timeDelta;
+			SetVelocity(m_prop1_MoveVelocity  +  m_prop2_Accel  * timeDelta);
 
 
 		}
@@ -128,7 +143,7 @@ void MovableObject::Update(efd::TimeType timeDelta)
 			m_prop1_MoveVelocity = m_TargetVelocity;
 			m_LeftTimeForTransitionVelocity = 0.0f;
 			//加速度复位
-			m_prop2_Accel = efd::Point3::ZERO;
+			SetAccel(efd::Point3::ZERO);
 
 		}
 		
@@ -149,36 +164,30 @@ void MovableObject::Update(efd::TimeType timeDelta)
 
 		m_LeftTimeForTransitionAngular -= timeDelta;
 		//执行过渡角度操作
-		if(m_LeftTimeForTransitionAngular)
-		{
+		
 
-
-			efd::Point3 currentEulerAngle = efd::Point3::ZERO;
-			m_pOwningEntity->GetPropertyValue
+		efd::Point3 currentEulerAngle = efd::Point3::ZERO;
+		m_pOwningEntity->GetPropertyValue
 				(
 				game::PROPRTY_ID_Rotation,
 				currentEulerAngle
 				);
 
-			if (m_LeftTimeForTransitionAngular <= 0.0f)
-			{
-				m_LeftTimeForTransitionAngular = 0.0f;
-				m_prop4_AngularSpeed = 0.0f;
-				currentEulerAngle.z = m_TargetAngular;
-
-
-			}
-			else
-			{
-				currentEulerAngle.z += m_prop4_AngularSpeed * timeDelta;
-
-
-			}
-			m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Rotation,currentEulerAngle);
+		if (m_LeftTimeForTransitionAngular <= 0.0f)
+		{
+			m_LeftTimeForTransitionAngular = 0.0f;
+			SetAngularSpeed(0.0f);
+			currentEulerAngle.z = m_TargetAngular;
 
 
 		}
+		else
+		{
+			currentEulerAngle.z += m_prop4_AngularSpeed * timeDelta;
 
+
+		}
+		m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Rotation,currentEulerAngle);
 	}
 
 	// 	efd::Point3 currentEulerAngle = efd::Point3::ZERO;

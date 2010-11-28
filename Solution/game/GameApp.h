@@ -24,8 +24,6 @@ typedef LPTSTR CmdLineType;
 typedef const char* CmdLineType;
 #endif
 
-//这个是GB 整合Physx sdk的头文件 
-#include <efdPhysX/PhysXSDKManager.h>  
 
 ///////////////////////////////////////////////////////////////////////////////
 // defines
@@ -127,9 +125,7 @@ protected:
 
 private:
 
-	//PhysX 库  
-	efdPhysX::PhysXSDKManager* m_pPhysXSDKManager;
-
+	
     // As the "Application" object I hold the primary reference count for the service manager.
     // Since I'm also an ISystemService myself this means I also have a plain pointer to the
     // service manager, but that pointer is automatically managed by the ServiceManager itself

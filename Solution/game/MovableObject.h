@@ -31,20 +31,22 @@ class MovableObject :
 		//这里我们直接绑定属性描述到 m_prop1_MoveDirection 的地址:
 		//用Get/Set 存储器方法
 
-		EE_BUILTINMODELPROPERTY_READONLY_ACCESSOR_REF(
+		EE_BUILTINMODELPROPERTY_ACCESSOR_REF(
 		MovableObject, 
 		kPropertyID_prop1_MoveVelocity, 
 		efd::Point3, 
 		MovableObject, 
-		GetVelocity
+		GetVelocity,
+		SetVelocity
 		)
 
-		EE_BUILTINMODELPROPERTY_READONLY_ACCESSOR_REF(
+		EE_BUILTINMODELPROPERTY_ACCESSOR_REF(
 		MovableObject, 
 		kPropertyID_prop2_MoveAccel, 
 		efd::Point3, 
 		MovableObject, 
-		GetAccel 
+		GetAccel,
+		SetAccel
 		)
 
 
@@ -57,12 +59,13 @@ class MovableObject :
 		SetRotationAxis)
 
 
-		EE_BUILTINMODELPROPERTY_READONLY_ACCESSOR_REF(
+		EE_BUILTINMODELPROPERTY_ACCESSOR_REF(
 		MovableObject, 
 		kPropertyID_prop4_AngularSpeed, 
 		efd::Float32, 
 		MovableObject, 
-		GetAngularSpeed 
+		GetAngularSpeed,
+		SetAngularSpeed
 		)
 		EE_END_BUILTINMODEL_PROPERTIES
 
@@ -95,20 +98,32 @@ public:
 	}
 
 
-	// 应用程序 getter/setter...
+	// 应用程序 getter
 	const efd::Point3& GetVelocity() const
 	{
 
 		return m_prop1_MoveVelocity;
 	}
+	void SetVelocity(const efd::Point3& MoveVelocity)
+	{
+		m_prop1_MoveVelocity = MoveVelocity;
+	}
+
+
 
 	
-	// 应用程序 getter/setter...
+	// 应用程序 getter
 	const efd::Point3& GetAccel() const
 	{
 
 		return m_prop2_Accel;
 	}
+
+	void SetAccel(const efd::Point3& Accel)
+	{
+		m_prop2_Accel = Accel;
+	}
+
 	
 	//设置和取得转动轴
 	const efd::Point3& GetRotationAxis() const
@@ -124,15 +139,21 @@ public:
 		//如果应用程序直接调用SetRotationAxis  修改成员，他会想调用Dirty自己
 	}
 
-	//设置和取得角速度
+	//取得角速度
 	const efd::Float32& GetAngularSpeed() const
 	{
 
 		return m_prop4_AngularSpeed;
 	}
+
+	//设置角速度
+	void SetAngularSpeed(const efd::Float32& AngularSpeed)
+	{
+		m_prop4_AngularSpeed = AngularSpeed;
+
+	}
+
 	
-
-
 
 protected:
 
