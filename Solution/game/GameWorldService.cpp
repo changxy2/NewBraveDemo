@@ -10,11 +10,15 @@
 #include "GameWorldService.h"
 
 #include <egf/EntityLoaderService.h>
+#include <egf/EntityFactoryResponse.h>
 #include <efd/Foundation.h>
+#include <efd/AssetLoadResponse.h>
 
 EE_IMPLEMENT_CONCRETE_CLASS_INFO(GameWorldService);
 
 EE_HANDLER(GameWorldService, HandleEntityLoadResult, egf::EntityLoadResult);
+EE_HANDLER(GameWorldService, HandleEntityFactoryResponse, egf::EntityFactoryResponse);
+
 
 
 GameWorldService::GameWorldService(void):
@@ -148,4 +152,24 @@ void GameWorldService::HandleEntityLoadResult(
 
 	}
 
+}
+
+void GameWorldService::HandleEntityFactoryResponse(
+	const egf::EntityFactoryResponse* pResponse,
+	efd::Category targetCategory)
+{
+	if(m_entityCat == targetCategory)// entity¼ÓÔØÁË
+	{
+		if (pResponse->GetResult() == efd::AssetLoadResponse::ALR_Success)
+		{
+			egf::Entity* pNewEntity = pResponse->GetEntity();
+
+			// do something with the newly created entity...
+		}
+		else
+		{
+			// The failure occured after all data was loaded, most likely a built-in model could not
+			// be allocated or intitialized. Failure at this stage is rare.
+		}
+	}
 }

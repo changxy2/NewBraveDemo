@@ -13,6 +13,7 @@
 namespace egf
 {
 	class EntityLoadResult;
+	class EntityFactoryResponse;
 }
 
 class GameWorldService : public efd::ISystemService
@@ -50,6 +51,10 @@ public:
 	void HandleEntityLoadResult(
 		const egf::EntityLoadResult* pWorldMessage,
 		efd::Category targetChannel);
+
+	void HandleEntityFactoryResponse(
+		const egf::EntityFactoryResponse* pResponse,
+		efd::Category targetCategory);
 
 private:
 	efd::Category m_blockCat;
