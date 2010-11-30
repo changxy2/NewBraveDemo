@@ -367,6 +367,14 @@
 			>
 		</File>
 		<File
+			RelativePath=".\GameWorldService.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\GameWorldService.h"
+			>
+		</File>
+		<File
 			RelativePath=".\ID.h"
 			>
 		</File>

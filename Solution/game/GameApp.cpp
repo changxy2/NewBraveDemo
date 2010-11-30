@@ -54,6 +54,8 @@
 //添加移动使用的MovementService
 #include "MovementService.h"
 
+#include "GameWorldService.h"
+
 #include <egmTerrain\TerrainService.h>
 
 //------------------------------------------------------------------------------------------------
@@ -285,6 +287,10 @@ bool GameApp::SetupServices(
     // Program Type your application is running as.
     m_spServiceManager->SetProgramType(ServiceManager::kProgType_Client);
 
+	// 注册worldService
+ 	GameWorldServicePtr pWorldService = EE_NEW GameWorldService();
+ 	m_pServiceManager->RegisterSystemService(pWorldService);
+
     // register AI service
     AIServicePtr spAIService = EE_NEW AIService();
     m_spServiceManager->RegisterSystemService(spAIService);
@@ -301,7 +307,7 @@ bool GameApp::SetupServices(
 	MovementService * pMovementService = EE_NEW MovementService();
 	m_pServiceManager->RegisterSystemService(pMovementService);
 
-
+	
 
 	
 
@@ -321,7 +327,7 @@ efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistr
     // the EntityLoaderService to be initialed before this service and shutdown after this service
     // so we can always rely on that service being available during our OnInit, OnTick and
     // OnShutdown methods.
-    pDependencyRegistrar->AddDependency<EntityLoaderService>();
+    //pDependencyRegistrar->AddDependency<EntityLoaderService>();
 
     // We also manually set our input actions so we need ecrInput::InputService to be available.
     pDependencyRegistrar->AddDependency<ecrInput::InputService>();
@@ -335,6 +341,8 @@ efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistr
     {
         pRenderService->SetDefaultSurfaceBackgroundColor(efd::ColorA(0.0f, 0.0f, 0.15f, 1.0f));
     }
+
+	pDependencyRegistrar->AddDependency<GameWorldService>();
 
     return efd::SyncResult_Success;
 }
@@ -386,9 +394,15 @@ efd::AsyncResult GameApp::OnInit()
     }
     else
     {
-        EntityLoaderService* els = m_pServiceManager->GetSystemServiceAs<EntityLoaderService>();
-		EE_ASSERT(els);
-        els->RequestEntitySetLoad(world_file);
+//         EntityLoaderService* els = m_pServiceManager->GetSystemServiceAs<EntityLoaderService>();
+// 		EE_ASSERT(els);
+//         els->RequestEntitySetLoad(world_file);
+		GameWorldService* pWorldSerivce = m_pServiceManager->GetSystemServiceAs<GameWorldService>();
+		EE_ASSERT(pWorldSerivce);
+		if (pWorldSerivce)
+		{
+			pWorldSerivce->LoadBlock(world_file, true);
+		}
     }
 
     return efd::AsyncResult_Complete;
