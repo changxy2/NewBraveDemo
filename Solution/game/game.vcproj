@@ -414,6 +414,14 @@
 			RelativePath=".\MovementService.h"
 			>
 		</File>
+		<File
+			RelativePath=".\NetWorkService.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\NetWorkService.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

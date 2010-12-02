@@ -55,6 +55,7 @@
 #include "MovementService.h"
 
 #include "GameWorldService.h"
+#include "NetWorkService.h"
 
 #include <egmTerrain\TerrainService.h>
 
@@ -308,7 +309,9 @@ bool GameApp::SetupServices(
 	m_pServiceManager->RegisterSystemService(pMovementService);
 
 	
-
+	//×¢²áÍøÂç
+	NetWorkServicePtr pNetWorkService = EE_NEW NetWorkService();
+	m_pServiceManager->RegisterSystemService(pNetWorkService);
 	
 
 

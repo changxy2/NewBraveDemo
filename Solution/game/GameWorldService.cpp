@@ -135,7 +135,7 @@ void GameWorldService::HandleEntityLoadResult(
 	efd::Category targetChannel)
 {
 	
-	if (m_blockCat == targetChannel)// block³¡¾°¼ÓÔØ
+	if (m_blockCat == targetChannel)// block³¡¾°
 	{
 		switch (pWorldMessage->m_result)
 		{

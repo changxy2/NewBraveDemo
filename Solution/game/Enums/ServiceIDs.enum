@@ -9,5 +9,6 @@
     <item name="AIService"/>
     <item name="InGameCameraService"/>
     <item name="ControlServer"/>
-    <item name="WorldService">
+    <item name="WorldService"/>
+    <item name="NetWorkService"/>
 </enum>
