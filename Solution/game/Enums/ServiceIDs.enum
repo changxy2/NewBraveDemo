@@ -11,4 +11,5 @@
     <item name="ControlServer"/>
     <item name="WorldService"/>
     <item name="NetWorkService"/>
+    <item name="GameStateService"/>
 </enum>

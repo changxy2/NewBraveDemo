@@ -21,6 +21,7 @@ namespace game
     static const efd::ClassID SERVICE_ID_ControlServer       =  101711875u; // 0x06100003
     static const efd::ClassID SERVICE_ID_WorldService        =  101711876u; // 0x06100004
     static const efd::ClassID SERVICE_ID_NetWorkService      =  101711877u; // 0x06100005
+    static const efd::ClassID SERVICE_ID_GameStateService    =  101711878u; // 0x06100006
 
 } // end namespace game
 

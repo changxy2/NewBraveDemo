@@ -152,6 +152,8 @@ void GameWorldService::HandleEntityLoadResult(
 
 	}
 
+	notifyObserver(Event::BlockLoad, (void*)pWorldMessage);
+
 }
 
 void GameWorldService::HandleEntityFactoryResponse(

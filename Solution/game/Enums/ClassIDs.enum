@@ -9,5 +9,10 @@
     <item name="Camera_base"/>
     <item name="Camera_smoothFollow"/>
     <item name="MovableObject"/>
-    <item name="MovementService"/>  
+    <item name="MovementService"/>
+    <item name="CustomMessageTarget"/>
+    <item name="GameState"/>
+    <item name="GameInitingState"/>
+    <item name="GameLoadingState"/>
+    <item name="GamePlayingState"/>
 </enum>

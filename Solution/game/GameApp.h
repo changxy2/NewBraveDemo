@@ -101,6 +101,8 @@ public:
 
     virtual const char* GetDisplayName() const;
 
+	void SetupGameStates();
+
 protected:
 	// We register dependencies with other services during preInit
 	virtual efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistrar);

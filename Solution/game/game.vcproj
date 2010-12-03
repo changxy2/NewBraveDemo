@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib egmWhitebox.lib"
+				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib egmWhitebox.lib NiFont.lib"
 				AdditionalLibraryDirectories="&quot;$(EMERGENT_PATH)/SDK/Win32/Lib/VC90/Debug&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\lib\win32\&quot;"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -183,6 +183,20 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\Enums\MessageIDs.enum"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating enumeration header for $(ProjectDir)Enums\$(InputName).enum"
+						CommandLine="&quot;$(EMERGENT_PATH)\Source\Tools\DDEHeaderGen\bin\DDEHeaderGenRelease.exe&quot; output=&quot;$(ProjectDir)autogen\$(InputName).h&quot; enum=&quot;$(ProjectDir)\Enums\$(InputName).enum&quot;"
+						Outputs="$(ProjectDir)autogen\$(InputName).h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\Enums\PropertyIDs.enum"
 				>
 				<FileConfiguration
@@ -230,6 +244,10 @@
 			</File>
 			<File
 				RelativePath=".\autogen\ClassIDs.h"
+				>
+			</File>
+			<File
+				RelativePath=".\autogen\MessageIDs.h"
 				>
 			</File>
 			<File
@@ -295,6 +313,126 @@
 			</File>
 			<File
 				RelativePath=".\swig_helpers\CameraAPI.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="net"
+			>
+			<File
+				RelativePath=".\NetWorkService.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\NetWorkService.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="GameState"
+			>
+			<File
+				RelativePath=".\GameInitingState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GameInitingState.h"
+				>
+			</File>
+			<File
+				RelativePath=".\GameLoadingState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GameLoadingState.h"
+				>
+			</File>
+			<File
+				RelativePath=".\GamePlayingState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GamePlayingState.h"
+				>
+			</File>
+			<File
+				RelativePath=".\GameState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GameState.h"
+				>
+			</File>
+			<File
+				RelativePath=".\GameStateService.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GameStateService.h"
+				>
+			</File>
+			<File
+				RelativePath=".\LogoSplash.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\LogoSplash.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ScreenTextureClick.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ScreenTextureClick.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ScreenTextureClick.inl"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="message"
+			>
+			<File
+				RelativePath=".\CustomMessage.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\CustomMessage.h"
+				>
+			</File>
+			<File
+				RelativePath=".\CustomMessageTarget.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\CustomMessageTarget.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="pattern"
+			>
+			<File
+				RelativePath=".\Observer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Observer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ObserverEvent.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Subject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Subject.h"
 				>
 			</File>
 		</Filter>
@@ -412,14 +550,6 @@
 		</File>
 		<File
 			RelativePath=".\MovementService.h"
-			>
-		</File>
-		<File
-			RelativePath=".\NetWorkService.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\NetWorkService.h"
 			>
 		</File>
 	</Files>

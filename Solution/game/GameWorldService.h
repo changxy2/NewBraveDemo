@@ -9,6 +9,7 @@
 #pragma once
 #include <efd/ISystemService.h>
 #include <egf/Entity.h>
+#include "Subject.h"
 
 namespace egf
 {
@@ -16,7 +17,7 @@ namespace egf
 	class EntityFactoryResponse;
 }
 
-class GameWorldService : public efd::ISystemService
+class GameWorldService : public efd::ISystemService, public Event::Subject
 {
 	EE_DECLARE_CLASS1(GameWorldService, game::SERVICE_ID_WorldService, ISystemService);
 	EE_DECLARE_CONCRETE_REFCOUNT;

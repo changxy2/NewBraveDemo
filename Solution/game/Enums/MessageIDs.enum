@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Framework message IDs -->
+<enum type="Normal" storage="efd::UInt32" invalid=""  start="0x06300000" end="0x063FFFFF">
+
+    <header useNamespace="game" useExistingTypedef="efd::ClassID" prefix="kMSGID_" includes="efd/ClassInfo.h" />
+
+    <!-- Add any new messages to the end of this list to preserve order -->
+    <item name="CustomMessage"/>    
+    <item name="CustomMessageWrap"/>
+
+</enum>
