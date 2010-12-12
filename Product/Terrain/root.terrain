@@ -8,9 +8,14 @@
         <MinElevation>-100.0000000000000000</MinElevation>
         <MaxElevation>100.0000000000000000</MaxElevation>
         <VertexSpacing>1.0000000000000000</VertexSpacing>
-        <NumSurfaces>0</NumSurfaces>
+        <NumSurfaces>4</NumSurfaces>
         <LowDetailSpecularPower>1.0000000000000000</LowDetailSpecularPower>
         <LowDetailSpecularIntensity>1.0000000000000000</LowDetailSpecularIntensity>
     </Configuration>
-    <SurfaceList />
+    <SurfaceList>
+        <Surface LastRelativePath=".\..\Materials\s_textures.tmpkg" AssetID="urn:llid:256b7742-0000-0000-0000-000000000000" name="Material0" position="0" packageIteration="6" />
+        <Surface LastRelativePath=".\..\Materials\s_textures.tmpkg" AssetID="urn:llid:256b7742-0000-0000-0000-000000000000" name="Material1" position="1" packageIteration="6" />
+        <Surface LastRelativePath=".\..\Materials\s_textures.tmpkg" AssetID="urn:llid:256b7742-0000-0000-0000-000000000000" name="Material2" position="2" packageIteration="6" />
+        <Surface LastRelativePath=".\..\Materials\s_textures.tmpkg" AssetID="urn:llid:256b7742-0000-0000-0000-000000000000" name="Material3" position="3" packageIteration="6" />
+    </SurfaceList>
 </Terrain>

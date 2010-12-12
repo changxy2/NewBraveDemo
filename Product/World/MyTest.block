@@ -61,49 +61,6 @@
   <entities
     version="1">
     <entity
-      id="28327391-414c-4488-8790-e726c921761f"
-      model-name="Player"
-      model-id="b2867ef6-0d62-4d5b-a590-760087c72602"
-      name="Player0"
-      iterations="7"
-      visible="true"
-      locked="false">
-      <properties>
-        <property
-          name="Position">
-          <set
-            value="0, 0, 0" />
-        </property>
-        <property
-          name="Scale">
-          <set
-            value="0.1" />
-        </property>
-      </properties>
-    </entity>
-    <entity
-      id="3c05547c-10fb-4c9c-adc7-dfdc2aefb3a3"
-      model-name="Terrain"
-      model-id="3bee69a7-c94f-4849-bc79-082f81e77ef9"
-      name="Terrain1"
-      iterations="3"
-      visible="true"
-      locked="false">
-      <properties>
-        <property
-          name="TerrainAsset">
-          <set
-            value="urn:llid:02092973-0000-0000-0000-000000000000" />
-        </property>
-        <property
-          name="TerrainInitialSectors">
-          <set
-            index="0"
-            value="0" />
-        </property>
-      </properties>
-    </entity>
-    <entity
       id="789098e9-8910-4c91-bb37-6fe53b3d4e28"
       model-name="Floor"
       model-id="32d3e35e-0d9f-4b8f-8e5e-f39d08f3d461"
@@ -120,11 +77,32 @@
       </properties>
     </entity>
     <entity
+      id="a37fb389-4f03-463d-a5ed-5911b5c15c70"
+      model-name="Vandal"
+      model-id="18ed5ba5-b6f8-45a2-a776-4a05b760d6da"
+      name="Vandal0"
+      iterations="10"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="Position">
+          <set
+            value="-38.8816261, 38.694603, 2.941717" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="0, 0, 265.084045" />
+        </property>
+      </properties>
+    </entity>
+    <entity
       id="db6279b0-ce4c-4630-be89-b8672758eed6"
       model-name="SmoothFollowCamera"
       model-id="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
       name="SmoothFollowCamera0"
-      iterations="256"
+      iterations="254"
       visible="true"
       locked="false">
       <properties>
@@ -156,7 +134,7 @@
         <property
           name="Target">
           <set
-            value="28327391-414c-4488-8790-e726c921761f|Player0|MyTest" />
+            value="a37fb389-4f03-463d-a5ed-5911b5c15c70|Vandal0|MyTest" />
         </property>
       </properties>
     </entity>

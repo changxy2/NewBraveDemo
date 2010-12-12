@@ -92,7 +92,7 @@ public:
 	~MovableObject(void);
 
 	//这里是MovableObject 的创建工厂，引擎用他来创建built in Model 实例
-	static egf::IBuiltinModel* MovableObject::Factory()
+	static egf::IBuiltinModel* Factory()
 	{
 		return EE_NEW MovableObject();
 	}

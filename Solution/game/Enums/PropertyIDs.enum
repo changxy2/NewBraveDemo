@@ -14,5 +14,9 @@
 	<item name="Yaw" value="2150195470"/>
 	<item name="Pitch" value="478331364"/>
 	<item name="Height" value="452724723"/>
+  <item name="Dimension" value ="3203708055"></item>
+  <item name="SceneName" value="3540665846"></item>
+  <item name="CollisionGroup" value="2746271558"></item>
+  
+ </enum>
 
-</enum>

@@ -66,10 +66,6 @@ void MovableObject::ChangeVelocityTo(efd::Float32 fDelayTime,efd::Point3 TargetV
 	
 		
 
-
-
-
-
 }
 
 //设置在规定时间内旋转到某个沿着旋转轴的某个角度,这里的旋转，会找最小的那个角来旋转
@@ -191,67 +187,7 @@ void MovableObject::Update(efd::TimeType timeDelta)
 		m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Rotation,currentEulerAngle);
 	}
 
-	// 	efd::Point3 currentEulerAngle = efd::Point3::ZERO;
-	// 	 		m_pOwningEntity->GetPropertyValue(
-	// 	 			game::PROPRTY_ID_Rotation,
-	// 	 			currentEulerAngle);
-	// 
-	// 	//先取得当前的角度
-	// 	currentEulerAngle.z += m_prop4_AngularSpeed * timeDelta * efd::EE_RADIANS_TO_DEGREES;
-	// 	m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Rotation,currentEulerAngle);
-	// 
-	// 	if (m_LeftTimeForTransitionAngular)
-	// 	{
-	// 		currentEulerAngle.z += m_prop4_AngularSpeed * timeDelta;
-	// 
-	// 	}
-
-	// 
-	// 
-	// 	
-	// 	//计算,并设置新的速度
-	// 	SetVelocity(m_prop1_MoveVelocity + m_prop2_Accel * timeDelta);
-	// 
-	// 
-	// 	efd::Point3 currentPosition = efd::Point3::ZERO;
-	// 	m_pOwningEntity->GetPropertyValue(
-	// 		game::PROPRTY_ID_Position,
-	// 		currentPosition);
-	// 
-	// 	currentPosition += OffsetPosition;
-	// 	m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Position,currentPosition);
-	// 
-	// 
-	// 	if(m_prop4_AngularSpeed != 0.0f && m_prop3_RotationAxis.Length() != 0)
-	// 	{
-	// 		//取的当前的方向
-	// 		efd::Point3 currentEulerAngle = efd::Point3::ZERO;
-	// 		m_pOwningEntity->GetPropertyValue(
-	// 			game::PROPRTY_ID_Rotation,
-	// 			currentEulerAngle);
-	// 
-	// 
-	// 		//efd::Matrix3 matRot;
-	// 		//matRot.FromEulerAnglesXYZ(currentEulerAngle.x,currentEulerAngle.y,currentEulerAngle.z);
-	// 
-	// 		//EE_ASSERT(m_prop3_RotationAxis.Length() == 1);
-	// 
-	// 
-	// 		//efd::Matrix3 matRotChange; 
-	// 		//计算出，旋转的角度
-	// 		//matRotChange.MakeRotation(m_prop4_AngularSpeed * timeDelta,m_prop3_RotationAxis);
-	// 
-	// 		//matRot = matRotChange * matRot  ;
-	// 
-	// 
-	// 		//efd::Point3 EulerAngle;
-	// 		//matRot.ToEulerAnglesXYZ(EulerAngle.x,EulerAngle.y,EulerAngle.z);
-	// 
-	// 
-	// 		// 这里现在按照任意轴旋转有问题，所以暂时不采用，任意轴旋转，将来有时间解决
-	// 		
-	// 		currentEulerAngle.z += m_prop4_AngularSpeed * timeDelta * efd::EE_RADIANS_TO_DEGREES;
-	// 		m_pOwningEntity->SetPropertyValue(game::PROPRTY_ID_Rotation,currentEulerAngle);
+	
 
 
 }

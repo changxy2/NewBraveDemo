@@ -53,6 +53,12 @@
       parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
       filepath="Library\StandardModelLibrary\StandardModelLibrary.emtproj" />
     <Item
+      content-type="Emergent.Toolbench.WorldBuilder.BlockDocument"
+      name="BattleTest.block"
+      id="53a9c1dd-222e-4219-8d5c-707fff742dec"
+      parent="b6c5813c-9eba-4e9a-97c7-def364e77dd0"
+      filepath="World\BattleTest.block" />
+    <Item
       content-type="Emergent.Toolbench.EntityModeling.EntityModelingProject"
       name="General.emtproj"
       id="87692283-5cb3-4e08-a2b2-bb3fe3e9ee2e"

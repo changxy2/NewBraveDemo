@@ -4,7 +4,7 @@
   <setting
     id="Emergent.Toolbench.EntityModeling.PreviousSessionActiveContent"
     property-type="Guid">
-    <value>6dc771ae-e00b-40ad-a25a-096f84ef0da8</value>
+    <value>5087db62-2c90-42b6-8dbf-68c90829b2f4</value>
   </setting>
   <setting
     id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.BrowseViewMode"
@@ -24,7 +24,7 @@
   <setting
     id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.TreeRestoreWidth"
     property-type="Double">
-    <value>200</value>
+    <value>64</value>
   </setting>
   <setting
     id="Emergent.Toolbench.EntityModeling.UI.ProjectExplorer.TreeWidth"

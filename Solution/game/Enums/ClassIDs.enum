@@ -9,5 +9,8 @@
     <item name="Camera_base"/>
     <item name="Camera_smoothFollow"/>
     <item name="MovableObject"/>
-    <item name="MovementService"/>  
+    <item name="MovementService"/>
+    <item name="PhysCharacterMoveObject"/>
 </enum>
+
+
