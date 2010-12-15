@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib egmWhitebox.lib NiFont.lib"
+				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib egmWhitebox.lib NiFont.lib ./lib/clientnet.lib"
 				AdditionalLibraryDirectories="&quot;$(EMERGENT_PATH)/SDK/Win32/Lib/VC90/Debug&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\lib\win32\&quot;"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -191,7 +191,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Generating enumeration header for $(ProjectDir)Enums\$(InputName).enum"
-						CommandLine="&quot;$(EMERGENT_PATH)\Source\Tools\DDEHeaderGen\bin\DDEHeaderGenRelease.exe&quot; output=&quot;$(ProjectDir)autogen\$(InputName).h&quot; enum=&quot;$(ProjectDir)\Enums\$(InputName).enum&quot;"
+						CommandLine="&quot;$(EMERGENT_PATH)\Source\Tools\DDEHeaderGen\bin\DDEHeaderGenRelease.exe&quot; output=&quot;$(ProjectDir)autogen\$(InputName).h&quot; enum=&quot;$(ProjectDir)\Enums\$(InputName).enum&quot;&#x0D;&#x0A;"
 						Outputs="$(ProjectDir)autogen\$(InputName).h"
 					/>
 				</FileConfiguration>
@@ -320,11 +320,47 @@
 			Name="net"
 			>
 			<File
-				RelativePath=".\NetWorkService.cpp"
+				RelativePath=".\net\demoproto.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\NetWorkService.h"
+				RelativePath=".\net\demoproto.h"
+				>
+			</File>
+			<File
+				RelativePath=".\net\IClientNetInterface.h"
+				>
+			</File>
+			<File
+				RelativePath=".\net\netdata.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\net\netdata.h"
+				>
+			</File>
+			<File
+				RelativePath=".\net\NetWorkService.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						WarnAsError="false"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\net\NetWorkService.h"
+				>
+			</File>
+			<File
+				RelativePath=".\net\sdpkg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\net\sdtype.h"
 				>
 			</File>
 		</Filter>
@@ -416,6 +452,14 @@
 			Name="pattern"
 			>
 			<File
+				RelativePath=".\ICommand.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ICommand.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Observer.cpp"
 				>
 			</File>
@@ -425,6 +469,26 @@
 			</File>
 			<File
 				RelativePath=".\ObserverEvent.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Signal.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Signal.inl"
+				>
+			</File>
+			<File
+				RelativePath=".\SignalSlotMacros.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Slot.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Slot.inl"
 				>
 			</File>
 			<File

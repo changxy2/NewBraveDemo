@@ -103,6 +103,8 @@ public:
 
 	void SetupGameStates();
 
+	static LRESULT CALLBACK MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
 protected:
 	// We register dependencies with other services during preInit
 	virtual efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistrar);

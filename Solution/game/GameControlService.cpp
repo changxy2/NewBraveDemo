@@ -5,6 +5,8 @@
 #include <ecrInput/InputService.h>
 
 #include "GameWorldService.h"
+#include "net/NetWorkService.h"
+#include "net/sdpkg.h"
 
 EE_IMPLEMENT_CONCRETE_CLASS_INFO(GameControlService);
 
@@ -85,16 +87,25 @@ void GameControlService::HandleInputActionMessage(
 		EE_LOG(efd::kApp, 1, (
 			"GameControlService::HandleInputActionMessage: Test"));
 
-		GameWorldService* pWorldService = m_pServiceManager->GetSystemServiceAs<GameWorldService>();
-		EE_ASSERT(pWorldService);
-		if (pWorldService)
-		{
-			egf::EntityID entityId= pWorldService->SpawnEntity("Player");
-			if (egf::kENTITY_INVALID == entityId)
-			{
-				int a  =0;
-			}
-		}
+// 		GameWorldService* pWorldService = m_pServiceManager->GetSystemServiceAs<GameWorldService>();
+// 		EE_ASSERT(pWorldService);
+// 		if (pWorldService)
+// 		{
+// 			egf::EntityID entityId= pWorldService->SpawnEntity("Player");
+// 			if (egf::kENTITY_INVALID == entityId)
+// 			{
+// 				int a  =0;
+// 			}
+// 		}
+
+ 		NetWorkServicePtr pNetWorkService = m_pServiceManager->GetSystemServiceAs<NetWorkService>();
+ 		EE_ASSERT(pNetWorkService);
+
+		IClientNetModule* poModule = CreateNetModule();
+		IConnector* poConnector = poModule->CreateConnector(pNetWorkService, new CSDPacketParser());
+
+		poConnector->Connect("127.0.0.1", 135);
+
 	}	
 	else if ("TestComBo" == pMessage->GetEventName())
 	{

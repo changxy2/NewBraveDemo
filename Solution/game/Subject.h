@@ -1,11 +1,11 @@
 #pragma once
-#include <NIRefobject.h>
+#include <NiMemObject.h>
 #include "ObserverEvent.h"
 
 namespace Event
 {
 	class Observer;
-	class Subject :	public NiRefObject
+	class Subject :	public NiMemObject
 	{
 	public:
 		Subject(void);
@@ -26,5 +26,5 @@ namespace Event
 		void ClearUp();
 
 	};
-}
 
+}

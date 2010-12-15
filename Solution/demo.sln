@@ -3,16 +3,56 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "game\game.vcproj", "{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clientnet", "..\..\项目\clientnet\clientnet\clientnet.vcproj", "{2A3F2877-227B-4803-9624-9897FFBAA271}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nettest", "..\..\项目\clientnet\nettest\nettest.vcproj", "{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		DebugDLL|Win32 = DebugDLL|Win32
 		Release|Win32 = Release|Win32
+		ReleaseDLL|Win32 = ReleaseDLL|Win32
+		Shipping|Win32 = Shipping|Win32
+		ShippingDLL|Win32 = ShippingDLL|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Debug|Win32.ActiveCfg = Debug|Win32
 		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Debug|Win32.Build.0 = Debug|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.DebugDLL|Win32.ActiveCfg = Debug|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.DebugDLL|Win32.Build.0 = Debug|Win32
 		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Release|Win32.ActiveCfg = Release|Win32
 		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Release|Win32.Build.0 = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.ReleaseDLL|Win32.ActiveCfg = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.ReleaseDLL|Win32.Build.0 = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Shipping|Win32.ActiveCfg = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.Shipping|Win32.Build.0 = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.ShippingDLL|Win32.ActiveCfg = Release|Win32
+		{900F4FA4-C3AC-4E49-9B38-DE8A8B4C8FFB}.ShippingDLL|Win32.Build.0 = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Debug|Win32.Build.0 = Debug|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.DebugDLL|Win32.ActiveCfg = Debug|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.DebugDLL|Win32.Build.0 = Debug|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Release|Win32.ActiveCfg = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Release|Win32.Build.0 = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.ReleaseDLL|Win32.ActiveCfg = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.ReleaseDLL|Win32.Build.0 = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Shipping|Win32.ActiveCfg = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.Shipping|Win32.Build.0 = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.ShippingDLL|Win32.ActiveCfg = Release|Win32
+		{2A3F2877-227B-4803-9624-9897FFBAA271}.ShippingDLL|Win32.Build.0 = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Debug|Win32.Build.0 = Debug|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.DebugDLL|Win32.ActiveCfg = Debug|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.DebugDLL|Win32.Build.0 = Debug|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Release|Win32.ActiveCfg = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Release|Win32.Build.0 = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.ReleaseDLL|Win32.ActiveCfg = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.ReleaseDLL|Win32.Build.0 = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Shipping|Win32.ActiveCfg = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.Shipping|Win32.Build.0 = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.ShippingDLL|Win32.ActiveCfg = Release|Win32
+		{33FBAE6E-9CD4-45AC-9CBB-1AAAEF5DE72C}.ShippingDLL|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

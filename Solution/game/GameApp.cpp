@@ -59,7 +59,7 @@
 #include "GameLoadingState.h"
 #include "GamePlayingState.h"
 #include "GameWorldService.h"
-#include "NetWorkService.h"
+#include "net/NetWorkService.h"
 
 #include <Ni2DStringRenderClick.h>
 #include <egmTerrain\TerrainService.h>
@@ -233,6 +233,7 @@ bool GameApp::SetupServices(
     // message pump.  It will create a main window and pump messages for it.
     Win32PlatformServicePtr spWin32 = EE_NEW Win32PlatformService(instance, previous, commandLine);
     spWin32->SetWindowTitle(g_uniqueIndex.GetName());
+	spWin32->SetWndProc(&MsgProc);
 
     utf8string width, height;
     UInt32 windowWidth = 1280;
@@ -540,3 +541,43 @@ const char* GameApp::GetDisplayName() const
 
 //-----------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------
+
+static const UINT EE_APP_ACTIVATE = WM_USER + 1000;
+static const UINT EE_APP_DEACTIVATE = WM_USER + 1001;
+
+LRESULT CALLBACK GameApp::MsgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_CHAR:
+		{
+			// 			switch ((unsigned char)wParam)
+			// 			{
+			// 			case VK_ESCAPE:
+			// 				PostMessage(hWnd, WM_DESTROY, 0, 0);
+			// 				break;
+			// 			}
+		}
+		break;
+
+	case WM_ACTIVATEAPP:
+		{
+			// Activation and deactivation events can be used to reduce CPU usage when the game does
+			// not have focus.
+			if (wParam == TRUE)
+				PostMessage(hWnd, EE_APP_ACTIVATE, 0, 0);
+			else
+				PostMessage(hWnd, EE_APP_DEACTIVATE, 0, 0);
+		}
+		break;
+
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
+}

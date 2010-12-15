@@ -1,10 +1,17 @@
+// ======================================================================================
+// File         : Subject.h
+// Author       : Zhang yuzhong 
+// Last Change  : 12/3/2010
+// Description  : (观察者设计模式)订阅者
+//				  
+// ======================================================================================
+
 #include "game_pch.h"
 #include "Subject.h"
 #include "Observer.h"
 
 namespace Event
 {
-
 	Subject::Subject(void)
 	{
 	}
@@ -35,7 +42,7 @@ namespace Event
 			listOb = ite->second;
 		}
 
-		NIASSERT(listOb);
+		EE_ASSERT(listOb);
 		if (listOb)
 		{
 			listOb->push_back(o);
