@@ -29,7 +29,6 @@
 
 #include "AIService.h"
 #include "InGameCameraService.h"
-#include "GameControlService.h"
 
 // Other various headers
 #include <efd/SystemUniqueIndex.h>
@@ -54,13 +53,25 @@
 //添加移动使用的MovementService
 #include "MovementService.h"
 
-//添加Physx 地形服务
-#include <egmPhysXTerrain\PhysXTerrainService.h>
-//添加白盒服务
-#include <egmPhysXWhitebox\PhysXWhiteboxService.h>
+//添加Physx 地形服务#include <egmPhysXTerrain\PhysXTerrainService.h>//添加白盒服务#include <egmPhysXWhitebox\PhysXWhiteboxService.h>#include "GameControlService.h"
+#include "GameStateService.h"
+#include "GameInitingState.h"
+#include "GameLoadingState.h"
+#include "GamePlayingState.h"
+#include "GameWorldService.h"
+#include "NetWorkService.h"
+
+#include <Ni2DStringRenderClick.h>
+#include <egmTerrain\TerrainService.h>
 
 //添加PhysxCharacterMovementService 服务
 #include "PhysxCharacterMovementService.h"
+
+#include "GameControlService.h"
+
+#include <egmPhysXWhitebox\PhysXWhiteboxService.h>
+
+#include <egmPhysXTerrain\PhysXTerrainService.h>
 
 
 
@@ -301,6 +312,14 @@ bool GameApp::SetupServices(
     // Program Type your application is running as.
     m_spServiceManager->SetProgramType(ServiceManager::kProgType_Client);
 
+	//注册网络
+	NetWorkServicePtr pNetWorkService = EE_NEW NetWorkService();
+	m_pServiceManager->RegisterSystemService(pNetWorkService);
+
+	// 注册worldService
+ 	GameWorldServicePtr pWorldService = EE_NEW GameWorldService();
+ 	m_pServiceManager->RegisterSystemService(pWorldService);
+
     // register AI service
     AIServicePtr spAIService = EE_NEW AIService();
     m_spServiceManager->RegisterSystemService(spAIService);
@@ -328,6 +347,9 @@ bool GameApp::SetupServices(
 	MovementService * pMovementService = EE_NEW MovementService();
 	m_pServiceManager->RegisterSystemService(pMovementService);
 
+	// registe stateService
+	GameStateServicePtr pGameStateService = EE_NEW GameStateService();
+	m_pServiceManager->RegisterSystemService(pGameStateService);
 
 	
 
@@ -369,7 +391,7 @@ efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistr
     // the EntityLoaderService to be initialed before this service and shutdown after this service
     // so we can always rely on that service being available during our OnInit, OnTick and
     // OnShutdown methods.
-    pDependencyRegistrar->AddDependency<EntityLoaderService>();
+    //pDependencyRegistrar->AddDependency<EntityLoaderService>();
 
     // We also manually set our input actions so we need ecrInput::InputService to be available.
     pDependencyRegistrar->AddDependency<ecrInput::InputService>();
@@ -383,6 +405,10 @@ efd::SyncResult GameApp::OnPreInit(efd::IDependencyRegistrar* pDependencyRegistr
     {
         pRenderService->SetDefaultSurfaceBackgroundColor(efd::ColorA(0.0f, 0.0f, 0.15f, 1.0f));
     }
+
+	pDependencyRegistrar->AddDependency<GameWorldService>();
+
+	pDependencyRegistrar->AddDependency<GameStateService>();
 
     return efd::SyncResult_Success;
 }
@@ -426,18 +452,45 @@ efd::AsyncResult GameApp::OnInit()
     pMessageService->Subscribe(this, kCAT_LocalMessage);
 
     // Load the main block file
-    efd::IConfigManager* pConfig = m_pServiceManager->GetSystemServiceAs<efd::IConfigManager>();
-    efd::utf8string world_file = pConfig->FindValue("Game.InitialWorld");
-    if (world_file.empty())
-    {
-        EE_LOG(efd::kApp, efd::ILogger::kERR0, ("No block file specified, set Game.InitialWorld."));
-    }
-    else
-    {
-        EntityLoaderService* els = m_pServiceManager->GetSystemServiceAs<EntityLoaderService>();
-		EE_ASSERT(els);
-        els->RequestEntitySetLoad(world_file);
-    }
+//     efd::IConfigManager* pConfig = m_pServiceManager->GetSystemServiceAs<efd::IConfigManager>();
+//     efd::utf8string world_file = pConfig->FindValue("Game.InitialWorld");
+//     if (world_file.empty())
+//     {
+//         EE_LOG(efd::kApp, efd::ILogger::kERR0, ("No block file specified, set Game.InitialWorld."));
+//     }
+//     else
+//     {
+// //         EntityLoaderService* els = m_pServiceManager->GetSystemServiceAs<EntityLoaderService>();
+// // 		EE_ASSERT(els);
+// //         els->RequestEntitySetLoad(world_file);
+// 		GameWorldService* pWorldSerivce = m_pServiceManager->GetSystemServiceAs<GameWorldService>();
+// 		EE_ASSERT(pWorldSerivce);
+// 		if (pWorldSerivce)
+// 		{
+// 			pWorldSerivce->LoadBlock(world_file, true);
+// 		}
+//     }
+
+// 	// 加入测试文字
+// 	Ni2DStringRenderClickPtr pStringRenderClick = NiNew Ni2DStringRenderClick;
+// 	RenderSurface* pRenderSuface = spRenderService->GetActiveRenderSurface();
+// 	NiDefaultClickRenderStep* pClickRenderStep = NiDynamicCast(NiDefaultClickRenderStep, pRenderSuface->GetRenderStep());
+// 	EE_ASSERT(pClickRenderStep);
+// 	pClickRenderStep->AppendRenderClick(pStringRenderClick);
+// 
+// 	//NiFontPtr spFont = NiFont::Create(spRenderService->GetRenderer(), "ArialUnicodeMS_BA_36.nff");
+// 	//NIASSERT(spFont);
+// 
+// 	NiColorA kRed(1.0f, 0.0f, 0.0f, 1.0f);
+// 	Ni2DStringPtr spTestString = NiNew Ni2DString(spFont,
+// 		NiFontString::COLORED | NiFontString::CENTERED,
+// 		32, "Test String\nTwo Lines", kRed, 320, 240);
+// 
+// 
+// 	pStringRenderClick->Append2DString(spTestString);
+
+
+	SetupGameStates();
 
     return efd::AsyncResult_Complete;
 }
@@ -488,6 +541,30 @@ void GameApp::HandleCameraDiscoverMessage(
 
     pCameraService->SetActiveCamera(pEntity->GetEntityID(),
         pRenderService->GetActiveRenderSurface()->GetWindowRef());
+}
+
+void GameApp::SetupGameStates()
+{
+	GameStateService* pGameStateService = m_pServiceManager->GetSystemServiceAs<GameStateService>();
+	EE_ASSERT(pGameStateService);
+	pGameStateService->AddState(EE_NEW GameInitingState(pGameStateService, GameState::LoadingStateID, "gamebryoLogo.dds"));
+	pGameStateService->AddState(EE_NEW GameLoadingState(pGameStateService, GameState::PlayingStateID));
+	pGameStateService->AddState(EE_NEW GamePlayingState(pGameStateService));
+
+	efd::IConfigManager* pConfig = m_pServiceManager->GetSystemServiceAs<efd::IConfigManager>();
+	efd::utf8string world_file = pConfig->FindValue("Game.InitialWorld");
+	if (world_file.empty())
+	{
+		EE_LOG(efd::kApp, efd::ILogger::kERR0, ("No block file specified, set Game.InitialWorld."));
+		return;
+	}
+	GameState* pGameState = pGameStateService->FindState(GameState::LoadingStateID);
+	EE_ASSERT(pGameState);
+	GameLoadingState* pLoadingState = EE_DYNAMIC_CAST(GameLoadingState, pGameState);
+	EE_ASSERT(pLoadingState);
+	pLoadingState->QueueBlockFile(world_file, true);
+
+	pGameStateService->ChangeState(GameState::InitGameStateID);
 }
 
 // modify by zyz 2010-11-9 控制权交由GameControlService

@@ -9,5 +9,9 @@
     <item name="AIService"/>
     <item name="InGameCameraService"/>
     <item name="ControlServer"/>
-    <item name="PhysxCharacterMovementService">
-</enum>
+    <item name="PhysxCharacterMovementService">    
+    <item name="WorldService"/>
+    <item name="NetWorkService"/>
+    <item name="GameStateService"/>
+   
+    </enum>

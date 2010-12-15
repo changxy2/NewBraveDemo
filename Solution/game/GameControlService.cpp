@@ -4,6 +4,8 @@
 #include <efd/MessageService.h>
 #include <ecrInput/InputService.h>
 
+#include "GameWorldService.h"
+
 EE_IMPLEMENT_CONCRETE_CLASS_INFO(GameControlService);
 
 EE_HANDLER(
@@ -82,6 +84,17 @@ void GameControlService::HandleInputActionMessage(
 	{
 		EE_LOG(efd::kApp, 1, (
 			"GameControlService::HandleInputActionMessage: Test"));
+
+		GameWorldService* pWorldService = m_pServiceManager->GetSystemServiceAs<GameWorldService>();
+		EE_ASSERT(pWorldService);
+		if (pWorldService)
+		{
+			egf::EntityID entityId= pWorldService->SpawnEntity("Player");
+			if (egf::kENTITY_INVALID == entityId)
+			{
+				int a  =0;
+			}
+		}
 	}	
 	else if ("TestComBo" == pMessage->GetEventName())
 	{

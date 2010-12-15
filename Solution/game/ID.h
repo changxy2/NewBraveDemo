@@ -27,6 +27,7 @@
 #include "autogen/ServiceIDs.h"
 #include "autogen/ClassIDs.h"
 #include "autogen/PropertyIDs.h"
+#include "autogen/MessageIDs.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // defines
