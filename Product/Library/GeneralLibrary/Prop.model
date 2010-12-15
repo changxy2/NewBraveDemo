@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="2d677303-4ba0-4363-b487-effef8b9a08e"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="46c50bb9-fa71-4f68-8a6e-81a49088feef"
+      SourceName="PhysXProp" />
+    <Mixin
+      SourceID="769224cc-5c68-4af1-b1c8-85bc9879d9a9"
+      SourceName="Mesh" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

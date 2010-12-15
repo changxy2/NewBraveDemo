@@ -45,6 +45,12 @@
     <File
       path="MovableObject.model" />
     <File
+      path="PhysCharacterMoveObject.model" />
+    <File
+      path="PhysxCharacter.model" />
+    <File
+      path="PhysxPlayer.model" />
+    <File
       path="Player.model" />
     <File
       path="simple.diagram" />

@@ -40,7 +40,7 @@
         <Asset
           Value="urn:llid:0105d902-0000-0000-0000-000000000000">
           <LastKnownName>AmbientLight</LastKnownName>
-          <LastKnownPath>/StandardModelLibrary/Media/AmbientLight.nif</LastKnownPath>
+          <LastKnownPath>/Library/StandardModelLibrary/Media/AmbientLight.nif</LastKnownPath>
           <LastKnownTags>application:gamebryo-scenegraph:AmbientLight</LastKnownTags>
         </Asset>
       </Value>

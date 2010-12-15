@@ -21,7 +21,7 @@
         <Asset
           Value="urn:llid:89772076-0000-0000-0000-000000000000">
           <LastKnownName>DirectionalLight</LastKnownName>
-          <LastKnownPath>/StandardModelLibrary/Media/DirectionalLight.nif</LastKnownPath>
+          <LastKnownPath>/Library/StandardModelLibrary/Media/DirectionalLight.nif</LastKnownPath>
           <LastKnownTags>application:gamebryo-scenegraph:DirectionalLight</LastKnownTags>
         </Asset>
       </Value>

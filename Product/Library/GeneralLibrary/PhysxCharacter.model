@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="5087db62-2c90-42b6-8dbf-68c90829b2f4"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="bc8153af-f680-46ac-9de7-f99106dee084"
+      SourceName="Actor" />
+    <Mixin
+      SourceID="44dcef9a-eb27-49c6-869f-8d23090ac715"
+      SourceName="PhysCharacterMoveObject" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

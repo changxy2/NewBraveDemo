@@ -89,7 +89,7 @@
         <Asset
           Value="urn:llid:9760c049-0000-0000-0000-000000000000">
           <LastKnownName>Camera</LastKnownName>
-          <LastKnownPath>/StandardModelLibrary/Media/Camera.nif</LastKnownPath>
+          <LastKnownPath>/Library/StandardModelLibrary/Media/Camera.nif</LastKnownPath>
           <LastKnownTags>application:gamebryo-scenegraph:Camera</LastKnownTags>
         </Asset>
       </Value>

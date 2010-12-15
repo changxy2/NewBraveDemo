@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(EMERGENT_PATH)/Source/3rdParty/Lua/Package/src&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/STLPort/Package&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/TinyXML&quot;;&quot;$(EMERGENT_PATH)/SDK/Win32/Include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Foundation\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Physics\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\PhysXLoader\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Cooking\include&quot;"
+				AdditionalIncludeDirectories="&quot;$(EMERGENT_PATH)/Source/3rdParty/Lua/Package/src&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/STLPort/Package&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/TinyXML&quot;;&quot;$(EMERGENT_PATH)/SDK/Win32/Include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Foundation\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Physics\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\PhysXLoader\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Cooking\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\NxCharacter\include&quot;"
 				PreprocessorDefinitions="NOMINMAX;STRICT;EE_COMPILE_VC90;WIN32;_WINDOWS;EE_PLATFORM_WIN32;_CONSOLE;LUA_USELONGLONG;LNUM_DOUBLE;LNUM_INT64;LUA_SCRIPTING;EE_GAMEBRYO_VERSION=32;_DEBUG;NIDEBUG;EE_EFD_CONFIG_DEBUG;EE_CONFIG_DEBUG;EE_USE_MEMORY_MANAGEMENT;EE_USE_ASSERT_STACKTRACE"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -63,7 +63,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+<<<<<<< HEAD
 				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib egmWhitebox.lib NiFont.lib ./lib/clientnet.lib"
+=======
+				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib NiFont.lib PhysXLoader.lib efdPhysX.lib egfPhysX.lib egfPhysXLua.lib egmPhysXWhitebox.lib egmPhysXTerrain.lib ecrPhysX.lib egmWhitebox.lib NiPhysX.lib NiTerrainPhysX.lib NxCharacter.lib"
+>>>>>>> f9f32b878ee44822923b023a9ad9092fb5561f3b
 				AdditionalLibraryDirectories="&quot;$(EMERGENT_PATH)/SDK/Win32/Lib/VC90/Debug&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\lib\win32\&quot;"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -263,6 +267,18 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\autogen\PhysxCharacterMovementAPI_LuaWrap.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\autogen\PropertyIDs.h"
 				>
 			</File>
@@ -303,6 +319,20 @@
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\swig\PhysxCharacterMovementAPI.i"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="SET SWIG_LIB=%EMERGENT_PATH%\Source\3rdParty\SWIG\Lib&#x0D;&#x0A;@REM the following lines must be on the same line in your custom build command&#x0D;&#x0A;set SDK_INCLUDE=&quot;$(EMERGENT_PATH)/SDK/Win32/include&quot;&#x0D;&#x0A;&quot;$(EMERGENT_PATH)\Source\3rdParty\SWIG\swig.exe&quot; -c++ -lua -DEE_EXTERNAL_RUNTIME=egfLua\SWIGLuaRuntime.h -DWIN32 -DEE_PLATFORM_WIN32 -I%SDK_INCLUDE% -I. -o ./autogen/$(InputName)_LuaWrap.cpp ./swig/$(InputName).i&#x0D;&#x0A;"
+						AdditionalDependencies="$(ProjectDir)swig_helpers\$(InputName).h"
+						Outputs="$(ProjectDir)autogen\$(InputName)_LuaWrap.cpp"
+					/>
+				</FileConfiguration>
+			</File>
 		</Filter>
 		<Filter
 			Name="swig_helpers"
@@ -313,6 +343,22 @@
 			</File>
 			<File
 				RelativePath=".\swig_helpers\CameraAPI.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MovementAPI.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\MovementAPI.h"
+				>
+			</File>
+			<File
+				RelativePath=".\swig_helpers\PhysxCharacterMovementAPI.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\swig_helpers\PhysxCharacterMovementAPI.h"
 				>
 			</File>
 		</Filter>
@@ -533,6 +579,14 @@
 			>
 		</File>
 		<File
+			RelativePath=".\CharacterControllerHitReport.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\CharacterControllerHitReport.h"
+			>
+		</File>
+		<File
 			RelativePath=".\ClassDiagram1.cd"
 			>
 		</File>
@@ -593,6 +647,14 @@
 			>
 		</File>
 		<File
+			RelativePath=".\MathHelpers.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\MathHelpers.h"
+			>
+		</File>
+		<File
 			RelativePath=".\MovableObject.cpp"
 			>
 		</File>
@@ -601,19 +663,39 @@
 			>
 		</File>
 		<File
-			RelativePath=".\MovementAPI.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\MovementAPI.h"
-			>
-		</File>
-		<File
 			RelativePath=".\MovementService.cpp"
 			>
 		</File>
 		<File
 			RelativePath=".\MovementService.h"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysxCharacterMovementService.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysxCharacterMovementService.h"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysxCharacterMoveObject.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysxCharacterMoveObject.h"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysXSceneHandle.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysXSceneHandle.h"
+			>
+		</File>
+		<File
+			RelativePath=".\PhysXSceneHandle.inl"
 			>
 		</File>
 	</Files>

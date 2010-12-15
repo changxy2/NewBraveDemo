@@ -2,30 +2,9 @@
 <game>
   <entitySet>
     <entity
-      id="28327391414c44888790e726c921761f"
-      modelName="Player"
-      name="Player0"
-      iterations="7">
-      <property
-        name="Position">
-        <set
-          value="0, 0, 0" />
-      </property>
-      <property
-        name="Scale">
-        <set
-          value="0.1" />
-      </property>
-      <property
-        name="Name">
-        <set
-          value="Player0" />
-      </property>
-    </entity>
-    <entity
-      id="3c05547c10fb4c9cadc7dfdc2aefb3a3"
-      modelName="Terrain"
-      name="Terrain1"
+      id="1399e7c6d23a48859f3112ddc70258cb"
+      modelName="PhysXTerrain"
+      name="PhysXTerrain0"
       iterations="3">
       <property
         name="TerrainAsset">
@@ -40,14 +19,75 @@
       </property>
     </entity>
     <entity
-      id="789098e989104c91bb376fe53b3d4e28"
-      modelName="Floor"
-      name="Floor0"
-      iterations="3">
+      id="1ecf3d86bc22433692e6f07ef429efc5"
+      modelName="PhysXScene"
+      name="PhysXScene0"
+      iterations="0" />
+    <entity
+      id="2920aeabba244c10b602350feedee1ac"
+      modelName="PhysxPlayer"
+      name="PhysxPlayer0"
+      iterations="22">
+      <property
+        name="KfmAsset">
+        <set
+          value="urn:llid:af3b754d-0000-0000-0000-000000000000" />
+      </property>
+      <property
+        name="InitialSequence">
+        <set
+          value="idle" />
+      </property>
       <property
         name="Position">
         <set
-          value="-28.1926346, -13.8429794, 1.941717" />
+          value="0, 0, 100" />
+      </property>
+      <property
+        name="Scale">
+        <set
+          value="0.1" />
+      </property>
+      <property
+        name="Dimension">
+        <set
+          value="8, 8, 8" />
+      </property>
+      <property
+        name="Name">
+        <set
+          value="PhysxPlayer0" />
+      </property>
+    </entity>
+    <entity
+      id="73a92cafd0674032ad96902c29a883e3"
+      modelName="PhysXWhitebox"
+      name="PhysXWhitebox0"
+      iterations="31">
+      <property
+        name="DynamicallySimulate">
+        <set
+          value="True" />
+      </property>
+      <property
+        name="Friction">
+        <set
+          value="20" />
+      </property>
+      <property
+        name="ShapeDimensions">
+        <set
+          value="24.395647, 28.94731, 20.9678612" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-98.95769, -130.786209, 49.16659" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="0, 0, 0" />
       </property>
     </entity>
     <entity
@@ -58,7 +98,7 @@
       <property
         name="Target">
         <set
-          value="28327391-414c-4488-8790-e726c921761f" />
+          value="2920aeab-ba24-4c10-b602-350feedee1ac" />
       </property>
       <property
         name="Distance">
@@ -120,6 +160,37 @@
         name="StrictlyObserveSizeHint">
         <set
           value="False" />
+      </property>
+    </entity>
+    <entity
+      id="f3845528e1bf4f35b459798b4ecb6048"
+      modelName="PhysXWhitebox"
+      name="PhysXWhitebox1"
+      iterations="33">
+      <property
+        name="DynamicallySimulate">
+        <set
+          value="True" />
+      </property>
+      <property
+        name="Friction">
+        <set
+          value="20" />
+      </property>
+      <property
+        name="ShapeDimensions">
+        <set
+          value="22.7320824, 22.210598, 20.509201" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-92.21317, -97.22009, 37.9253159" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="0, 0, 0" />
       </property>
     </entity>
   </entitySet>

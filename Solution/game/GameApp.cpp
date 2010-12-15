@@ -53,7 +53,7 @@
 //添加移动使用的MovementService
 #include "MovementService.h"
 
-#include "GameControlService.h"
+//添加Physx 地形服务#include <egmPhysXTerrain\PhysXTerrainService.h>//添加白盒服务#include <egmPhysXWhitebox\PhysXWhiteboxService.h>#include "GameControlService.h"
 #include "GameStateService.h"
 #include "GameInitingState.h"
 #include "GameLoadingState.h"
@@ -63,6 +63,17 @@
 
 #include <Ni2DStringRenderClick.h>
 #include <egmTerrain\TerrainService.h>
+
+//添加PhysxCharacterMovementService 服务
+#include "PhysxCharacterMovementService.h"
+
+#include "GameControlService.h"
+
+#include <egmPhysXWhitebox\PhysXWhiteboxService.h>
+
+#include <egmPhysXTerrain\PhysXTerrainService.h>
+
+
 
 //------------------------------------------------------------------------------------------------
 using namespace efd;
@@ -79,6 +90,11 @@ extern "C" int luaopen_ecr(lua_State *L);
 extern "C" int luaopen_egmAnimation(lua_State *L);
 extern "C" int luaopen_CameraAPI(lua_State *L);
 extern "C" int luaopen_MovementAPI(lua_State *L);
+//声明Physx lua 接口
+extern "C" int luaopen_bapiPhysXBase(lua_State *L);
+//声明PhysxCharacterMovementAPI lua 接口
+extern "C" int luaopen_PhysxCharacterMovementAPI(lua_State *L);
+
 
 
 #include <NiLicense.h>
@@ -193,10 +209,9 @@ bool GameApp::SetupServices(
         m_spServiceManager,
         ecr::rsaf_NO_PICK_SERVICE));
 
-	egmTerrain::TerrainServicePtr spTerrainService = EE_NEW egmTerrain::TerrainService();
-	m_spServiceManager->RegisterSystemService(spTerrainService);
 
 
+	
     // The AnimationService handles all actors, which are animating scene objects.
     // A note on priority, we use a higher priority than the scene graph service so the actors
     // get updated before their associated scene graph nodes.
@@ -283,6 +298,10 @@ bool GameApp::SetupServices(
     EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_egmAnimation));
     EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_CameraAPI));
 	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_MovementAPI));
+	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_bapiPhysXBase));
+	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_PhysxCharacterMovementAPI));
+	
+
 	
 #endif // !defined (EE_DYNAMIC_BEHAVIOR_LOAD)
 	
@@ -314,6 +333,17 @@ bool GameApp::SetupServices(
 	GameControlServicePtr pControlService = EE_NEW GameControlService();
 	m_pServiceManager->RegisterSystemService(pControlService);
 
+	// PhysX services -  PhysX 模拟 和 碰撞和/triggers
+	EE_VERIFY (egfPhysX::CreatePhysXServices(m_spServiceManager));
+
+
+	egmPhysXWhitebox::PhysXWhiteboxService * pkWhiteboxService = EE_NEW egmPhysXWhitebox::PhysXWhiteboxService();
+	m_pServiceManager->RegisterSystemService(pkWhiteboxService);
+
+	ecrPhysX::PropService * pkPropService =  EE_NEW ecrPhysX::PropService();
+	m_pServiceManager->RegisterSystemService(pkPropService);
+
+
 	//注册MovementService
 	MovementService * pMovementService = EE_NEW MovementService();
 	m_pServiceManager->RegisterSystemService(pMovementService);
@@ -321,6 +351,31 @@ bool GameApp::SetupServices(
 	// registe stateService
 	GameStateServicePtr pGameStateService = EE_NEW GameStateService();
 	m_pServiceManager->RegisterSystemService(pGameStateService);
+
+	
+
+	// Startup PhysX
+	m_pPhysXSDKManager = efdPhysX::PhysXSDKManager::GetManager();
+	//构造Physx内存分配器
+	m_pPhysXAllocator = EE_NEW efdPhysX::PhysXAllocator();
+
+	if (!m_pPhysXSDKManager->Initialize(m_pPhysXAllocator))
+	{
+		EE_FAIL("Could not initialize the PhysX SDK.");
+		return false;
+	}
+	m_pPhysXSDKManager->Configure(spConfigManager);
+
+
+	egmPhysXTerrain::PhysXTerrainService * pkTerrainService = EE_NEW egmPhysXTerrain::PhysXTerrainService();
+	m_pServiceManager->RegisterSystemService(pkTerrainService);
+
+	//注册PhysxCharacterMovementService
+	PhysxCharacterMovementService * pPhysxCharacterMovementService = EE_NEW PhysxCharacterMovementService(m_pPhysXAllocator);
+	m_pServiceManager->RegisterSystemService(pPhysxCharacterMovementService);
+
+
+
 
     return true;
 }
@@ -417,23 +472,23 @@ efd::AsyncResult GameApp::OnInit()
 // 		}
 //     }
 
-	// 加入测试文字
-	Ni2DStringRenderClickPtr pStringRenderClick = NiNew Ni2DStringRenderClick;
-	RenderSurface* pRenderSuface = spRenderService->GetActiveRenderSurface();
-	NiDefaultClickRenderStep* pClickRenderStep = NiDynamicCast(NiDefaultClickRenderStep, pRenderSuface->GetRenderStep());
-	EE_ASSERT(pClickRenderStep);
-	pClickRenderStep->AppendRenderClick(pStringRenderClick);
-
-	NiFontPtr spFont = NiFont::Create(spRenderService->GetRenderer(), "ArialUnicodeMS_BA_36.nff");
-	NIASSERT(spFont);
-
-	NiColorA kRed(1.0f, 0.0f, 0.0f, 1.0f);
-	Ni2DStringPtr spTestString = NiNew Ni2DString(spFont,
-		NiFontString::COLORED | NiFontString::CENTERED,
-		32, "Test String\nTwo Lines", kRed, 320, 240);
-
-
-	pStringRenderClick->Append2DString(spTestString);
+// 	// 加入测试文字
+// 	Ni2DStringRenderClickPtr pStringRenderClick = NiNew Ni2DStringRenderClick;
+// 	RenderSurface* pRenderSuface = spRenderService->GetActiveRenderSurface();
+// 	NiDefaultClickRenderStep* pClickRenderStep = NiDynamicCast(NiDefaultClickRenderStep, pRenderSuface->GetRenderStep());
+// 	EE_ASSERT(pClickRenderStep);
+// 	pClickRenderStep->AppendRenderClick(pStringRenderClick);
+// 
+// 	//NiFontPtr spFont = NiFont::Create(spRenderService->GetRenderer(), "ArialUnicodeMS_BA_36.nff");
+// 	//NIASSERT(spFont);
+// 
+// 	NiColorA kRed(1.0f, 0.0f, 0.0f, 1.0f);
+// 	Ni2DStringPtr spTestString = NiNew Ni2DString(spFont,
+// 		NiFontString::COLORED | NiFontString::CENTERED,
+// 		32, "Test String\nTwo Lines", kRed, 320, 240);
+// 
+// 
+// 	pStringRenderClick->Append2DString(spTestString);
 
 
 	SetupGameStates();
@@ -444,12 +499,24 @@ efd::AsyncResult GameApp::OnInit()
 //------------------------------------------------------------------------------------------------
 efd::AsyncResult GameApp::OnTick()
 {
+
     return AsyncResult_Complete;
 }
 
 //------------------------------------------------------------------------------------------------
 efd::AsyncResult GameApp::OnShutdown()
 {
+
+	NiTerrainPhysXUtils::SDM_Shutdown();
+	efdPhysX::PhysXSDKManager* pPhysXSDKManager;
+	pPhysXSDKManager = efdPhysX::PhysXSDKManager::GetManager();
+	if (pPhysXSDKManager)
+	{
+		pPhysXSDKManager->Shutdown();
+	}
+	EE_DELETE m_pPhysXAllocator;
+	m_pPhysXAllocator = NULL;
+
     return AsyncResult_Complete;
 }
 

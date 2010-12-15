@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="bce85475-fff1-43d0-bd60-556671125af3"
+  Description="">
+  <Mixins>
+    <Mixin
+      SourceID="5087db62-2c90-42b6-8dbf-68c90829b2f4"
+      SourceName="PhysxCharacter" />
+    <Mixin
+      SourceID="6fd25663-b822-49f7-a666-35e471d9b160"
+      SourceName="InputHandler" />
+  </Mixins>
+  <Properties />
+  <PropertyOverrides>
+    <PropertyOverride
+      Name="NormalEventMap"
+      Description="">
+      <TraitOverrides />
+      <Value>
+        <Map
+          ItemsDataType="String">
+          <Items>
+            <Item
+              Key="MoveForward">
+              <String
+                Value="Move_Forward" />
+            </Item>
+            <Item
+              Key="MoveBackward">
+              <String
+                Value="Move_Backward" />
+            </Item>
+            <Item
+              Key="MoveLeft">
+              <String
+                Value="Move_Left" />
+            </Item>
+            <Item
+              Key="MoveRight">
+              <String
+                Value="Move_Right" />
+            </Item>
+          </Items>
+        </Map>
+      </Value>
+    </PropertyOverride>
+  </PropertyOverrides>
+  <Behaviors>
+    <Behavior
+      Name="Move_Right"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Left"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Forward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="Move_Backward"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+    <Behavior
+      Name="RunningAIStep"
+      Description=""
+      Target="Lua">
+      <Traits />
+    </Behavior>
+  </Behaviors>
+  <BehaviorOverrides>
+    <BehaviorOverride
+      Name="OnEntitySetFinished"
+      Description="Behavior invoked when all entities in a world file have completed their OnCreate lifecycle event."
+      Target="Lua">
+      <TraitOverrides />
+    </BehaviorOverride>
+  </BehaviorOverrides>
+  <Traits>
+    <Trait
+      Name="Active" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>

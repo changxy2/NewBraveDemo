@@ -13,6 +13,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 // includes
 ///////////////////////////////////////////////////////////////////////////////
+//加入 PhysXSDKManager 用来操作Physx 对象
+#include <efdPhysX/PhysXSDKManager.h>    
+//PhysX Service 的创建头文件
+#include <egfPhysX/ServiceAllocator.h>    
 
 #include <efd/ServiceManager.h>
 #include <egf/EntityChangeMessage.h>
@@ -138,6 +142,14 @@ private:
 
     // Category we use for additional action messages
     efd::Category m_catQuitGame;
+
+	//PhysXSDK 实例
+	efdPhysX::PhysXSDKManager* m_pPhysXSDKManager;
+
+
+	//PhysX 内存分配器
+	efdPhysX::PhysXAllocator* m_pPhysXAllocator;
+
 };
 
 // #################################################################################
