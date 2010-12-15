@@ -1,0 +1,154 @@
+-- ======================================================================================
+-- File         : EseVandal.lua
+-- Author       : Wu Jie 
+-- Last Change  : 10/25/2010 | 17:58:11 PM | Monday,October
+-- Description  : 
+-- ======================================================================================
+
+require("global")
+
+--/////////////////////////////////////////////////////////////////////////////
+--
+--/////////////////////////////////////////////////////////////////////////////
+
+module("EseVandal", package.seeall)
+
+local easeIn = 0.2
+local easeOut = 0.2
+
+--/////////////////////////////////////////////////////////////////////////////
+--
+--/////////////////////////////////////////////////////////////////////////////
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnEntitySetFinished(self, params)
+    egmAnimation.SetTargetAnimationByName(self, "idle")
+    self:SendEvent("OnTick")
+end
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnTick(self, params)
+    local cam = CameraAPI.CurrentCamera()
+
+    local params = ParameterList.ParameterList()
+    params:PutFloat32(2.0) -- zoom factor
+    params:PutFloat32(2.0) -- duration
+    cam:SendEvent( "Zoom", params )
+
+    while 1 do
+        -- egmAnimation.SetTargetAnimationByName(self, "idle")
+
+        -- local position = self.Position
+        -- position[1] = position[1] + 10.0 * global.dt
+        -- self.Position = position
+
+        BehaviorAPI.Sleep( global.dt * 1000 )
+    end
+end
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnMoveForward(self, params)
+    -- egmAnimation.SetTargetAnimationByName( self, "attack1" )
+    -- egmAnimation.SetTargetAnimationByName( self, "attack2" )
+    -- egmAnimation.SetTargetAnimationByName( self, "attack3" )
+    -- egmAnimation.SetTargetAnimationByName( self, "charge" )
+    -- egmAnimation.SetTargetAnimationByName( self, "charge_attack" )
+    -- egmAnimation.SetTargetAnimationByName( self, "damaged" )
+    -- egmAnimation.SetTargetAnimationByName( self, "heavy_attack" )
+    -- egmAnimation.SetTargetAnimationByName( self, "idle" )
+    -- egmAnimation.SetTargetAnimationByName( self, "run" )
+    egmAnimation.SetTargetAnimationByName( self, "slow_walk" )
+    -- egmAnimation.SetTargetAnimationByName( self, "undamaged" )
+    -- egmAnimation.SetTargetAnimationByName( self, "walk" )
+
+    -- BehaviorAPI.LogMessage(3, string.format("EseTick_Test::OnMoveForward(%x)", self.ID))
+    -- local magnitude = params:GetFloat32("Magnitude")
+    -- local position = self.Position
+    -- position[1] = position[1] + 100.0 * global.dt
+    -- self.Position = position
+end
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnMoveBackward(self, params)
+    -- if we are playing the animation in current sequence, just return
+    if egmAnimation.GetCurrentAnimationName(self) == "attack1" then return end 
+    -- deactive the animation in case of bug
+    egmAnimation.DeactivateLayeredSequence(self, "attack1", 0)
+
+    egmAnimation.ActivateLayeredSequence (
+        self, 
+        "attack1", 
+        true, 
+        1, 1, 
+        easeIn, easeOut,
+        egmAnimation.kInvalidSequence, 
+        1, 
+        0.0
+    )
+
+    -- BehaviorAPI.LogMessage(3, string.format("EseTick_Test::OnMoveBackword(%x)", self.ID))
+    -- local magnitude = params:GetFloat32("Magnitude")
+    -- local position = self.Position
+    -- position[1] = position[1] - 100.0 * global.dt
+    -- self.Position = position
+end
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnMoveLeft(self, params)
+    if egmAnimation.GetCurrentAnimationName(self) == "attack2" then return end 
+
+    egmAnimation.ActivateLayeredSequence (
+        self, 
+        "attack2", 
+        true, 
+        1, 1, 
+        easeIn, easeOut,
+        egmAnimation.kInvalidSequence, 
+        1, 
+        0.0
+    )
+    -- BehaviorAPI.LogMessage(3, string.format("EseTick_Test::OnMoveLeft(%x)", self.ID))
+    -- local magnitude = params:GetFloat32("Magnitude")
+    -- local position = self.Position
+    -- position[2] = position[2] + 100.0 * global.dt
+    -- self.Position = position
+end
+
+-- ------------------------------------------------------------------ 
+-- Desc: 
+-- ------------------------------------------------------------------ 
+
+function OnMoveRight(self, params)
+    if egmAnimation.GetCurrentAnimationName(self) == "attack3" then return end 
+
+    egmAnimation.ActivateLayeredSequence (
+        self, 
+        "attack3", 
+        true, 
+        1, 1,
+        easeIn, easeOut,
+        egmAnimation.kInvalidSequence, 
+        1, 
+        0.0
+    )
+    -- BehaviorAPI.LogMessage(3, string.format("EseTick_Test::OnMoveRight(%x)", self.ID))
+    -- local magnitude = params:GetFloat32("Magnitude")
+    -- local position = self.Position
+    -- position[2] = position[2] - 100.0 * global.dt
+    -- self.Position = position
+end

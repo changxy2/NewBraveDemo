@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model
+  name="PhysCharacterMoveObject"
+  id="201573187">
+  <trait
+    value="Active" />
+  <trait
+    value="BuiltinModel" />
+  <property
+    type="Point3"
+    name="Dimension"
+    id="3203708055"
+    source="PhysCharacterMoveObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="String"
+    name="SceneName"
+    id="3540665846"
+    source="PhysCharacterMoveObject">
+    <set
+      value="" />
+  </property>
+  <property
+    type="UInt32"
+    name="CollisionGroup"
+    id="2746271558"
+    source="PhysCharacterMoveObject">
+    <set
+      value="0" />
+  </property>
+  <property
+    type="Point3"
+    name="RotationAxis"
+    id="3391897551"
+    source="PhysCharacterMoveObject">
+    <set
+      value="0, 0, 0" />
+  </property>
+  <property
+    type="Float32"
+    name="AngularSpeed"
+    id="1367195968"
+    source="PhysCharacterMoveObject">
+    <set
+      value="0" />
+  </property>
+</model>

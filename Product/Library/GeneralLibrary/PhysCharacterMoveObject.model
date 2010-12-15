@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityModel
+  version="5"
+  ID="44dcef9a-eb27-49c6-869f-8d23090ac715"
+  Description="">
+  <Mixins />
+  <Properties>
+    <Property
+      Name="Dimension"
+      Description="">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="SceneName"
+      Description="">
+      <Traits />
+      <Value>
+        <String
+          Value="" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="CollisionGroup"
+      Description="">
+      <Traits />
+      <Value>
+        <UInt32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="RotationAxis"
+      Description="">
+      <Traits />
+      <Value>
+        <Point3>
+          <X>
+            <Float32
+              Value="0" />
+          </X>
+          <Y>
+            <Float32
+              Value="0" />
+          </Y>
+          <Z>
+            <Float32
+              Value="0" />
+          </Z>
+        </Point3>
+      </Value>
+      <Restriction />
+    </Property>
+    <Property
+      Name="AngularSpeed"
+      Description="">
+      <Traits />
+      <Value>
+        <Float32
+          Value="0" />
+      </Value>
+      <Restriction />
+    </Property>
+  </Properties>
+  <PropertyOverrides />
+  <Behaviors />
+  <BehaviorOverrides />
+  <Traits>
+    <Trait
+      Name="Active" />
+    <Trait
+      Name="BuiltinModel" />
+  </Traits>
+  <ExtraDataList />
+</EntityModel>
