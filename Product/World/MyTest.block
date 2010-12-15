@@ -129,6 +129,42 @@
       </properties>
     </entity>
     <entity
+      id="73a92caf-d067-4032-ad96-902c29a883e3"
+      model-name="PhysXWhitebox"
+      model-id="37ab77e8-af35-4ea9-8b11-7f3807156d6b"
+      name="PhysXWhitebox0"
+      iterations="31"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="DynamicallySimulate">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Friction">
+          <set
+            value="20" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="-98.95769, -130.786209, 49.16659" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="0, 0, 0" />
+        </property>
+        <property
+          name="ShapeDimensions">
+          <set
+            value="24.395647, 28.94731, 20.9678612" />
+        </property>
+      </properties>
+    </entity>
+    <entity
       id="db6279b0-ce4c-4630-be89-b8672758eed6"
       model-name="SmoothFollowCamera"
       model-id="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
@@ -207,6 +243,42 @@
           name="StrictlyObserveSizeHint">
           <set
             value="False" />
+        </property>
+      </properties>
+    </entity>
+    <entity
+      id="f3845528-e1bf-4f35-b459-798b4ecb6048"
+      model-name="PhysXWhitebox"
+      model-id="37ab77e8-af35-4ea9-8b11-7f3807156d6b"
+      name="PhysXWhitebox1"
+      iterations="33"
+      visible="true"
+      locked="false">
+      <properties>
+        <property
+          name="DynamicallySimulate">
+          <set
+            value="True" />
+        </property>
+        <property
+          name="Friction">
+          <set
+            value="20" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="-92.21317, -97.22009, 37.9253159" />
+        </property>
+        <property
+          name="Rotation">
+          <set
+            value="0, 0, 0" />
+        </property>
+        <property
+          name="ShapeDimensions">
+          <set
+            value="22.7320824, 22.210598, 20.509201" />
         </property>
       </properties>
     </entity>

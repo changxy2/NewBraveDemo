@@ -60,6 +60,37 @@
       </property>
     </entity>
     <entity
+      id="73a92cafd0674032ad96902c29a883e3"
+      modelName="PhysXWhitebox"
+      name="PhysXWhitebox0"
+      iterations="31">
+      <property
+        name="DynamicallySimulate">
+        <set
+          value="True" />
+      </property>
+      <property
+        name="Friction">
+        <set
+          value="20" />
+      </property>
+      <property
+        name="ShapeDimensions">
+        <set
+          value="24.395647, 28.94731, 20.9678612" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-98.95769, -130.786209, 49.16659" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="0, 0, 0" />
+      </property>
+    </entity>
+    <entity
       id="db6279b0ce4c4630be89b8672758eed6"
       modelName="SmoothFollowCamera"
       name="SmoothFollowCamera0"
@@ -129,6 +160,37 @@
         name="StrictlyObserveSizeHint">
         <set
           value="False" />
+      </property>
+    </entity>
+    <entity
+      id="f3845528e1bf4f35b459798b4ecb6048"
+      modelName="PhysXWhitebox"
+      name="PhysXWhitebox1"
+      iterations="33">
+      <property
+        name="DynamicallySimulate">
+        <set
+          value="True" />
+      </property>
+      <property
+        name="Friction">
+        <set
+          value="20" />
+      </property>
+      <property
+        name="ShapeDimensions">
+        <set
+          value="22.7320824, 22.210598, 20.509201" />
+      </property>
+      <property
+        name="Position">
+        <set
+          value="-92.21317, -97.22009, 37.9253159" />
+      </property>
+      <property
+        name="Rotation">
+        <set
+          value="0, 0, 0" />
       </property>
     </entity>
   </entitySet>
