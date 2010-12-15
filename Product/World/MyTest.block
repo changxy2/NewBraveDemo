@@ -61,39 +61,70 @@
   <entities
     version="1">
     <entity
-      id="789098e9-8910-4c91-bb37-6fe53b3d4e28"
-      model-name="Floor"
-      model-id="32d3e35e-0d9f-4b8f-8e5e-f39d08f3d461"
-      name="Floor0"
+      id="1399e7c6-d23a-4885-9f31-12ddc70258cb"
+      model-name="PhysXTerrain"
+      model-id="71994823-4511-426b-8e9b-b20303d34fd3"
+      name="PhysXTerrain0"
       iterations="3"
       visible="true"
       locked="false">
       <properties>
         <property
-          name="Position">
+          name="TerrainAsset">
           <set
-            value="-28.1926346, -13.8429794, 1.941717" />
+            value="urn:llid:02092973-0000-0000-0000-000000000000" />
+        </property>
+        <property
+          name="TerrainInitialSectors">
+          <set
+            index="0"
+            value="0" />
         </property>
       </properties>
     </entity>
     <entity
-      id="a37fb389-4f03-463d-a5ed-5911b5c15c70"
-      model-name="Vandal"
-      model-id="18ed5ba5-b6f8-45a2-a776-4a05b760d6da"
-      name="Vandal0"
-      iterations="10"
+      id="1ecf3d86-bc22-4336-92e6-f07ef429efc5"
+      model-name="PhysXScene"
+      model-id="d8a858bb-65d3-4886-8590-3cc9371b227c"
+      name="PhysXScene0"
+      iterations="0"
+      visible="true"
+      locked="false">
+      <properties />
+    </entity>
+    <entity
+      id="2920aeab-ba24-4c10-b602-350feedee1ac"
+      model-name="PhysxPlayer"
+      model-id="bce85475-fff1-43d0-bd60-556671125af3"
+      name="PhysxPlayer0"
+      iterations="22"
       visible="true"
       locked="false">
       <properties>
         <property
-          name="Position">
+          name="Dimension">
           <set
-            value="-38.8816261, 38.694603, 2.941717" />
+            value="8, 8, 8" />
         </property>
         <property
-          name="Rotation">
+          name="InitialSequence">
           <set
-            value="0, 0, 265.084045" />
+            value="idle" />
+        </property>
+        <property
+          name="KfmAsset">
+          <set
+            value="urn:llid:af3b754d-0000-0000-0000-000000000000" />
+        </property>
+        <property
+          name="Position">
+          <set
+            value="0, 0, 100" />
+        </property>
+        <property
+          name="Scale">
+          <set
+            value="0.1" />
         </property>
       </properties>
     </entity>
@@ -102,7 +133,7 @@
       model-name="SmoothFollowCamera"
       model-id="6dc771ae-e00b-40ad-a25a-096f84ef0da8"
       name="SmoothFollowCamera0"
-      iterations="254"
+      iterations="256"
       visible="true"
       locked="false">
       <properties>
@@ -134,7 +165,7 @@
         <property
           name="Target">
           <set
-            value="a37fb389-4f03-463d-a5ed-5911b5c15c70|Vandal0|MyTest" />
+            value="2920aeab-ba24-4c10-b602-350feedee1ac|PhysxPlayer0|MyTest" />
         </property>
       </properties>
     </entity>

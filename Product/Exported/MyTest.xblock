@@ -2,46 +2,72 @@
 <game>
   <entitySet>
     <entity
-      id="789098e989104c91bb376fe53b3d4e28"
-      modelName="Floor"
-      name="Floor0"
+      id="1399e7c6d23a48859f3112ddc70258cb"
+      modelName="PhysXTerrain"
+      name="PhysXTerrain0"
       iterations="3">
       <property
-        name="Position">
+        name="TerrainAsset">
         <set
-          value="-28.1926346, -13.8429794, 1.941717" />
+          value="urn:llid:02092973-0000-0000-0000-000000000000" />
+      </property>
+      <property
+        name="TerrainInitialSectors">
+        <set
+          index="0"
+          value="0" />
       </property>
     </entity>
     <entity
-      id="a37fb3894f03463da5ed5911b5c15c70"
-      modelName="Vandal"
-      name="Vandal0"
-      iterations="10">
+      id="1ecf3d86bc22433692e6f07ef429efc5"
+      modelName="PhysXScene"
+      name="PhysXScene0"
+      iterations="0" />
+    <entity
+      id="2920aeabba244c10b602350feedee1ac"
+      modelName="PhysxPlayer"
+      name="PhysxPlayer0"
+      iterations="22">
+      <property
+        name="KfmAsset">
+        <set
+          value="urn:llid:af3b754d-0000-0000-0000-000000000000" />
+      </property>
+      <property
+        name="InitialSequence">
+        <set
+          value="idle" />
+      </property>
       <property
         name="Position">
         <set
-          value="-38.8816261, 38.694603, 2.941717" />
+          value="0, 0, 100" />
       </property>
       <property
-        name="Rotation">
+        name="Scale">
         <set
-          value="0, 0, 265.084045" />
+          value="0.1" />
+      </property>
+      <property
+        name="Dimension">
+        <set
+          value="8, 8, 8" />
       </property>
       <property
         name="Name">
         <set
-          value="Vandal0" />
+          value="PhysxPlayer0" />
       </property>
     </entity>
     <entity
       id="db6279b0ce4c4630be89b8672758eed6"
       modelName="SmoothFollowCamera"
       name="SmoothFollowCamera0"
-      iterations="254">
+      iterations="256">
       <property
         name="Target">
         <set
-          value="a37fb389-4f03-463d-a5ed-5911b5c15c70" />
+          value="2920aeab-ba24-4c10-b602-350feedee1ac" />
       </property>
       <property
         name="Distance">
