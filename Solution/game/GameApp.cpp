@@ -110,113 +110,113 @@ static efd::SystemUniqueIndex g_uniqueIndex("GameApp");
 EE_IMPLEMENT_CONCRETE_CLASS_INFO(GameApp);
 
 EE_HANDLER_WRAP(GameApp, HandleCameraDiscoverMessage, EntityChangeMessage,
-                kMSGID_OwnedEntityAdded);
+				kMSGID_OwnedEntityAdded);
 //EE_HANDLER(GameApp, HandleActionMessage, ecrInput::InputActionMessage);
 
 //------------------------------------------------------------------------------------------------
 GameApp::GameApp()
 {
-    // The ServiceManager is the heart of any Foundation based application.  It owns all
-    // of the System Services that compose your application and runs the main loop.
-    m_spServiceManager = EE_NEW ServiceManager();
+	// The ServiceManager is the heart of any Foundation based application.  It owns all
+	// of the System Services that compose your application and runs the main loop.
+	m_spServiceManager = EE_NEW ServiceManager();
 }
 
 //------------------------------------------------------------------------------------------------
 GameApp::~GameApp()
 {
-    m_spServiceManager = NULL;
+	m_spServiceManager = NULL;
 }
 
 //------------------------------------------------------------------------------------------------
 efd::SInt32 GameApp::Go(
-    efd::InstanceRef instance,
-    efd::InstanceRef previous,
-    CmdLineType commandLine,
-    int argcInit,
-    char** argvInit)
+						efd::InstanceRef instance,
+						efd::InstanceRef previous,
+						CmdLineType commandLine,
+						int argcInit,
+						char** argvInit)
 {
-    if (SetupServices(instance, previous, commandLine, argcInit, argvInit))
-    {
-        m_spServiceManager->Run();
+	if (SetupServices(instance, previous, commandLine, argcInit, argvInit))
+	{
+		m_spServiceManager->Run();
 
-        // We need to release the service manager so that it will release all the services that it
-        // holds references to (which includes GameApp itself) or else we'll have a circular
-        // reference which will prevent proper shutdown from occurring.
-        m_spServiceManager = NULL;
-		
-		
-	
-        return 0;
-    }
-    return 1;
+		// We need to release the service manager so that it will release all the services that it
+		// holds references to (which includes GameApp itself) or else we'll have a circular
+		// reference which will prevent proper shutdown from occurring.
+		m_spServiceManager = NULL;
+
+
+
+		return 0;
+	}
+	return 1;
 }
 
 //------------------------------------------------------------------------------------------------
 void GameApp::InitLoggingDestinations()
 {
-    // The Logger is a special Singleton, not a system service, so it must be created and
-    // registered by calling LoggerSingleton::Initialize. This should be created as early as
-    // possible to avoid missing any important log messages.
-    LoggerPtr spLogger = EE_NEW Logger();
-    efd::LoggerSingleton::Initialize(spLogger);
+	// The Logger is a special Singleton, not a system service, so it must be created and
+	// registered by calling LoggerSingleton::Initialize. This should be created as early as
+	// possible to avoid missing any important log messages.
+	LoggerPtr spLogger = EE_NEW Logger();
+	efd::LoggerSingleton::Initialize(spLogger);
 
-    // You can specify one or more output handlers for each logging module.  In this case we
-    // are simply logging everything to a text file, but we could route different modules to
-    // different files or all critical errors to a separate file.  We could also log to other
-    // destinations like OutputDebugString or a network socket by using specialized
-    // ILogDestination implementations.
-    utf8string name =  g_uniqueIndex.GetName();
-    utf8string strLogFileName(Formatted, "./Log/%s.log", name.c_str());
-    FileDestinationPtr logDest = EE_NEW FileDestination("default", strLogFileName,
-        FileDestination::kFileOverwrite);
-    spLogger->AddDest(logDest, true);
+	// You can specify one or more output handlers for each logging module.  In this case we
+	// are simply logging everything to a text file, but we could route different modules to
+	// different files or all critical errors to a separate file.  We could also log to other
+	// destinations like OutputDebugString or a network socket by using specialized
+	// ILogDestination implementations.
+	utf8string name =  g_uniqueIndex.GetName();
+	utf8string strLogFileName(Formatted, "./Log/%s.log", name.c_str());
+	FileDestinationPtr logDest = EE_NEW FileDestination("default", strLogFileName,
+		FileDestination::kFileOverwrite);
+	spLogger->AddDest(logDest, true);
 
-    // Logging defaults to having level 0 to 3 errors and level 0 to 1 non-errors enabled.
-    // You can override those defaults here either for all categories or specific categories.
-    // See the following examples:
-    //  spLogger->SetLogLevel(efd::kALL, efd::ILogger::kLogMask_None);
-    //  spLogger->SetLogLevel(efd::kEntity, efd::ILogger::kLogMask_All);
-    // Also note that default logging settings can be changed via the config.ini file too, so
-    // there is no need to recompile your code to change the log configuration.
+	// Logging defaults to having level 0 to 3 errors and level 0 to 1 non-errors enabled.
+	// You can override those defaults here either for all categories or specific categories.
+	// See the following examples:
+	//  spLogger->SetLogLevel(efd::kALL, efd::ILogger::kLogMask_None);
+	//  spLogger->SetLogLevel(efd::kEntity, efd::ILogger::kLogMask_All);
+	// Also note that default logging settings can be changed via the config.ini file too, so
+	// there is no need to recompile your code to change the log configuration.
 }
 
 //------------------------------------------------------------------------------------------------
 bool GameApp::SetupServices(
-    efd::InstanceRef instance,
-    efd::InstanceRef previous,
-    CmdLineType commandLine,
-    int argcInit,
-    char** argvInit)
+							efd::InstanceRef instance,
+							efd::InstanceRef previous,
+							CmdLineType commandLine,
+							int argcInit,
+							char** argvInit)
 {
-    // Setup the default logging as soon as possible so other services can log early
-    InitLoggingDestinations();
+	// Setup the default logging as soon as possible so other services can log early
+	InitLoggingDestinations();
 
-    // Set the name displayed by this process when connected to Toolbench
-    m_spServiceManager->SetVirtualProcessName("GameApp");
+	// Set the name displayed by this process when connected to Toolbench
+	m_spServiceManager->SetVirtualProcessName("GameApp");
 
-    // Use the Service Allocator helper functions to create common game services needed by
-    // most applications.  This is a simplified approach to creating instances of the services
-    // directly.
+	// Use the Service Allocator helper functions to create common game services needed by
+	// most applications.  This is a simplified approach to creating instances of the services
+	// directly.
 
-    // Foundation services - messaging, logging, asset service, application configuration
-    EE_VERIFY(efd::CreateFoundationServices(m_spServiceManager, argcInit, argvInit));
+	// Foundation services - messaging, logging, asset service, application configuration
+	EE_VERIFY(efd::CreateFoundationServices(m_spServiceManager, argcInit, argvInit));
 
-    // GameApp Framework services - entities, behaviors, rapid iteration
-    EE_VERIFY(egf::CreateGameServices(m_spServiceManager));
+	// GameApp Framework services - entities, behaviors, rapid iteration
+	EE_VERIFY(egf::CreateGameServices(m_spServiceManager));
 
-    // Core Runtime services - rendering, lights, cameras, scenes
-    EE_VERIFY(ecr::CreateRuntimeServices(
-        m_spServiceManager,
-        ecr::rsaf_NO_PICK_SERVICE));
+	// Core Runtime services - rendering, lights, cameras, scenes
+	EE_VERIFY(ecr::CreateRuntimeServices(
+		m_spServiceManager,
+		ecr::rsaf_NO_PICK_SERVICE));
 
 
 
-	
-    // The AnimationService handles all actors, which are animating scene objects.
-    // A note on priority, we use a higher priority than the scene graph service so the actors
-    // get updated before their associated scene graph nodes.
-    egmAnimation::AnimationServicePtr spAnimationService = EE_NEW egmAnimation::AnimationService();
-    m_spServiceManager->RegisterSystemService(spAnimationService);
+
+	// The AnimationService handles all actors, which are animating scene objects.
+	// A note on priority, we use a higher priority than the scene graph service so the actors
+	// get updated before their associated scene graph nodes.
+	egmAnimation::AnimationServicePtr spAnimationService = EE_NEW egmAnimation::AnimationService();
+	m_spServiceManager->RegisterSystemService(spAnimationService);
 
 #ifndef EE_CONFIG_SHIPPING
 	// 创建 Sim Debugger. 他被RapidIterationService 所管。
@@ -227,107 +227,107 @@ bool GameApp::SetupServices(
 #endif
 
 	// The InputService service manages input from keyboard and joystick devices.  It uses an
-    // actionmap to convert device input into events.  Further you can register for either
-    // message based or behavior based callbacks when an input event occurs.
-    ecrInput::InputServicePtr spInputService = EE_NEW ecrInput::InputService(false, false);
-    m_spServiceManager->RegisterSystemService(spInputService);
+	// actionmap to convert device input into events.  Further you can register for either
+	// message based or behavior based callbacks when an input event occurs.
+	ecrInput::InputServicePtr spInputService = EE_NEW ecrInput::InputService(false, false);
+	m_spServiceManager->RegisterSystemService(spInputService);
 
-	
 
-    // Since we want to be able to run Lua behaviors we must add the Lua scripting runtime to the
-    // scheduler.
-    Scheduler* pScheduler = m_spServiceManager->GetSystemServiceAs<Scheduler>();
-    pScheduler->RegisterScriptingRuntime("Lua", BehaviorType_Lua, EE_NEW SchedulerLua());
 
-    // Our GameApp application object is also a service that controls some game-specific logic
-    m_spServiceManager->RegisterSystemService(this);
+	// Since we want to be able to run Lua behaviors we must add the Lua scripting runtime to the
+	// scheduler.
+	Scheduler* pScheduler = m_spServiceManager->GetSystemServiceAs<Scheduler>();
+	pScheduler->RegisterScriptingRuntime("Lua", BehaviorType_Lua, EE_NEW SchedulerLua());
 
-    IConfigManagerPtr spConfigManager = m_spServiceManager->GetSystemServiceAs<IConfigManager>();
+	// Our GameApp application object is also a service that controls some game-specific logic
+	m_spServiceManager->RegisterSystemService(this);
+
+	IConfigManagerPtr spConfigManager = m_spServiceManager->GetSystemServiceAs<IConfigManager>();
 #if defined(EE_PLATFORM_WIN32)
-    // On windows you can use the Win32PlatformService to implement a simple default windows
-    // message pump.  It will create a main window and pump messages for it.
-    Win32PlatformServicePtr spWin32 = EE_NEW Win32PlatformService(instance, previous, commandLine);
-    spWin32->SetWindowTitle(g_uniqueIndex.GetName());
+	// On windows you can use the Win32PlatformService to implement a simple default windows
+	// message pump.  It will create a main window and pump messages for it.
+	Win32PlatformServicePtr spWin32 = EE_NEW Win32PlatformService(instance, previous, commandLine);
+	spWin32->SetWindowTitle(g_uniqueIndex.GetName());
 	spWin32->SetWndProc(&MsgProc);
 
-    utf8string width, height;
-    UInt32 windowWidth = 1280;
-    UInt32 windowHeight = 720;
+	utf8string width, height;
+	UInt32 windowWidth = 1280;
+	UInt32 windowHeight = 720;
 
-    if (spConfigManager->FindValue("Game.WindowWidth", width)) {
-        if (!width.empty())
-            windowWidth = atoi(width.c_str());
-    }
+	if (spConfigManager->FindValue("Game.WindowWidth", width)) {
+		if (!width.empty())
+			windowWidth = atoi(width.c_str());
+	}
 
-    if (spConfigManager->FindValue("Game.WindowHeight", height)) {
-        if (!height.empty())
-            windowHeight = atoi(height.c_str());
-    }
+	if (spConfigManager->FindValue("Game.WindowHeight", height)) {
+		if (!height.empty())
+			windowHeight = atoi(height.c_str());
+	}
 
-    spWin32->SetWindowWidth(windowWidth);
-    spWin32->SetWindowHeight(windowHeight);
+	spWin32->SetWindowWidth(windowWidth);
+	spWin32->SetWindowHeight(windowHeight);
 
-    int xSlots = GetSystemMetrics(SM_CXSCREEN) / windowWidth;
-    int ySlots = GetSystemMetrics(SM_CYSCREEN) / windowHeight;
-    UInt32 left = (windowWidth * ((g_uniqueIndex.GetIndex()-1)%xSlots)) + 1;
-    UInt32 top = (windowHeight * (((g_uniqueIndex.GetIndex()-1)/xSlots)%ySlots)) + 1;
+	int xSlots = GetSystemMetrics(SM_CXSCREEN) / windowWidth;
+	int ySlots = GetSystemMetrics(SM_CYSCREEN) / windowHeight;
+	UInt32 left = (windowWidth * ((g_uniqueIndex.GetIndex()-1)%xSlots)) + 1;
+	UInt32 top = (windowHeight * (((g_uniqueIndex.GetIndex()-1)/xSlots)%ySlots)) + 1;
 
-    spWin32->SetWindowLeft(left);
-    spWin32->SetWindowTop(top);
+	spWin32->SetWindowLeft(left);
+	spWin32->SetWindowTop(top);
 
-    spWin32->SetWindowClass(g_AppName);
+	spWin32->SetWindowClass(g_AppName);
 
-    m_spServiceManager->RegisterSystemService(spWin32);
+	m_spServiceManager->RegisterSystemService(spWin32);
 #elif defined(EE_PLATFORM_PS3)
-    // This service is used to perform any PS3 specific behavior that may be required such
-    // as running PS3 specific initialization code.
-    const int callbackSlot = 0;
-    PS3PlatformServicePtr spPS3 = EE_NEW PS3PlatformService(callbackSlot);
+	// This service is used to perform any PS3 specific behavior that may be required such
+	// as running PS3 specific initialization code.
+	const int callbackSlot = 0;
+	PS3PlatformServicePtr spPS3 = EE_NEW PS3PlatformService(callbackSlot);
 
-    m_spServiceManager->RegisterSystemService(spPS3);
+	m_spServiceManager->RegisterSystemService(spPS3);
 #endif
 
 #if !defined (EE_DYNAMIC_BEHAVIOR_LOAD)
-    // For Statically linked built-ins we need to add the static ecr module to the Lua
-    // scheduler here before it starts ticking.  We do this by registering the SWIG-generated
-    // init function with the scheduler as a static built-in function.  Static built-ins can be
-    // used on any platform, but since DLLs are easy to use on Windows we are using DLLs on that
-    // platform.  With DLLs we can specify what modules to load purely through config.ini settings
-    // and we can also reload those DLLs on the fly which makes testing changes easier.
-    EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_ecr));
-    EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_egmAnimation));
-    EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_CameraAPI));
+	// For Statically linked built-ins we need to add the static ecr module to the Lua
+	// scheduler here before it starts ticking.  We do this by registering the SWIG-generated
+	// init function with the scheduler as a static built-in function.  Static built-ins can be
+	// used on any platform, but since DLLs are easy to use on Windows we are using DLLs on that
+	// platform.  With DLLs we can specify what modules to load purely through config.ini settings
+	// and we can also reload those DLLs on the fly which makes testing changes easier.
+	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_ecr));
+	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_egmAnimation));
+	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_CameraAPI));
 	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_MovementAPI));
 	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_bapiPhysXBase));
 	EE_VERIFY(SchedulerLua::AddStaticBuiltinInitFunction(luaopen_PhysxCharacterMovementAPI));
-	
 
-	
+
+
 #endif // !defined (EE_DYNAMIC_BEHAVIOR_LOAD)
-	
 
 
-    // Some shared code might run slightly different based on whether it is being used in
-    // a client application or a tool application.  We call this concept the Program Type,
-    // in order for such code to operate correctly you need to tell the ServiceManager what
-    // Program Type your application is running as.
-    m_spServiceManager->SetProgramType(ServiceManager::kProgType_Client);
+
+	// Some shared code might run slightly different based on whether it is being used in
+	// a client application or a tool application.  We call this concept the Program Type,
+	// in order for such code to operate correctly you need to tell the ServiceManager what
+	// Program Type your application is running as.
+	m_spServiceManager->SetProgramType(ServiceManager::kProgType_Client);
 
 	//注册网络
 	NetWorkServicePtr pNetWorkService = EE_NEW NetWorkService();
 	m_pServiceManager->RegisterSystemService(pNetWorkService);
 
 	// 注册worldService
- 	GameWorldServicePtr pWorldService = EE_NEW GameWorldService();
- 	m_pServiceManager->RegisterSystemService(pWorldService);
+	GameWorldServicePtr pWorldService = EE_NEW GameWorldService();
+	m_pServiceManager->RegisterSystemService(pWorldService);
 
-    // register AI service
-    AIServicePtr spAIService = EE_NEW AIService();
-    m_spServiceManager->RegisterSystemService(spAIService);
+	// register AI service
+	AIServicePtr spAIService = EE_NEW AIService();
+	m_spServiceManager->RegisterSystemService(spAIService);
 
-    // register InGameCamera service
-    InGameCameraServicePtr spInGameCameraService = EE_NEW InGameCameraService();
-    m_spServiceManager->RegisterSystemService(spInGameCameraService);
+	// register InGameCamera service
+	InGameCameraServicePtr spInGameCameraService = EE_NEW InGameCameraService();
+	m_spServiceManager->RegisterSystemService(spInGameCameraService);
 
 	// 注册controlService
 	GameControlServicePtr pControlService = EE_NEW GameControlService();
@@ -352,7 +352,7 @@ bool GameApp::SetupServices(
 	GameStateServicePtr pGameStateService = EE_NEW GameStateService();
 	m_pServiceManager->RegisterSystemService(pGameStateService);
 
-	
+
 
 	// Startup PhysX
 	m_pPhysXSDKManager = efdPhysX::PhysXSDKManager::GetManager();
@@ -374,9 +374,7 @@ bool GameApp::SetupServices(
 	PhysxCharacterMovementService * pPhysxCharacterMovementService = EE_NEW PhysxCharacterMovementService(m_pPhysXAllocator);
 	m_pServiceManager->RegisterSystemService(pPhysxCharacterMovementService);
 
-
-
-
+	ShowCursor(FALSE);
     return true;
 }
 
@@ -619,12 +617,12 @@ LRESULT CALLBACK GameApp::MsgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
 	{
 	case WM_CHAR:
 		{
-			// 			switch ((unsigned char)wParam)
-			// 			{
-			// 			case VK_ESCAPE:
-			// 				PostMessage(hWnd, WM_DESTROY, 0, 0);
-			// 				break;
-			// 			}
+ 			switch ((unsigned char)wParam)
+ 			{
+ 			case VK_ESCAPE:
+ 				PostMessage(hWnd, WM_DESTROY, 0, 0);
+ 				break;
+ 			}
 		}
 		break;
 
@@ -643,6 +641,96 @@ LRESULT CALLBACK GameApp::MsgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
 		PostQuitMessage(0);
 		break;
 
+	//case WM_IME_NOTIFY:// 处理了这个消息 输入法返回的可选文字就不会在显示在输入法窗口 即可实现自己的输入法窗口 比如全屏游戏使用
+ // 		{
+ // 			switch(wParam)
+ // 			{
+ // 			case IMN_OPENCANDIDATE:// 打开可选文字框 有生成对应的可选文字列表 就到这里了
+ //				{
+	//				int a = 0;
+ //				}
+ //				break;
+ // 			case IMN_CHANGECANDIDATE:// 有文字可以选择 在其中获取可选文字列表
+ // 				{
+ // 					HKL hKL = ::GetKeyboardLayout(0); // 获取当前线程所使用的键盘布局
+ // 
+ // 					if (hKL && ::ImmIsIME(hKL))
+ // 					{
+ // 						HIMC hIMC;
+ // 						hIMC = ImmGetContext(hWnd); 
+ // 						DWORD dwCount = 0, dwSize = 0;
+ // 						dwSize = ImmGetCandidateListCount(hIMC, &dwCount);
+ // 						if (dwCount > 0)
+ // 						{
+ // 							efd::wstring wstrCaption;
+ // 							char* pBuf   =   new   char[dwSize];   
+ // 							LPCANDIDATELIST pList   =   (LPCANDIDATELIST)pBuf;   
+ // 
+ // 							for   (int i=0;   i<dwCount;   i++)   
+ // 							{   
+ // 								::ImmGetCandidateList(hIMC,   i,   pList,dwSize);   
+ // 								for   (int j=0;   j<pList->dwPageSize;   j++)   
+ // 								{
+ // 									char* pStr   =   (char*)(pBuf+pList->dwOffset[pList->dwPageStart+j]);
+ // 									wchar_t wszStr[MAX_PATH + 1] = {0,};
+ // 									MultiByteToWideChar(CP_ACP,0,pStr,-1, wszStr , MAX_PATH);
+ // 									wstrCaption = wstrCaption + wszStr + L" ";
+ // 								}
+ // 							}
+ // 
+ // 							delete[]   pBuf;   
+ //							
+ // 						}
+ // 
+ // 						::ImmReleaseContext(hWnd,hIMC);   
+ // 					}
+ // 				}
+ // 				break;
+ // 			}
+ // 		}
+ // 		break;
+ //	case WM_IME_STARTCOMPOSITION:// 打开一个文字输入框 输入了一个字符 就到这里了
+ //		{
+	//		int  a = 0;
+ //		}
+ //		break;
+ // 	case WM_IME_COMPOSITION: // 具体的文字输入
+ // 		{
+ // 			HKL hKL = ::GetKeyboardLayout(0); // 获取当前线程所使用的键盘布局
+ // 
+ // 			if( hKL && ::ImmIsIME(hKL) ) 
+ // 			{
+ // 				HIMC hIMC = ::ImmGetContext( hWnd );
+ // 
+ // 				// Get the size of the result string.
+ // 				DWORD dwSize = ::ImmGetCompositionString(hIMC, GCS_RESULTSTR, NULL, 0);
+ // 
+ // 				if (dwSize > 0)
+ // 				{
+ // 					// increase buffer size for terminating null character, 
+ // 					//   maybe it is in UNICOD					dwSize += sizeof(WCHAR);
+ // 
+ // 					char* lpstr = new char[dwSize];
+ // 					memset(lpstr, 0, dwSize);
+ // 
+ // 					// Get the result strings that is generated by IME into lpstr.
+ // 					ImmGetCompositionString(hIMC, GCS_RESULTSTR, lpstr, dwSize);
+ // 
+ // 					wchar_t* lwszStr = new wchar_t[dwSize];
+ // 					memset(lwszStr, 0, dwSize);
+ // 					MultiByteToWideChar(CP_ACP,0,lpstr,-1, lwszStr , dwSize);
+ // 
+ // 					//m_pWindow->setCaption(lwszStr);
+ // 
+ // 					delete[] lpstr;
+ // 					delete[] lwszStr;
+ // 				}		
+ // 
+ // 
+ // 				::ImmReleaseContext( hWnd, hIMC );
+ // 			}
+ // 		}
+ // 		break;
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
 	}

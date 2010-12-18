@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(EMERGENT_PATH)/Source/3rdParty/Lua/Package/src&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/STLPort/Package&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/TinyXML&quot;;&quot;$(EMERGENT_PATH)/SDK/Win32/Include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Foundation\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Physics\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\PhysXLoader\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Cooking\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\NxCharacter\include&quot;"
+				AdditionalIncludeDirectories="&quot;$(EMERGENT_PATH)/Source/3rdParty/Lua/Package/src&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/STLPort/Package&quot;;&quot;$(EMERGENT_PATH)/Source/3rdParty/TinyXML&quot;;&quot;$(EMERGENT_PATH)/SDK/Win32/Include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Foundation\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Physics\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\PhysXLoader\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\Cooking\include&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\NxCharacter\include&quot;;./sdk/include/MYGUI;./sdk/include/DirectXPlatform"
 				PreprocessorDefinitions="NOMINMAX;STRICT;EE_COMPILE_VC90;WIN32;_WINDOWS;EE_PLATFORM_WIN32;_CONSOLE;LUA_USELONGLONG;LNUM_DOUBLE;LNUM_INT64;LUA_SCRIPTING;EE_GAMEBRYO_VERSION=32;_DEBUG;NIDEBUG;EE_EFD_CONFIG_DEBUG;EE_CONFIG_DEBUG;EE_USE_MEMORY_MANAGEMENT;EE_USE_ASSERT_STACKTRACE"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib NiFont.lib PhysXLoader.lib efdPhysX.lib egfPhysX.lib egfPhysXLua.lib egmPhysXWhitebox.lib egmPhysXTerrain.lib ecrPhysX.lib egmWhitebox.lib NiPhysX.lib NiTerrainPhysX.lib NxCharacter.lib ./lib/clientnet.lib"
+				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib NiFont.lib PhysXLoader.lib efdPhysX.lib egfPhysX.lib egfPhysXLua.lib egmPhysXWhitebox.lib egmPhysXTerrain.lib ecrPhysX.lib egmWhitebox.lib NiPhysX.lib NiTerrainPhysX.lib NxCharacter.lib ./lib/clientnet.lib ./sdk/lib/Debug/MyGUI.DirectXPlatform_d.lib ./sdk/lib/Debug/MyGUIEngineStatic_d.lib ./sdk/lib/Debug/freetype2311_D.lib Imm32.lib"
 				AdditionalLibraryDirectories="&quot;$(EMERGENT_PATH)/SDK/Win32/Lib/VC90/Debug&quot;;&quot;$(PHYSXINSTALLPATH)\SDKs\lib\win32\&quot;"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -133,6 +133,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="comctl32.lib dinput8.lib dxguid.lib dxerr.lib Rpcrt4.lib winmm.lib ws2_32.lib xinput.lib NiAnimation.lib NiBinaryShaderLib.lib NiCollision.lib ecrD3D11BinaryShaderLib.lib NiD3D10BinaryShaderLib.lib ecrD3D11RendererSetup.lib NiD3D10RendererSetup.lib NiDX9RendererSetup.lib NiEnvironment.lib NiFloodgate.lib NiInput.lib NiMain.lib NiMesh.lib NiParticle.lib NiSettingsDialog.lib NiSystem.lib NiTerrain.lib NiVisualTracker.lib NSBShaderLib.lib NSFParserLib.lib ecr.lib ecrInput.lib ecrLua.lib efd.lib efdLogservice.lib efdNetwork.lib egf.lib egfLua.lib egmAnimation.lib egmAnimationLua.lib egmTerrain.lib egmTerrainLua.lib egmVisualizers.lib egmVisualTracker.lib NiFont.lib PhysXLoader.lib efdPhysX.lib egfPhysX.lib egfPhysXLua.lib egmPhysXWhitebox.lib egmPhysXTerrain.lib ecrPhysX.lib egmWhitebox.lib NiPhysX.lib NiTerrainPhysX.lib NxCharacter.lib ./lib/clientnet.lib ./sdk/lib/Release/MyGUI.DirectXPlatform.lib ./sdk/lib/Release/MyGUIEngineStatic.lib ./sdk/lib/Release/freetype2311.lib"
 				GenerateDebugInformation="true"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -539,6 +540,18 @@
 			</File>
 			<File
 				RelativePath=".\Subject.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="ui"
+			>
+			<File
+				RelativePath=".\UI\MyGUIRenderClick.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UI\MyGUIRenderClick.h"
 				>
 			</File>
 		</Filter>
